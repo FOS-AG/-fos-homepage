@@ -3,19 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diagnostik & Potenzialanalysen | FOS - Focus on Solutions AG</title>
-    <meta name="description" content="FOS – Focus on Solutions AG: Evidenzbasierte Diagnostik und Potenzialanalysen für Kompetenzen, Potenziale und Teamdynamiken.">
+    <title>Diagnostik & Potenzialanalysen | Diagnostics – FOS - Focus on Solutions AG</title>
+    <meta name="description" content="Evidenzbasierte Diagnostik und Potenzialanalysen für Unternehmen und Führungskräfte. Professionelle Kompetenz- und Teamdynamik-Analysen.">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* Professional Diagnostics Hero - Weiß/Gold Design */
         .diagnostics-hero {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--blue-light) 50%, var(--primary-gold) 100%);
-            color: white;
-            padding: 8rem 2rem 6rem;
-            text-align: center;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 30%, #C7A15A 70%, #b8944a 100%);
+            color: var(--primary-blue);
+            padding: 8rem 0 6rem;
             position: relative;
             overflow: hidden;
         }
+        
         .diagnostics-hero::before {
             content: '';
             position: absolute;
@@ -23,114 +24,202 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23C7A15A" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23C7A15A" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23C7A15A" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="%23C7A15A" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="%23C7A15A" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
             opacity: 0.3;
         }
+        
         .diagnostics-hero-content {
             position: relative;
             z-index: 2;
+            text-align: center;
             max-width: 800px;
             margin: 0 auto;
         }
+        
         .diagnostics-hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 800;
             margin-bottom: 1.5rem;
-            color: white;
+            line-height: 1.2;
+            color: var(--primary-blue);
         }
+        
+        .diagnostics-hero h1 .highlight {
+            color: var(--primary-gold);
+        }
+        
         .diagnostics-hero p {
             font-size: 1.25rem;
+            line-height: 1.6;
+            opacity: 0.95;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            color: var(--primary-blue);
         }
+        
+        /* Diagnostics Section mit fließendem Übergang */
+        .diagnostics-section {
+            position: relative;
+            background: white;
+            padding: 6rem 0;
+            margin-top: -2rem;
+            border-radius: 2rem 2rem 0 0;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
         .diagnostics-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 2rem;
-            margin: 3rem 0;
+            margin-top: 3rem;
         }
-        .diagnostics-card {
+        
+        .diagnostic-card {
             background: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(214, 158, 46, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
-        .diagnostics-card:hover {
-            transform: translateY(-5px);
+        
+        .diagnostic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), #e6b800);
         }
-        .diagnostics-card h3 {
-            color: var(--primary-gold);
-            font-size: 1.25rem;
+        
+        .diagnostic-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(214, 158, 46, 0.15);
+            border-color: rgba(214, 158, 46, 0.3);
+        }
+        
+        .diagnostic-icon-container {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-gold), #e6b800);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(214, 158, 46, 0.2);
+        }
+        
+        .diagnostic-icon {
+            width: 40px;
+            height: 40px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .diagnostic-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
             margin-bottom: 1rem;
+            line-height: 1.3;
         }
-        .diagnostics-process {
-            background: var(--light-gray);
-            padding: 4rem 2rem;
+        
+        .diagnostic-card p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
         }
-        .process-grid {
+        
+        .diagnostic-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .diagnostic-features span {
+            background: rgba(214, 158, 46, 0.1);
+            color: var(--primary-gold);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid rgba(214, 158, 46, 0.2);
+        }
+        
+        /* Process Section */
+        .process-section {
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+            padding: 5rem 0;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(214, 158, 46, 0.1);
+        }
+        
+        .process-steps {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
-        .process-item {
+        
+        .process-step {
+            text-align: center;
+            padding: 2rem;
             background: white;
-            padding: 1.5rem;
-            border-radius: 0.75rem;
-            border-left: 4px solid var(--primary-gold);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(214, 158, 46, 0.1);
+            transition: all 0.3s ease;
             position: relative;
         }
-        .process-item::before {
-            content: counter(process-counter);
-            counter-increment: process-counter;
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            width: 30px;
-            height: 30px;
-            background: var(--primary-gold);
-            color: white;
+        
+        .process-step:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(214, 158, 46, 0.1);
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-gold), #e6b800);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: bold;
-            font-size: 0.9rem;
+            margin: 0 auto 1rem;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(214, 158, 46, 0.2);
         }
-        .process-grid {
-            counter-reset: process-counter;
-        }
-        .process-item h4 {
+        
+        .process-step h3 {
             color: var(--primary-blue);
+            font-size: 1.25rem;
             margin-bottom: 0.5rem;
-            margin-left: 1rem;
         }
-        .cta-section {
-            background: var(--primary-gold);
-            color: white;
-            text-align: center;
-            padding: 4rem 2rem;
+        
+        .process-step p {
+            color: var(--medium-gray);
+            line-height: 1.6;
         }
-        .cta-section h2 {
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        .cta-btn {
-            background: white;
-            color: var(--primary-gold);
-            padding: 1rem 2rem;
-            border-radius: 2rem;
-            text-decoration: none;
-            font-weight: 600;
-            display: inline-block;
-            margin-top: 1rem;
-            transition: all 0.3s ease;
-        }
-        .cta-btn:hover {
-            background: var(--primary-blue);
-            color: white;
-            transform: translateY(-2px);
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .diagnostics-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .diagnostics-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .diagnostics-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -138,15 +227,14 @@
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="index3.html" class="logo" style="display: flex; align-items: center; height: 60px;">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; height: 60px;">
                 <img src="assets/logos/fos-icon-exklusiv.svg" alt="FOS Icon Logo" style="height: 48px; width: auto; display: block;" />
             </a>
             <ul class="nav-links" id="nav-links">
-                <li><a href="index3.html" data-de="Startseite" data-en="Home">Startseite</a></li>
+                <li><a href="index.html" data-de="Startseite" data-en="Home">Startseite</a></li>
                 <li><a href="about.html" data-de="Über uns" data-en="About">Über uns</a></li>
                 <li><a href="services.html" data-de="Leistungen" data-en="Services">Leistungen</a></li>
                 <li><a href="team.html" data-de="Team" data-en="Team">Team</a></li>
-                <li><a href="publications.html" data-de="Publikationen" data-en="Publications">Publikationen</a></li>
                 <li><a href="login.html" data-de="Login" data-en="Login">Login</a></li>
                 <li><a href="contact.html" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
             </ul>
@@ -162,136 +250,180 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Professional Diagnostics Hero -->
     <section class="diagnostics-hero">
-        <div class="diagnostics-hero-content">
-            <h1 class="lang-de">Diagnostik & Potenzialanalysen</h1>
-            <h1 class="lang-en" style="display:none;">Diagnostics & Potential Analyses</h1>
-            <p class="lang-de">Evidenzbasierte Verfahren zur Erfassung von Kompetenzen, Potenzialen und Teamdynamiken für fundierte Entscheidungen.</p>
-            <p class="lang-en" style="display:none;">Evidence-based methods for assessing competencies, potentials and team dynamics for informed decisions.</p>
+        <div class="container">
+            <div class="diagnostics-hero-content">
+                <h1 class="lang-de">Diagnostik & <span class="highlight">Potenzialanalysen</span></h1>
+                <h1 class="lang-en" style="display:none;">Diagnostics & <span class="highlight">Potential Analyses</span></h1>
+                <p class="lang-de">Evidenzbasierte Verfahren zur Erfassung von Kompetenzen, Potenzialen und Teamdynamiken. Wissenschaftlich fundierte Analysen für nachhaltige Entwicklung.</p>
+                <p class="lang-en" style="display:none;">Evidence-based methods for assessing competencies, potentials and team dynamics. Scientifically grounded analyses for sustainable development.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Diagnostics Areas -->
-    <section class="section">
+    <!-- Professional Diagnostics Section -->
+    <section class="diagnostics-section">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title lang-de">Unsere Diagnostik-Verfahren</h2>
-                <h2 class="section-title lang-en" style="display:none;">Our Diagnostic Methods</h2>
-                <p class="section-subtitle lang-de">Wissenschaftlich fundierte Instrumente für präzise Analysen und aussagekräftige Ergebnisse</p>
-                <p class="section-subtitle lang-en" style="display:none;">Scientifically grounded instruments for precise analyses and meaningful results</p>
-            </div>
             <div class="diagnostics-grid">
-                <div class="diagnostics-card">
-                    <h3 class="lang-de">Kompetenzanalysen</h3>
-                    <h3 class="lang-en" style="display:none;">Competency Analyses</h3>
-                    <p class="lang-de">Systematische Erfassung von Fach- und Führungskompetenzen mit validierten psychologischen Verfahren.</p>
-                    <p class="lang-en" style="display:none;">Systematic assessment of professional and leadership competencies with validated psychological methods.</p>
+                <!-- Kompetenzanalysen -->
+                <div class="diagnostic-card">
+                    <div class="diagnostic-icon-container">
+                        <img src="assets/icons/strategy.svg" alt="Kompetenzanalysen" class="diagnostic-icon">
+                    </div>
+                    <h2 class="lang-de">Kompetenzanalysen</h2>
+                    <h2 class="lang-en" style="display:none;">Competency Analyses</h2>
+                    <p class="lang-de">Systematische Erfassung und Bewertung von Führungs-, Fach- und Methodenkompetenzen für gezielte Entwicklungsmaßnahmen.</p>
+                    <p class="lang-en" style="display:none;">Systematic assessment and evaluation of leadership, professional and methodological competencies for targeted development measures.</p>
+                    <div class="diagnostic-features lang-de">
+                        <span>Führungskompetenzen</span>
+                        <span>Fachkompetenzen</span>
+                        <span>Methodenkompetenzen</span>
+                    </div>
+                    <div class="diagnostic-features lang-en" style="display:none;">
+                        <span>Leadership Competencies</span>
+                        <span>Professional Competencies</span>
+                        <span>Methodological Competencies</span>
+                    </div>
                 </div>
-                <div class="diagnostics-card">
-                    <h3 class="lang-de">Potenzialanalysen</h3>
-                    <h3 class="lang-en" style="display:none;">Potential Analyses</h3>
-                    <p class="lang-de">Identifikation von Entwicklungspotenzialen und Karriereperspektiven basierend auf wissenschaftlichen Modellen.</p>
-                    <p class="lang-en" style="display:none;">Identification of development potentials and career perspectives based on scientific models.</p>
+
+                <!-- Potenzialanalysen -->
+                <div class="diagnostic-card">
+                    <div class="diagnostic-icon-container">
+                        <img src="assets/icons/coaching.svg" alt="Potenzialanalysen" class="diagnostic-icon">
+                    </div>
+                    <h2 class="lang-de">Potenzialanalysen</h2>
+                    <h2 class="lang-en" style="display:none;">Potential Analyses</h2>
+                    <p class="lang-de">Identifikation und Bewertung von Entwicklungspotenzialen für Karriereplanung und Nachfolgeplanung.</p>
+                    <p class="lang-en" style="display:none;">Identification and assessment of development potential for career planning and succession planning.</p>
+                    <div class="diagnostic-features lang-de">
+                        <span>Entwicklungspotenziale</span>
+                        <span>Karriereplanung</span>
+                        <span>Nachfolgeplanung</span>
+                    </div>
+                    <div class="diagnostic-features lang-en" style="display:none;">
+                        <span>Development Potential</span>
+                        <span>Career Planning</span>
+                        <span>Succession Planning</span>
+                    </div>
                 </div>
-                <div class="diagnostics-card">
-                    <h3 class="lang-de">Teamdynamiken</h3>
-                    <h3 class="lang-en" style="display:none;">Team Dynamics</h3>
-                    <p class="lang-de">Analyse von Gruppenprozessen, Rollenverteilungen und Zusammenarbeitsmustern in Teams.</p>
-                    <p class="lang-en" style="display:none;">Analysis of group processes, role distributions and collaboration patterns in teams.</p>
+
+                <!-- Teamdynamiken -->
+                <div class="diagnostic-card">
+                    <div class="diagnostic-icon-container">
+                        <img src="assets/icons/special.svg" alt="Teamdynamiken" class="diagnostic-icon">
+                    </div>
+                    <h2 class="lang-de">Teamdynamiken</h2>
+                    <h2 class="lang-en" style="display:none;">Team Dynamics</h2>
+                    <p class="lang-de">Analyse von Teamstrukturen, Kommunikationsmustern und Zusammenarbeitsprozessen für optimale Teamperformance.</p>
+                    <p class="lang-en" style="display:none;">Analysis of team structures, communication patterns and collaboration processes for optimal team performance.</p>
+                    <div class="diagnostic-features lang-de">
+                        <span>Teamstrukturen</span>
+                        <span>Kommunikationsmuster</span>
+                        <span>Zusammenarbeit</span>
+                    </div>
+                    <div class="diagnostic-features lang-en" style="display:none;">
+                        <span>Team Structures</span>
+                        <span>Communication Patterns</span>
+                        <span>Collaboration</span>
+                    </div>
+                </div>
+
+                <!-- 360°-Feedback -->
+                <div class="diagnostic-card">
+                    <div class="diagnostic-icon-container">
+                        <img src="assets/icons/arrow-right.svg" alt="360°-Feedback" class="diagnostic-icon">
+                    </div>
+                    <h2 class="lang-de">360°-Feedback</h2>
+                    <h2 class="lang-en" style="display:none;">360° Feedback</h2>
+                    <p class="lang-de">Umfassende Rückmeldung von Vorgesetzten, Kollegen und Mitarbeitern für ganzheitliche Persönlichkeitsentwicklung.</p>
+                    <p class="lang-en" style="display:none;">Comprehensive feedback from supervisors, colleagues and employees for holistic personality development.</p>
+                    <div class="diagnostic-features lang-de">
+                        <span>Mehrperspektivisch</span>
+                        <span>Ganzheitlich</span>
+                        <span>Entwicklungsorientiert</span>
+                    </div>
+                    <div class="diagnostic-features lang-en" style="display:none;">
+                        <span>Multi-perspective</span>
+                        <span>Holistic</span>
+                        <span>Development-oriented</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Process Section -->
-    <section class="diagnostics-process">
+    <section class="process-section">
         <div class="container">
             <div class="section-header" style="text-align: center;">
-                <h2 class="section-title lang-de">Unser Diagnostik-Prozess</h2>
-                <h2 class="section-title lang-en" style="display:none;">Our Diagnostic Process</h2>
-                <p class="section-subtitle lang-de">Strukturierter Ablauf für aussagekräftige und handlungsrelevante Ergebnisse</p>
-                <p class="section-subtitle lang-en" style="display:none;">Structured process for meaningful and action-relevant results</p>
+                <h2 class="section-title lang-de">Unser <span style="color: var(--primary-gold);">Diagnostik-Prozess</span></h2>
+                <h2 class="section-title lang-en" style="display:none;">Our <span style="color: var(--primary-gold);">Diagnostic Process</span></h2>
+                <p class="section-subtitle lang-de">Systematisch, transparent und evidenzbasiert – so arbeiten wir mit Ihnen zusammen.</p>
+                <p class="section-subtitle lang-en" style="display:none;">Systematic, transparent and evidence-based – this is how we work with you.</p>
             </div>
-            <div class="process-grid">
-                <div class="process-item">
-                    <h4 class="lang-de">1. Bedarfsanalyse</h4>
-                    <h4 class="lang-en" style="display:none;">1. Needs Analysis</h4>
-                    <p class="lang-de">Klärung der Fragestellung und Auswahl der passenden diagnostischen Instrumente.</p>
-                    <p class="lang-en" style="display:none;">Clarification of the question and selection of appropriate diagnostic instruments.</p>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3 class="lang-de">Analyse & Planung</h3>
+                    <h3 class="lang-en" style="display:none;">Analysis & Planning</h3>
+                    <p class="lang-de">Gemeinsame Definition der Ziele und Auswahl der passenden Diagnostik-Instrumente.</p>
+                    <p class="lang-en" style="display:none;">Joint definition of goals and selection of appropriate diagnostic instruments.</p>
                 </div>
-                <div class="process-item">
-                    <h4 class="lang-de">2. Datenerhebung</h4>
-                    <h4 class="lang-en" style="display:none;">2. Data Collection</h4>
-                    <p class="lang-de">Durchführung der ausgewählten Verfahren unter standardisierten Bedingungen.</p>
-                    <p class="lang-en" style="display:none;">Implementation of selected procedures under standardized conditions.</p>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3 class="lang-de">Durchführung</h3>
+                    <h3 class="lang-en" style="display:none;">Implementation</h3>
+                    <p class="lang-de">Professionelle Durchführung der ausgewählten Diagnostik-Verfahren in vertrauensvoller Atmosphäre.</p>
+                    <p class="lang-en" style="display:none;">Professional implementation of selected diagnostic procedures in a trusting atmosphere.</p>
                 </div>
-                <div class="process-item">
-                    <h4 class="lang-de">3. Auswertung</h4>
-                    <h4 class="lang-en" style="display:none;">3. Evaluation</h4>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3 class="lang-de">Auswertung</h3>
+                    <h3 class="lang-en" style="display:none;">Evaluation</h3>
                     <p class="lang-de">Wissenschaftlich fundierte Auswertung und Interpretation der Ergebnisse.</p>
                     <p class="lang-en" style="display:none;">Scientifically grounded evaluation and interpretation of results.</p>
                 </div>
-                <div class="process-item">
-                    <h4 class="lang-de">4. Berichterstattung</h4>
-                    <h4 class="lang-en" style="display:none;">4. Reporting</h4>
-                    <p class="lang-de">Erstellung eines detaillierten Berichts mit Handlungsempfehlungen.</p>
-                    <p class="lang-en" style="display:none;">Creation of a detailed report with recommendations for action.</p>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3 class="lang-de">Umsetzung</h3>
+                    <h3 class="lang-en" style="display:none;">Implementation</h3>
+                    <p class="lang-de">Entwicklung konkreter Handlungsempfehlungen und Begleitung bei der Umsetzung.</p>
+                    <p class="lang-en" style="display:none;">Development of concrete recommendations for action and support in implementation.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 class="lang-de">Interesse an einer Diagnostik?</h2>
-            <h2 class="lang-en" style="display:none;">Interested in Diagnostics?</h2>
-            <p class="lang-de">Kontaktieren Sie uns für ein unverbindliches Gespräch über Ihre spezifischen Anforderungen.</p>
-            <p class="lang-en" style="display:none;">Contact us for a non-binding conversation about your specific requirements.</p>
-            <a href="contact.html" class="cta-btn lang-de">Kontakt aufnehmen</a>
-            <a href="contact.html" class="cta-btn lang-en" style="display:none;">Contact Us</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <div class="footer-logo">
-                        <img src="assets/logos/fos-logo-voll-exklusiv.svg" alt="FOS Logo" style="height: 60px; width: auto;">
-                    </div>
-                    <p class="lang-de">FOS – Focus on Solutions AG</p>
-                    <p class="lang-en" style="display:none;">FOS – Focus on Solutions AG</p>
-                    <p class="lang-de">Ihr Partner für evidenzbasierte Beratung und Coaching</p>
-                    <p class="lang-en" style="display:none;">Your partner for evidence-based consulting and coaching</p>
-                </div>
-                <div class="footer-section">
-                    <h3 class="lang-de">Kontakt</h3>
-                    <h3 class="lang-en" style="display: none;">Contact</h3>
-                    <p><a href="tel:+41441234567">+41 44 123 45 67</a></p>
-                    <p><a href="mailto:info@fos-ag.ch">info@fos-ag.ch</a></p>
-                    <p class="lang-de">Zürich, Schweiz</p>
-                    <p class="lang-en" style="display: none;">Zurich, Switzerland</p>
-                </div>
-                <div class="footer-section">
-                    <h3 class="lang-de">Rechtliches</h3>
-                    <h3 class="lang-en" style="display: none;">Legal</h3>
-                    <p><a href="impressum.html" class="lang-de">Impressum</a><a href="impressum.html" class="lang-en" style="display: none;">Imprint</a></p>
-                    <p><a href="datenschutz.html" class="lang-de">Datenschutz</a><a href="datenschutz.html" class="lang-en" style="display: none;">Privacy Policy</a></p>
-                    <p><a href="agb.html" class="lang-de">AGB</a><a href="agb.html" class="lang-en" style="display: none;">Terms</a></p>
-                </div>
-                <div class="footer-section">
-                    <h3>Newsletter</h3>
-                    <p class="lang-de">Trends, Tools & Insights – quartalsweise per Mail</p>
-                    <p class="lang-en" style="display: none;">Trends, Tools & Insights – quarterly by email</p>
-                    <p><a href="#">LinkedIn</a></p>
-                </div>
+        <div class="footer-content" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: flex-start; gap: 4rem; flex-wrap: wrap;">
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">
+                    <span style="color: var(--primary-gold);">FOS</span> <span style="color: #fff; font-weight: 700;">FocusOnSolutions AG</span>
+                </h3>
+                <p style="color: rgba(255,255,255,0.8);">Ihr Partner für evidenzbasierte,<br>psychologisch fundierte Beratung</p>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 FOS – Focus on Solutions AG. <span class="lang-de">Alle Rechte vorbehalten.</span><span class="lang-en" style="display:none;">All rights reserved.</span></p>
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="margin-bottom: 1rem;">
+                    <a href="contact.html" style="color: var(--primary-gold); font-weight: 700; text-decoration: none; transition: color 0.2s; font-size: 1.125rem;" onmouseover="this.style.color='#f6e05e'" onmouseout="this.style.color='var(--primary-gold)'">Kontakt</a>
+                </h3>
+                <p style="color: rgba(255,255,255,0.8);">+41 44 123 45 67</p>
+                <p style="color: rgba(255,255,255,0.8);"><a href="mailto:info@fos-ag.ch" style="color: rgba(255,255,255,0.8); text-decoration: underline; transition: color 0.2s;">info@fos-ag.ch</a></p>
+                <p style="color: rgba(255,255,255,0.8);">Zürich, Schweiz</p>
             </div>
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="color: var(--primary-gold); font-weight: 700; margin-bottom: 1rem;">Rechtliches</h3>
+                <p><a href="impressum.html">Impressum</a></p>
+                <p><a href="datenschutz.html">Datenschutz</a></p>
+                <p><a href="agb.html">AGB</a></p>
+            </div>
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 2.5rem;">
+            <img src="assets/logos/fos-logo-consulting.svg" alt="FOS Consulting Logo" style="height: 90px; max-width: 90vw; width: auto; opacity: 0.97;" />
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FOS – Focus on Solutions AG. Alle Rechte vorbehalten.</p>
         </div>
     </footer>
 
@@ -358,26 +490,63 @@
         // FAB Kontaktmenü
         const fabContainer = document.getElementById('fabContainer');
         const fabMainBtn = document.getElementById('fabMainBtn');
+        
         function toggleFabMenu() {
             fabContainer.classList.toggle('open');
         }
+        
         function openWhatsApp() {
             const phone = '+41441234567';
             const currentLang = document.querySelector('.language-btn.active').textContent.toLowerCase();
             let message = currentLang === 'de'
-                ? 'Hallo, ich interessiere mich für Diagnostik & Potenzialanalysen von FOS.'
-                : 'Hello, I am interested in diagnostics & potential analyses from FOS.';
-            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`);
+                ? 'Hallo FOS Team, ich interessiere mich für Ihre Diagnostik-Leistungen.'
+                : 'Hello FOS Team, I am interested in your diagnostic services.';
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`,'_blank');
+            fabContainer.classList.remove('open');
         }
+        
         function openEmail() {
-            const subject = 'Anfrage Diagnostik & Potenzialanalysen';
-            const body = 'Hallo FOS Team,\n\nich interessiere mich für Ihre Diagnostik und Potenzialanalysen.\n\nMit freundlichen Grüßen';
-            window.open(`mailto:info@fos-ag.ch?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`);
+            const currentLang = document.querySelector('.language-btn.active').textContent.toLowerCase();
+            let subject = currentLang === 'de' ? 'Anfrage Diagnostik' : 'Diagnostic Inquiry';
+            let body = currentLang === 'de'
+                ? 'Sehr geehrtes FOS Team,%0D%0Aich interessiere mich für Ihre Diagnostik-Leistungen.'
+                : 'Dear FOS Team,%0D%0AI am interested in your diagnostic services.';
+            window.open(`mailto:info@fos-ag.ch?subject=${subject}&body=${body}`);
+            fabContainer.classList.remove('open');
         }
+        
         function openTelegram() {
-            const message = 'Hallo, ich interessiere mich für Diagnostik & Potenzialanalysen von FOS.';
-            window.open(`https://t.me/+41441234567?text=${encodeURIComponent(message)}`);
+            const phone = '+41441234567';
+            const currentLang = document.querySelector('.language-btn.active').textContent.toLowerCase();
+            let message = currentLang === 'de'
+                ? 'Hallo FOS Team, ich interessiere mich für Ihre Diagnostik-Leistungen.'
+                : 'Hello FOS Team, I am interested in your diagnostic services.';
+            window.open(`https://t.me/${phone}?text=${encodeURIComponent(message)}`,'_blank');
+            fabContainer.classList.remove('open');
         }
+
+        // Smooth scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all diagnostic cards and process steps
+        document.querySelectorAll('.diagnostic-card, .process-step').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'all 0.6s ease';
+            observer.observe(element);
+        });
     </script>
 </body>
-</html>
+</html> 
