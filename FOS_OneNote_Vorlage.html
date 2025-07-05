@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOS OneNote Notizbuch Vorlage</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #14213d;
+        }
+        
+        .header {
+            background: linear-gradient(120deg, #14213d 70%, #fca311 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #14213d;
+            border-bottom: 2px solid #fca311;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .template-item {
+            background: #f8f9fa;
+            border-left: 4px solid #fca311;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .template-item h3 {
+            color: #14213d;
+            margin-top: 0;
+        }
+        
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            padding: 8px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        .checklist li:before {
+            content: "☐ ";
+            color: #fca311;
+            font-weight: bold;
+        }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .grid-item {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #fca311;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8em;
+            margin: 2px;
+        }
+        
+        .priority-high { border-left-color: #dc3545; }
+        .priority-medium { border-left-color: #ffc107; }
+        .priority-low { border-left-color: #28a745; }
+        
+        .status-active { background-color: #d4edda; }
+        .status-pending { background-color: #fff3cd; }
+        .status-completed { background-color: #d1ecf1; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📓 FOS OneNote Notizbuch Vorlage</h1>
+        <p>Professionelle Struktur für Ihre Beratungsarbeit</p>
+    </div>
+
+    <div class="section">
+        <h2>📋 Notizbuch-Struktur</h2>
+        <div class="grid-container">
+            <div class="grid-item">
+                <h3>📁 Hauptabschnitte</h3>
+                <ul class="checklist">
+                    <li>Kunden & Projekte</li>
+                    <li>Coaching Sessions</li>
+                    <li>Strategieberatung</li>
+                    <li>Diagnostik & Analysen</li>
+                    <li>Workshops & Moderation</li>
+                    <li>Administration</li>
+                    <li>Wissensmanagement</li>
+                    <li>Persönliche Entwicklung</li>
+                </ul>
+            </div>
+            <div class="grid-item">
+                <h3>🏷️ Tagging-System</h3>
+                <div>
+                    <span class="tag">#Kunde</span>
+                    <span class="tag">#Coaching</span>
+                    <span class="tag">#Strategie</span>
+                    <span class="tag">#Workshop</span>
+                    <span class="tag">#Diagnostik</span>
+                    <span class="tag">#Follow-up</span>
+                    <span class="tag">#Ideen</span>
+                    <span class="tag">#Tools</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>👥 Kunden & Projekte Vorlage</h2>
+        <div class="template-item">
+            <h3>📄 Kundenprofil</h3>
+            <p><strong>Kunde:</strong> [Name der Organisation]</p>
+            <p><strong>Ansprechpartner:</strong> [Name, Position, Kontaktdaten]</p>
+            <p><strong>Projektstart:</strong> [Datum]</p>
+            <p><strong>Projektende:</strong> [Geplantes Datum]</p>
+            <p><strong>Budget:</strong> [Betrag]</p>
+            <p><strong>Ziele:</strong></p>
+            <ul class="checklist">
+                <li>[Ziel 1]</li>
+                <li>[Ziel 2]</li>
+                <li>[Ziel 3]</li>
+            </ul>
+        </div>
+        
+        <div class="template-item">
+            <h3>📝 Projektnotizen</h3>
+            <p><strong>Datum:</strong> [Datum]</p>
+            <p><strong>Besprechung:</strong> [Thema/Agenda]</p>
+            <p><strong>Teilnehmer:</strong> [Namen]</p>
+            <p><strong>Ergebnisse:</strong></p>
+            <ul class="checklist">
+                <li>[Ergebnis 1]</li>
+                <li>[Ergebnis 2]</li>
+            </ul>
+            <p><strong>Nächste Schritte:</strong></p>
+            <ul class="checklist">
+                <li>[Aufgabe 1] - [Verantwortlicher] - [Deadline]</li>
+                <li>[Aufgabe 2] - [Verantwortlicher] - [Deadline]</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🎯 Coaching Sessions Vorlage</h2>
+        <div class="template-item">
+            <h3>📅 Session-Protokoll</h3>
+            <p><strong>Datum:</strong> [Datum]</p>
+            <p><strong>Coachee:</strong> [Name]</p>
+            <p><strong>Session-Nr.:</strong> [X von Y]</p>
+            <p><strong>Dauer:</strong> [Zeit]</p>
+            <p><strong>Format:</strong> [Präsenz/Online/Telefon]</p>
+            
+            <h4>🎯 Session-Ziele:</h4>
+            <ul class="checklist">
+                <li>[Ziel 1]</li>
+                <li>[Ziel 2]</li>
+            </ul>
+            
+            <h4>💭 Besprochene Themen:</h4>
+            <ul class="checklist">
+                <li>[Thema 1]</li>
+                <li>[Thema 2]</li>
+            </ul>
+            
+            <h4>🔍 Erkenntnisse:</h4>
+            <ul class="checklist">
+                <li>[Erkenntnis 1]</li>
+                <li>[Erkenntnis 2]</li>
+            </ul>
+            
+            <h4>📋 Vereinbarte Maßnahmen:</h4>
+            <ul class="checklist">
+                <li>[Maßnahme 1] - [Deadline]</li>
+                <li>[Maßnahme 2] - [Deadline]</li>
+            </ul>
+            
+            <h4>📝 Notizen für nächste Session:</h4>
+            <p>[Freitext für wichtige Punkte]</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📊 Diagnostik & Analysen Vorlage</h2>
+        <div class="template-item">
+            <h3>🔬 Assessment-Protokoll</h3>
+            <p><strong>Teilnehmer:</strong> [Name]</p>
+            <p><strong>Datum:</strong> [Datum]</p>
+            <p><strong>Verfahren:</strong> [Name des Tests/Verfahrens]</p>
+            <p><strong>Dauer:</strong> [Zeitaufwand]</p>
+            
+            <h4>📈 Ergebnisse:</h4>
+            <ul class="checklist">
+                <li>Kompetenzbereich 1: [Bewertung]</li>
+                <li>Kompetenzbereich 2: [Bewertung]</li>
+                <li>Kompetenzbereich 3: [Bewertung]</li>
+            </ul>
+            
+            <h4>💡 Empfehlungen:</h4>
+            <ul class="checklist">
+                <li>[Empfehlung 1]</li>
+                <li>[Empfehlung 2]</li>
+            </ul>
+            
+            <h4>📋 Follow-up Maßnahmen:</h4>
+            <ul class="checklist">
+                <li>[Maßnahme 1]</li>
+                <li>[Maßnahme 2]</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🎪 Workshop & Moderation Vorlage</h2>
+        <div class="template-item">
+            <h3>📋 Workshop-Planung</h3>
+            <p><strong>Titel:</strong> [Workshop-Titel]</p>
+            <p><strong>Datum:</strong> [Datum]</p>
+            <p><strong>Dauer:</strong> [Zeit]</p>
+            <p><strong>Teilnehmer:</strong> [Anzahl und Zielgruppe]</p>
+            <p><strong>Ort:</strong> [Adresse/Online]</p>
+            
+            <h4>🎯 Lernziele:</h4>
+            <ul class="checklist">
+                <li>[Lernziel 1]</li>
+                <li>[Lernziel 2]</li>
+            </ul>
+            
+            <h4>📅 Agenda:</h4>
+            <ul class="checklist">
+                <li>09:00 - 09:15: [Aktivität]</li>
+                <li>09:15 - 10:30: [Aktivität]</li>
+                <li>10:30 - 10:45: [Pause]</li>
+                <li>10:45 - 12:00: [Aktivität]</li>
+            </ul>
+            
+            <h4>📦 Benötigte Materialien:</h4>
+            <ul class="checklist">
+                <li>[Material 1]</li>
+                <li>[Material 2]</li>
+            </ul>
+        </div>
+        
+        <div class="template-item">
+            <h3>📝 Workshop-Protokoll</h3>
+            <p><strong>Datum:</strong> [Datum]</p>
+            <p><strong>Teilnehmer:</strong> [Liste]</p>
+            <p><strong>Moderator:</strong> [Name]</p>
+            
+            <h4>✅ Durchgeführte Aktivitäten:</h4>
+            <ul class="checklist">
+                <li>[Aktivität 1] - [Ergebnis]</li>
+                <li>[Aktivität 2] - [Ergebnis]</li>
+            </ul>
+            
+            <h4>💡 Wichtige Erkenntnisse:</h4>
+            <ul class="checklist">
+                <li>[Erkenntnis 1]</li>
+                <li>[Erkenntnis 2]</li>
+            </ul>
+            
+            <h4>📋 Nächste Schritte:</h4>
+            <ul class="checklist">
+                <li>[Schritt 1] - [Verantwortlicher]</li>
+                <li>[Schritt 2] - [Verantwortlicher]</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📚 Wissensmanagement Vorlage</h2>
+        <div class="template-item">
+            <h3>📖 Tool/Methode Dokumentation</h3>
+            <p><strong>Name:</strong> [Tool/Methode]</p>
+            <p><strong>Kategorie:</strong> [Coaching/Strategie/Diagnostik]</p>
+            <p><strong>Zweck:</strong> [Beschreibung]</p>
+            <p><strong>Anwendung:</strong> [Wann/wie einsetzen]</p>
+            
+            <h4>📋 Schritt-für-Schritt Anleitung:</h4>
+            <ol>
+                <li>[Schritt 1]</li>
+                <li>[Schritt 2]</li>
+                <li>[Schritt 3]</li>
+            </ol>
+            
+            <h4>💡 Tipps & Tricks:</h4>
+            <ul class="checklist">
+                <li>[Tipp 1]</li>
+                <li>[Tipp 2]</li>
+            </ul>
+            
+            <h4>📚 Weiterführende Literatur:</h4>
+            <ul class="checklist">
+                <li>[Quelle 1]</li>
+                <li>[Quelle 2]</li>
+            </ul>
+        </div>
+        
+        <div class="template-item">
+            <h3>💡 Ideen & Inspiration</h3>
+            <p><strong>Datum:</strong> [Datum]</p>
+            <p><strong>Quelle:</strong> [Buch/Artikel/Gespräch/etc.]</p>
+            <p><strong>Idea:</strong> [Beschreibung der Idee]</p>
+            
+            <h4>🎯 Anwendungsmöglichkeiten:</h4>
+            <ul class="checklist">
+                <li>[Anwendung 1]</li>
+                <li>[Anwendung 2]</li>
+            </ul>
+            
+            <h4>📋 Umsetzungsschritte:</h4>
+            <ul class="checklist">
+                <li>[Schritt 1]</li>
+                <li>[Schritt 2]</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📅 Administration Vorlage</h2>
+        <div class="template-item">
+            <h3>💰 Finanzen & Rechnungen</h3>
+            <p><strong>Rechnungsnr.:</strong> [Nummer]</p>
+            <p><strong>Kunde:</strong> [Name]</p>
+            <p><strong>Datum:</strong> [Datum]</p>
+            <p><strong>Betrag:</strong> [CHF]</p>
+            <p><strong>Leistung:</strong> [Beschreibung]</p>
+            <p><strong>Status:</strong> [Offen/Bezahlt/Überfällig]</p>
+            <p><strong>Zahlungsfrist:</strong> [Datum]</p>
+        </div>
+        
+        <div class="template-item">
+            <h3>📞 Kontakte & Netzwerk</h3>
+            <p><strong>Name:</strong> [Vor- und Nachname]</p>
+            <p><strong>Position:</strong> [Berufsbezeichnung]</p>
+            <p><strong>Unternehmen:</strong> [Firmenname]</p>
+            <p><strong>E-Mail:</strong> [E-Mail-Adresse]</p>
+            <p><strong>Telefon:</strong> [Telefonnummer]</p>
+            <p><strong>LinkedIn:</strong> [Profil-URL]</p>
+            <p><strong>Kontaktaufnahme:</strong> [Datum und Anlass]</p>
+            <p><strong>Notizen:</strong> [Wichtige Informationen]</p>
+            <p><strong>Follow-up:</strong> [Geplante Aktion]</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🎯 Persönliche Entwicklung Vorlage</h2>
+        <div class="template-item">
+            <h3>📈 Ziele & Reflexion</h3>
+            <p><strong>Quartal/Jahr:</strong> [Zeitraum]</p>
+            
+            <h4>🎯 Berufliche Ziele:</h4>
+            <ul class="checklist">
+                <li>[Ziel 1] - [Deadline]</li>
+                <li>[Ziel 2] - [Deadline]</li>
+            </ul>
+            
+            <h4>📚 Lernziele:</h4>
+            <ul class="checklist">
+                <li>[Lernziel 1]</li>
+                <li>[Lernziel 2]</li>
+            </ul>
+            
+            <h4>✅ Erfolge:</h4>
+            <ul class="checklist">
+                <li>[Erfolg 1]</li>
+                <li>[Erfolg 2]</li>
+            </ul>
+            
+            <h4>🔍 Verbesserungsbereiche:</h4>
+            <ul class="checklist">
+                <li>[Bereich 1]</li>
+                <li>[Bereich 2]</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>💡 Verwendungshinweise</h2>
+        <div class="template-item">
+            <h3>🚀 Tipps für effektive Nutzung:</h3>
+            <ul class="checklist">
+                <li>Erstellen Sie für jeden Kunden einen eigenen Abschnitt</li>
+                <li>Nutzen Sie Tags für schnelle Suche und Filterung</li>
+                <li>Führen Sie regelmäßige Reviews Ihrer Notizen durch</li>
+                <li>Verwenden Sie Farbkodierung für Prioritäten</li>
+                <li>Erstellen Sie Vorlagen für wiederkehrende Prozesse</li>
+                <li>Nutzen Sie OneNote's Suchfunktion aktiv</li>
+                <li>Teilen Sie relevante Notizen mit Team-Mitgliedern</li>
+                <li>Erstellen Sie Backups wichtiger Informationen</li>
+            </ul>
+        </div>
+        
+        <div class="template-item">
+            <h3>🔧 OneNote-Features nutzen:</h3>
+            <ul class="checklist">
+                <li>📱 Synchronisation über alle Geräte</li>
+                <li>🔍 Volltextsuche in allen Notizen</li>
+                <li>📎 Dateianhänge und Bilder einbetten</li>
+                <li>✏️ Handschriftliche Notizen (Tablet)</li>
+                <li>🎙️ Audio-Aufnahmen</li>
+                <li>📊 Tabellen und Listen</li>
+                <li>🔗 Verlinkungen zwischen Notizen</li>
+                <li>👥 Freigabe und Zusammenarbeit</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>📞 Kontakt & Support</h2>
+        <p>Bei Fragen zur Nutzung dieser Vorlage oder für individuelle Anpassungen:</p>
+        <p><strong>FOS - Focus on Solutions AG</strong></p>
+        <p>📧 info@fos-ag.ch</p>
+        <p>📱 +41 44 123 45 67</p>
+        <p>🌐 www.fos-ag.ch</p>
+    </div>
+</body>
+</html> 

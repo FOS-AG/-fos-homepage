@@ -1,0 +1,57 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://fos-consulting.ch/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+# Allow important files
+Allow: /styles.css
+Allow: /js/
+Allow: /assets/
+Allow: /*.html
+
+# Block unnecessary file types
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
+
+# Block search and filter URLs
+Disallow: /*?search=
+Disallow: /*?filter=
+Disallow: /*?sort=
+
+# Allow Googlebot specifically
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0.5
+
+# Allow Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0.5
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: / 

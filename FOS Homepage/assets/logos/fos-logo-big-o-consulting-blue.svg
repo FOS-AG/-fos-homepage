@@ -1,0 +1,14 @@
+<svg width="320" height="200" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="320" height="200" fill="none"/>
+  <!-- FOS -->
+  <text x="57" y="70" font-family="Montserrat, Arial, sans-serif" font-size="56" font-weight="700" fill="#202345">F</text>
+  <g>
+    <circle cx="120" cy="56" r="28" fill="none" stroke="#C7A15A" stroke-width="4"/>
+    <circle cx="120" cy="56" r="5.6" fill="#202345"/>
+  </g>
+  <text x="153" y="70" font-family="Montserrat, Arial, sans-serif" font-size="56" font-weight="700" fill="#202345">S</text>
+  <!-- FocusOnSolutions AG -->
+  <text x="40" y="110" font-family="Montserrat, Arial, sans-serif" font-size="20" font-weight="500" fill="#202345">FocusOnSolutions AG</text>
+  <!-- - Consulting - -->
+  <text x="60" y="140" font-family="Montserrat, Arial, sans-serif" font-size="16" font-weight="500" fill="#C7A15A" letter-spacing="2" text-anchor="start">– Consulting –</text>
+</svg> 

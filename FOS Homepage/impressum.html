@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impressum - FOS – Focus on Solutions AG</title>
+    <meta name="description" content="Impressum der FOS – Focus on Solutions AG. Rechtliche Informationen und Kontaktdaten.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 0;
+        }
+        
+        .legal-content h1 {
+            color: var(--primary-blue);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .legal-content h2 {
+            color: var(--primary-gold);
+            margin: 2rem 0 1rem 0;
+            font-size: 1.5rem;
+        }
+        
+        .legal-content h3 {
+            color: var(--primary-blue);
+            margin: 1.5rem 0 0.5rem 0;
+            font-size: 1.2rem;
+        }
+        
+        .legal-content p, .legal-content li {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            color: var(--medium-gray);
+        }
+        
+        .legal-content ul {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .legal-content .contact-info {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; height: 60px;">
+                <img src="assets/logos/fos-icon-exklusiv.svg" alt="FOS Icon Logo" style="height: 48px; width: auto; display: block;" />
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" data-de="Startseite" data-en="Home">Startseite</a></li>
+                <li><a href="about.html" data-de="Über uns" data-en="About">Über uns</a></li>
+                <li><a href="services.html" data-de="Leistungen" data-en="Services">Leistungen</a></li>
+                <li><a href="team.html" data-de="Team" data-en="Team">Team</a></li>
+                <li><a href="login.html" data-de="Login" data-en="Login">Login</a></li>
+                <li><a href="contact.html" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="language-btn active" onclick="switchLanguage('de')">DE</button>
+                <button class="language-btn" onclick="switchLanguage('en')">EN</button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Legal Content -->
+    <section class="section">
+        <div class="container">
+            <div class="legal-content">
+                <h1 class="lang-de">Impressum</h1>
+                <h1 class="lang-en" style="display:none;">Imprint</h1>
+                
+                <div class="lang-de">
+                    <p><strong>Stand: Januar 2024</strong></p>
+                    
+                    <h2>Angaben gemäß § 5 TMG</h2>
+                    <p><strong>FOS - Focus on Solutions AG</strong><br>
+                    Bahnhofstrasse 123<br>
+                    8001 Zürich<br>
+                    Schweiz</p>
+                    
+                    <h2>Vertreten durch</h2>
+                    <p>Geschäftsführer: [Name]</p>
+                    
+                    <h2>Kontakt</h2>
+                    <p>Telefon: +41 44 123 45 67<br>
+                    E-Mail: info@fos-ag.ch</p>
+                    
+                    <h2>Registereintrag</h2>
+                    <p>Eintragung im Handelsregister<br>
+                    Registergericht: Handelsregister Zürich<br>
+                    Registernummer: [Nummer]</p>
+                    
+                    <h2>Berufsbezeichnung und berufsrechtliche Regelungen</h2>
+                    <p>Berufsbezeichnung: Psychologisch fundierte Beratung<br>
+                    Zuständige Kammer: [Kammer]<br>
+                    Verliehen durch: Schweiz</p>
+                    
+                    <h2>Umsatzsteuer-ID</h2>
+                    <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br>
+                    CHE-123.456.789 MWST</p>
+                    
+                    <h2>Redaktionell verantwortlich</h2>
+                    <p>[Name]<br>
+                    FOS - Focus on Solutions AG<br>
+                    Bahnhofstrasse 123<br>
+                    8001 Zürich<br>
+                    Schweiz</p>
+                    
+                    <h2>EU-Streitschlichtung</h2>
+                    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank">https://ec.europa.eu/consumers/odr/</a>.<br>
+                    Unsere E-Mail-Adresse finden Sie oben im Impressum.</p>
+                    
+                    <h2>Verbraucherstreitbeilegung/Universalschlichtungsstelle</h2>
+                    <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+                    
+                    <h2>Haftung für Inhalte</h2>
+                    <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+                    
+                    <h2>Urheberrecht</h2>
+                    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem schweizerischen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+                    
+                    <div class="contact-info">
+                        <h3>Kontakt für rechtliche Fragen:</h3>
+                        <p><strong>FOS - Focus on Solutions AG</strong><br>
+                        info@fos-ag.ch<br>
+                        +41 44 123 45 67</p>
+                    </div>
+                </div>
+                
+                <div class="lang-en" style="display:none;">
+                    <p><strong>Effective: January 2024</strong></p>
+                    
+                    <h2>Information according to § 5 TMG</h2>
+                    <p><strong>FOS - Focus on Solutions AG</strong><br>
+                    Bahnhofstrasse 123<br>
+                    8001 Zurich<br>
+                    Switzerland</p>
+                    
+                    <h2>Represented by</h2>
+                    <p>Managing Director: [Name]</p>
+                    
+                    <h2>Contact</h2>
+                    <p>Phone: +41 44 123 45 67<br>
+                    Email: info@fos-ag.ch</p>
+                    
+                    <h2>Commercial Register</h2>
+                    <p>Entry in the Commercial Register<br>
+                    Register Court: Commercial Register Zurich<br>
+                    Register Number: [Number]</p>
+                    
+                    <h2>Professional title and professional regulations</h2>
+                    <p>Professional title: Psychologically grounded consulting<br>
+                    Responsible chamber: [Chamber]<br>
+                    Awarded by: Switzerland</p>
+                    
+                    <h2>VAT ID</h2>
+                    <p>VAT identification number according to § 27 a VAT Act:<br>
+                    CHE-123.456.789 MWST</p>
+                    
+                    <h2>Editorially responsible</h2>
+                    <p>[Name]<br>
+                    FOS - Focus on Solutions AG<br>
+                    Bahnhofstrasse 123<br>
+                    8001 Zurich<br>
+                    Switzerland</p>
+                    
+                    <h2>EU Dispute Resolution</h2>
+                    <p>The European Commission provides a platform for online dispute resolution (ODR): <a href="https://ec.europa.eu/consumers/odr/" target="_blank">https://ec.europa.eu/consumers/odr/</a>.<br>
+                    You can find our email address above in the imprint.</p>
+                    
+                    <h2>Consumer Dispute Resolution/Universal Arbitration Board</h2>
+                    <p>We are not willing or obliged to participate in dispute resolution procedures before a consumer arbitration board.</p>
+                    
+                    <h2>Liability for Content</h2>
+                    <p>As a service provider, we are responsible for our own content on these pages in accordance with the general laws pursuant to § 7 para.1 TMG. However, according to §§ 8 to 10 TMG, we as a service provider are not obliged to monitor transmitted or stored third-party information or to investigate circumstances that indicate illegal activity.</p>
+                    
+                    <h2>Copyright</h2>
+                    <p>The content and works created by the site operators on these pages are subject to Swiss copyright law. The reproduction, editing, distribution and any kind of exploitation outside the limits of copyright require the written consent of the respective author or creator. Downloads and copies of this page are only permitted for private, non-commercial use.</p>
+                    
+                    <div class="contact-info">
+                        <h3>Contact for legal questions:</h3>
+                        <p><strong>FOS - Focus on Solutions AG</strong><br>
+                        info@fos-ag.ch<br>
+                        +41 44 123 45 67</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: flex-start; gap: 4rem; flex-wrap: wrap;">
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">
+                    <span style="color: var(--primary-gold);">FOS</span> <span style="color: #fff; font-weight: 700;">FocusOnSolutions AG</span>
+                </h3>
+                <p style="color: rgba(255,255,255,0.8);">Ihr Partner für evidenzbasierte,<br>psychologisch fundierte Beratung</p>
+            </div>
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="margin-bottom: 1rem;">
+                    <a href="contact.html" style="color: var(--primary-gold); font-weight: 700; text-decoration: none; transition: color 0.2s; font-size: 1.125rem;" onmouseover="this.style.color='#f6e05e'" onmouseout="this.style.color='var(--primary-gold)'">Kontakt</a>
+                </h3>
+                <p style="color: rgba(255,255,255,0.8);">+41 44 123 45 67</p>
+                <p style="color: rgba(255,255,255,0.8);"><a href="mailto:info@fos-ag.ch" style="color: rgba(255,255,255,0.8); text-decoration: underline; transition: color 0.2s;">info@fos-ag.ch</a></p>
+                <p style="color: rgba(255,255,255,0.8);">Zürich, Schweiz</p>
+            </div>
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="color: var(--primary-gold); font-weight: 700; margin-bottom: 1rem;">Rechtliches</h3>
+                <p><a href="impressum.html">Impressum</a></p>
+                <p><a href="datenschutz.html">Datenschutz</a></p>
+                <p><a href="agb.html">AGB</a></p>
+            </div>
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 2.5rem;">
+            <img src="assets/logos/fos-logo-consulting.svg" alt="FOS Consulting Logo" style="height: 90px; max-width: 90vw; width: auto; opacity: 0.97;" />
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FOS – Focus on Solutions AG. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Language switcher
+        function switchLanguage(lang) {
+            const buttons = document.querySelectorAll('.language-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Show/hide language-specific content
+            const germanElements = document.querySelectorAll('.lang-de');
+            const englishElements = document.querySelectorAll('.lang-en');
+            
+            if (lang === 'de') {
+                germanElements.forEach(el => el.style.display = '');
+                englishElements.forEach(el => el.style.display = 'none');
+            } else {
+                germanElements.forEach(el => el.style.display = 'none');
+                englishElements.forEach(el => el.style.display = '');
+            }
+            
+            // Update navigation links
+            updateNavigationLanguage(lang);
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Update navigation language
+        function updateNavigationLanguage(lang) {
+            const navLinks = document.querySelectorAll('[data-de][data-en]');
+            navLinks.forEach(link => {
+                if (lang === 'de') {
+                    link.textContent = link.getAttribute('data-de');
+                } else {
+                    link.textContent = link.getAttribute('data-en');
+                }
+            });
+        }
+
+        // Load saved language preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                switchLanguage(savedLang);
+                const buttons = document.querySelectorAll('.language-btn');
+                buttons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.textContent.toLowerCase() === savedLang) {
+                        btn.classList.add('active');
+                    }
+                });
+            } else {
+                // Initialize navigation with default language
+                updateNavigationLanguage('de');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('mobile-active');
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,8 @@
+<svg width="320" height="120" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <text x="30" y="85" font-family="Montserrat, Arial, sans-serif" font-size="80" font-weight="700" fill="#202345">F</text>
+  <g>
+    <circle cx="120" cy="60" r="36" fill="none" stroke="#C7A15A" stroke-width="4"/>
+    <circle cx="120" cy="60" r="5" fill="#202345"/>
+  </g>
+  <text x="170" y="85" font-family="Montserrat, Arial, sans-serif" font-size="80" font-weight="700" fill="#202345">S</text>
+</svg> 

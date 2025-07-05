@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Formats & Events | FOS - Focus on Solutions AG</title>
+    <meta name="description" content="FOS – Focus on Solutions AG: Special Formats und Events für Unternehmen. Workshops, Seminare, Konferenzen und maßgeschneiderte Veranstaltungen.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Professional Special Formats Hero - Weiß/Gold Design */
+        .special-formats-hero {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 30%, #C7A15A 70%, #b8944a 100%);
+            color: var(--primary-blue);
+            padding: 8rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .special-formats-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23C7A15A" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23C7A15A" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23C7A15A" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="%23C7A15A" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="%23C7A15A" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .special-formats-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .special-formats-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: var(--primary-blue);
+        }
+        
+        .special-formats-hero h1 .highlight {
+            color: var(--primary-gold);
+        }
+        
+        .special-formats-hero p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            opacity: 0.95;
+            margin-bottom: 2rem;
+            color: var(--primary-blue);
+        }
+        
+        /* Special Formats Section mit fließendem Übergang */
+        .special-formats-section {
+            position: relative;
+            background: white;
+            padding: 6rem 0;
+            margin-top: -2rem;
+            border-radius: 2rem 2rem 0 0;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .formats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .format-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(214, 158, 46, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .format-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), #e6b800);
+        }
+        
+        .format-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(214, 158, 46, 0.15);
+            border-color: rgba(214, 158, 46, 0.3);
+        }
+        
+        .format-icon-container {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-gold), #e6b800);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(214, 158, 46, 0.2);
+        }
+        
+        .format-icon {
+            width: 40px;
+            height: 40px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .format-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .format-card p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .format-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .format-features span {
+            background: rgba(214, 158, 46, 0.1);
+            color: var(--primary-gold);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid rgba(214, 158, 46, 0.2);
+        }
+        
+        /* Events Section */
+        .events-section {
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+            padding: 5rem 0;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(214, 158, 46, 0.1);
+        }
+        
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .event-card {
+            background: white;
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(214, 158, 46, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .event-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(214, 158, 46, 0.1);
+        }
+        
+        .event-date {
+            background: linear-gradient(135deg, var(--primary-gold), #e6b800);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .event-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .event-card p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .event-btn {
+            background: linear-gradient(135deg, var(--primary-gold), #e6b800);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 0.75rem 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .event-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(214, 158, 46, 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .special-formats-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .special-formats-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .formats-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .format-card {
+                padding: 2rem;
+            }
+            
+            .events-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; height: 60px;">
+                <img src="assets/logos/fos-icon-exklusiv.svg" alt="FOS Icon Logo" style="height: 48px; width: auto; display: block;" />
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" data-de="Startseite" data-en="Home">Startseite</a></li>
+                <li><a href="about.html" data-de="Über uns" data-en="About">Über uns</a></li>
+                <li><a href="services.html" data-de="Leistungen" data-en="Services">Leistungen</a></li>
+                <li><a href="team.html" data-de="Team" data-en="Team">Team</a></li>
+                <li><a href="login.html" data-de="Login" data-en="Login">Login</a></li>
+                <li><a href="contact.html" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="language-btn active" onclick="switchLanguage('de')">DE</button>
+                <button class="language-btn" onclick="switchLanguage('en')">EN</button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Professional Special Formats Hero - Weiß/Gold Design -->
+    <section class="special-formats-hero">
+        <div class="container">
+            <div class="special-formats-hero-content">
+                <h1 class="lang-de">Special <span class="highlight">Formats</span> & Events</h1>
+                <h1 class="lang-en" style="display:none;">Special <span class="highlight">Formats</span> & Events</h1>
+                <p class="lang-de">Maßgeschneiderte Veranstaltungen, Workshops und Events für Ihre spezifischen Herausforderungen</p>
+                <p class="lang-en" style="display:none;">Tailored events, workshops and events for your specific challenges</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Special Formats Section -->
+    <section class="special-formats-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title lang-de">Unsere Special Formats</h2>
+                <h2 class="section-title lang-en" style="display:none;">Our Special Formats</h2>
+                <p class="section-subtitle lang-de">Innovative Formate für nachhaltige Entwicklung und Transformation</p>
+                <p class="section-subtitle lang-en" style="display:none;">Innovative formats for sustainable development and transformation</p>
+            </div>
+            
+            <div class="formats-grid">
+                <!-- Workshops -->
+                <div class="format-card">
+                    <div class="format-icon-container">
+                        <svg class="format-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+                        </svg>
+                    </div>
+                    <h2 class="lang-de">Interaktive Workshops</h2>
+                    <h2 class="lang-en" style="display:none;">Interactive Workshops</h2>
+                    <p class="lang-de">Intensive Workshops für Teams und Führungskräfte zu spezifischen Themen wie Leadership, Kommunikation und Change Management.</p>
+                    <p class="lang-en" style="display:none;">Intensive workshops for teams and executives on specific topics such as leadership, communication and change management.</p>
+                    <div class="format-features">
+                        <span class="lang-de">1-3 Tage</span>
+                        <span class="lang-en" style="display:none;">1-3 Days</span>
+                        <span class="lang-de">Interaktiv</span>
+                        <span class="lang-en" style="display:none;">Interactive</span>
+                        <span class="lang-de">Maßgeschneidert</span>
+                        <span class="lang-en" style="display:none;">Tailored</span>
+                    </div>
+                </div>
+
+                <!-- Seminare -->
+                <div class="format-card">
+                    <div class="format-icon-container">
+                        <svg class="format-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                        </svg>
+                    </div>
+                    <h2 class="lang-de">Fachseminare</h2>
+                    <h2 class="lang-en" style="display:none;">Specialized Seminars</h2>
+                    <p class="lang-de">Professionelle Seminare zu aktuellen Themen der Unternehmensführung, Psychologie und Organisationsentwicklung.</p>
+                    <p class="lang-en" style="display:none;">Professional seminars on current topics of business leadership, psychology and organizational development.</p>
+                    <div class="format-features">
+                        <span class="lang-de">Halbtags</span>
+                        <span class="lang-en" style="display:none;">Half Day</span>
+                        <span class="lang-de">Expertenwissen</span>
+                        <span class="lang-en" style="display:none;">Expert Knowledge</span>
+                        <span class="lang-de">Networking</span>
+                    </div>
+                </div>
+
+                <!-- Konferenzen -->
+                <div class="format-card">
+                    <div class="format-icon-container">
+                        <svg class="format-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                        </svg>
+                    </div>
+                    <h2 class="lang-de">Konferenzen & Events</h2>
+                    <h2 class="lang-en" style="display:none;">Conferences & Events</h2>
+                    <p class="lang-de">Großveranstaltungen mit internationalen Experten, Networking-Möglichkeiten und inspirierenden Keynotes.</p>
+                    <p class="lang-en" style="display:none;">Large-scale events with international experts, networking opportunities and inspiring keynotes.</p>
+                    <div class="format-features">
+                        <span class="lang-de">1-2 Tage</span>
+                        <span class="lang-en" style="display:none;">1-2 Days</span>
+                        <span class="lang-de">International</span>
+                        <span class="lang-en" style="display:none;">International</span>
+                        <span class="lang-de">Networking</span>
+                    </div>
+                </div>
+
+                <!-- Inhouse-Programme -->
+                <div class="format-card">
+                    <div class="format-icon-container">
+                        <svg class="format-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h2 class="lang-de">Inhouse-Programme</h2>
+                    <h2 class="lang-en" style="display:none;">In-House Programs</h2>
+                    <p class="lang-de">Maßgeschneiderte Programme für Ihr Unternehmen, angepasst an Ihre spezifischen Bedürfnisse und Unternehmenskultur.</p>
+                    <p class="lang-en" style="display:none;">Tailored programs for your company, adapted to your specific needs and corporate culture.</p>
+                    <div class="format-features">
+                        <span class="lang-de">Maßgeschneidert</span>
+                        <span class="lang-en" style="display:none;">Tailored</span>
+                        <span class="lang-de">Vor Ort</span>
+                        <span class="lang-en" style="display:none;">On Site</span>
+                        <span class="lang-de">Flexibel</span>
+                        <span class="lang-en" style="display:none;">Flexible</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title lang-de">Aktuelle Events</h2>
+                <h2 class="section-title lang-en" style="display:none;">Current Events</h2>
+                <p class="section-subtitle lang-de">Entdecken Sie unsere kommenden Veranstaltungen und melden Sie sich an</p>
+                <p class="section-subtitle lang-en" style="display:none;">Discover our upcoming events and register</p>
+            </div>
+            
+            <div class="events-grid">
+                <!-- Event 1 -->
+                <div class="event-card">
+                    <div class="event-date lang-de">15. März 2024</div>
+                    <div class="event-date lang-en" style="display:none;">March 15, 2024</div>
+                    <h3 class="lang-de">Leadership Summit 2024</h3>
+                    <h3 class="lang-en" style="display:none;">Leadership Summit 2024</h3>
+                    <p class="lang-de">Ein Tag voller Inspiration und praktischer Erkenntnisse für Führungskräfte aller Ebenen.</p>
+                    <p class="lang-en" style="display:none;">A day full of inspiration and practical insights for leaders at all levels.</p>
+                    <a href="#" class="event-btn lang-de">Anmelden</a>
+                    <a href="#" class="event-btn lang-en" style="display:none;">Register</a>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="event-card">
+                    <div class="event-date lang-de">22. April 2024</div>
+                    <div class="event-date lang-en" style="display:none;">April 22, 2024</div>
+                    <h3 class="lang-de">Change Management Workshop</h3>
+                    <h3 class="lang-en" style="display:none;">Change Management Workshop</h3>
+                    <p class="lang-de">Intensiver Workshop zu erfolgreichem Change Management und Transformation.</p>
+                    <p class="lang-en" style="display:none;">Intensive workshop on successful change management and transformation.</p>
+                    <a href="#" class="event-btn lang-de">Anmelden</a>
+                    <a href="#" class="event-btn lang-en" style="display:none;">Register</a>
+                </div>
+
+                <!-- Event 3 -->
+                <div class="event-card">
+                    <div class="event-date lang-de">10. Mai 2024</div>
+                    <div class="event-date lang-en" style="display:none;">May 10, 2024</div>
+                    <h3 class="lang-de">Team Development Seminar</h3>
+                    <h3 class="lang-en" style="display:none;">Team Development Seminar</h3>
+                    <p class="lang-de">Entwicklung von Hochleistungsteams und effektiver Zusammenarbeit.</p>
+                    <p class="lang-en" style="display:none;">Development of high-performance teams and effective collaboration.</p>
+                    <a href="#" class="event-btn lang-de">Anmelden</a>
+                    <a href="#" class="event-btn lang-en" style="display:none;">Register</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: flex-start; gap: 4rem; flex-wrap: wrap;">
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">
+                    <span style="color: var(--primary-gold);">FOS</span> <span style="color: #fff; font-weight: 700;">FocusOnSolutions AG</span>
+                </h3>
+                <p style="color: rgba(255,255,255,0.8);">Ihr Partner für evidenzbasierte,<br>psychologisch fundierte Beratung</p>
+            </div>
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="margin-bottom: 1rem;">
+                    <a href="contact.html" style="color: var(--primary-gold); font-weight: 700; text-decoration: none; transition: color 0.2s; font-size: 1.125rem;" onmouseover="this.style.color='#f6e05e'" onmouseout="this.style.color='var(--primary-gold)'">Kontakt</a>
+                </h3>
+                <p style="color: rgba(255,255,255,0.8);">+41 44 123 45 67</p>
+                <p style="color: rgba(255,255,255,0.8);"><a href="mailto:info@fos-ag.ch" style="color: rgba(255,255,255,0.8); text-decoration: underline; transition: color 0.2s;">info@fos-ag.ch</a></p>
+                <p style="color: rgba(255,255,255,0.8);">Zürich, Schweiz</p>
+            </div>
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="color: var(--primary-gold); font-weight: 700; margin-bottom: 1rem;">Rechtliches</h3>
+                <p><a href="impressum.html">Impressum</a></p>
+                <p><a href="datenschutz.html">Datenschutz</a></p>
+                <p><a href="agb.html">AGB</a></p>
+            </div>
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 2.5rem;">
+            <img src="assets/logos/fos-logo-consulting.svg" alt="FOS Consulting Logo" style="height: 90px; max-width: 90vw; width: auto; opacity: 0.97;" />
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FOS – Focus on Solutions AG. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Language switcher
+        function switchLanguage(lang) {
+            const buttons = document.querySelectorAll('.language-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Show/hide language-specific content
+            const germanElements = document.querySelectorAll('.lang-de');
+            const englishElements = document.querySelectorAll('.lang-en');
+            
+            if (lang === 'de') {
+                germanElements.forEach(el => el.style.display = '');
+                englishElements.forEach(el => el.style.display = 'none');
+            } else {
+                germanElements.forEach(el => el.style.display = 'none');
+                englishElements.forEach(el => el.style.display = '');
+            }
+            
+            // Update navigation links
+            updateNavigationLanguage(lang);
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Update navigation language
+        function updateNavigationLanguage(lang) {
+            const navLinks = document.querySelectorAll('[data-de][data-en]');
+            navLinks.forEach(link => {
+                if (lang === 'de') {
+                    link.textContent = link.getAttribute('data-de');
+                } else {
+                    link.textContent = link.getAttribute('data-en');
+                }
+            });
+        }
+
+        // Load saved language preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                switchLanguage(savedLang);
+                const buttons = document.querySelectorAll('.language-btn');
+                buttons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.textContent.toLowerCase() === savedLang) {
+                        btn.classList.add('active');
+                    }
+                });
+            } else {
+                // Initialize navigation with default language
+                updateNavigationLanguage('de');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('mobile-active');
+        }
+    </script>
+</body>
+</html> 

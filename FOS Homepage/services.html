@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leistungen | Services – FOS - Focus on Solutions AG</title>
+    <meta name="description" content="FOS – Focus on Solutions AG: Unsere Leistungen für Unternehmen und Führungskräfte – Coaching, Strategie, Organisationsentwicklung, Spezialformate.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Professional Services Hero - Weiß/Gold Design */
+        .services-hero {
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #f5f5f5 100%);
+            color: var(--primary-blue);
+            padding: 8rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(214, 158, 46, 0.1);
+        }
+        
+        .services-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23D69E2E" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="%23D69E2E" opacity="0.05"/><circle cx="50" cy="10" r="0.5" fill="%23D69E2E" opacity="0.03"/><circle cx="10" cy="60" r="0.5" fill="%23D69E2E" opacity="0.03"/><circle cx="90" cy="40" r="0.5" fill="%23D69E2E" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.8;
+        }
+        
+        .services-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .services-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: var(--primary-blue);
+        }
+        
+        .services-hero h1 .highlight {
+            color: var(--primary-gold);
+        }
+        
+        .services-hero p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+        
+        .services-hero .cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, var(--primary-gold), #e6b800);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            box-shadow: 0 4px 20px rgba(214, 158, 46, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .services-hero .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(214, 158, 46, 0.4);
+        }
+        
+        /* Enhanced Service Cards - Weiß/Gold Design */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(214, 158, 46, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), #e6b800);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(214, 158, 46, 0.15);
+            border-color: rgba(214, 158, 46, 0.3);
+        }
+        
+        .service-icon-container {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-gold), #e6b800);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(214, 158, 46, 0.2);
+        }
+        
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .service-card h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .service-card p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .service-methods span {
+            background: rgba(214, 158, 46, 0.1);
+            color: var(--primary-gold);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid rgba(214, 158, 46, 0.2);
+        }
+        
+        /* Service Features Section - Weiß/Gold Design */
+        .service-features {
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+            padding: 5rem 0;
+            margin-top: 5rem;
+            border-top: 1px solid rgba(214, 158, 46, 0.1);
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(214, 158, 46, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(214, 158, 46, 0.1);
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary-gold), #e6b800);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            box-shadow: 0 4px 15px rgba(214, 158, 46, 0.2);
+        }
+        
+        .feature-icon img {
+            width: 30px;
+            height: 30px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .feature-item h3 {
+            color: var(--primary-blue);
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-item p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .services-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .services-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .service-card {
+                padding: 2rem;
+            }
+            
+            .section {
+                margin-top: -1rem !important;
+                border-radius: 1rem 1rem 0 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; height: 60px;">
+                <img src="assets/logos/fos-icon-exklusiv.svg" alt="FOS Icon Logo" style="height: 48px; width: auto; display: block;" />
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" data-de="Startseite" data-en="Home">Startseite</a></li>
+                <li><a href="about.html" data-de="Über uns" data-en="About">Über uns</a></li>
+                <li><a href="services.html" data-de="Leistungen" data-en="Services">Leistungen</a></li>
+                <li><a href="team.html" data-de="Team" data-en="Team">Team</a></li>
+
+                <li><a href="login.html" data-de="Login" data-en="Login">Login</a></li>
+                <li><a href="contact.html" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="language-btn active" onclick="switchLanguage('de')">DE</button>
+                <button class="language-btn" onclick="switchLanguage('en')">EN</button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Professional Services Hero - Weiß/Gold Design -->
+    <section class="services-hero">
+        <div class="container">
+            <div class="services-hero-content">
+                <h1 class="lang-de">Unsere <span class="highlight">Leistungen</span></h1>
+                <h1 class="lang-en" style="display:none;">Our <span class="highlight">Services</span></h1>
+                <p class="lang-de">Maßgeschneiderte Beratung, Coaching und Spezialformate für Unternehmen, Führungskräfte und Teams – wissenschaftlich fundiert, praxisnah und wirkungsvoll.</p>
+                <p class="lang-en" style="display:none;">Tailored consulting, coaching and special formats for companies, leaders and teams – scientifically grounded, practical and effective.</p>
+                <a href="contact.html" class="cta-btn lang-de">
+                    <span>Jetzt beraten lassen</span>
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+                <a href="contact.html" class="cta-btn lang-en" style="display:none;">
+                    <span>Get Consulted Now</span>
+                    <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Services Section mit fließendem Übergang -->
+    <section class="section" style="position: relative; background: white; padding: 6rem 0; margin-top: -2rem; border-radius: 2rem 2rem 0 0; box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);">
+        <div class="container">
+            <div class="services-grid">
+                <!-- Coaching -->
+                <a href="coaching.html" class="service-card" style="text-decoration: none; color: inherit;">
+                    <div class="service-icon-container">
+                        <img src="assets/icons/coaching.svg" alt="Coaching Icon" class="service-icon">
+                    </div>
+                    <h2 class="lang-de">Executive & Business Coaching</h2>
+                    <h2 class="lang-en" style="display:none;">Executive & Business Coaching</h2>
+                    <p class="lang-de">Individuelle Begleitung von Führungskräften und Teams zur Entwicklung von Leadership, Resilienz und persönlicher Wirksamkeit.</p>
+                    <p class="lang-en" style="display:none;">Individual support for leaders and teams to develop leadership, resilience and personal effectiveness.</p>
+                    <div class="service-methods lang-de">
+                        <span>Einzel- und Teamcoaching</span>
+                        <span>Potenzialanalysen</span>
+                        <span>360°-Feedback</span>
+                    </div>
+                    <div class="service-methods lang-en" style="display:none;">
+                        <span>Individual & Team Coaching</span>
+                        <span>Potential Analyses</span>
+                        <span>360° Feedback</span>
+                    </div>
+                </a>
+                <!-- Strategie -->
+                <a href="strategy.html" class="service-card" style="text-decoration: none; color: inherit;">
+                    <div class="service-icon-container">
+                        <img src="assets/icons/strategy.svg" alt="Strategie Icon" class="service-icon">
+                    </div>
+                    <h2 class="lang-de">Strategieberatung & Transformation</h2>
+                    <h2 class="lang-en" style="display:none;">Strategy Consulting & Transformation</h2>
+                    <p class="lang-de">Entwicklung und Umsetzung von Strategien, Change-Management und Organisationsentwicklung.</p>
+                    <p class="lang-en" style="display:none;">Development and implementation of strategies, change management and organizational development.</p>
+                    <div class="service-methods lang-de">
+                        <span>Strategieentwicklung</span>
+                        <span>Change Management</span>
+                        <span>Organisationsentwicklung</span>
+                    </div>
+                    <div class="service-methods lang-en" style="display:none;">
+                        <span>Strategy Development</span>
+                        <span>Change Management</span>
+                        <span>Organizational Development</span>
+                    </div>
+                </a>
+                <!-- Spezialformate -->
+                <a href="special-formats.html" class="service-card" style="text-decoration: none; color: inherit;">
+                    <div class="service-icon-container">
+                        <img src="assets/icons/special.svg" alt="Spezialformate Icon" class="service-icon">
+                    </div>
+                    <h2 class="lang-de">Spezialformate & Moderation</h2>
+                    <h2 class="lang-en" style="display:none;">Special Formats & Facilitation</h2>
+                    <p class="lang-de">Workshops, Großgruppenformate, Konfliktmoderation und innovative Lernformate.</p>
+                    <p class="lang-en" style="display:none;">Workshops, large group formats, conflict facilitation and innovative learning formats.</p>
+                    <div class="service-methods lang-de">
+                        <span>Workshops</span>
+                        <span>Großgruppenformate</span>
+                        <span>Konfliktmoderation</span>
+                    </div>
+                    <div class="service-methods lang-en" style="display:none;">
+                        <span>Workshops</span>
+                        <span>Large Group Formats</span>
+                        <span>Conflict Facilitation</span>
+                    </div>
+                </a>
+                <!-- Diagnostik -->
+                <a href="diagnostics.html" class="service-card" style="text-decoration: none; color: inherit;">
+                    <div class="service-icon-container">
+                        <img src="assets/icons/arrow-right.svg" alt="Diagnostik Icon" class="service-icon">
+                    </div>
+                    <h2 class="lang-de">Diagnostik & Potenzialanalysen</h2>
+                    <h2 class="lang-en" style="display:none;">Diagnostics & Potential Analyses</h2>
+                    <p class="lang-de">Evidenzbasierte Verfahren zur Erfassung von Kompetenzen, Potenzialen und Teamdynamiken.</p>
+                    <p class="lang-en" style="display:none;">Evidence-based methods for assessing competencies, potentials and team dynamics.</p>
+                    <div class="service-methods lang-de">
+                        <span>Kompetenzanalysen</span>
+                        <span>Potenzialanalysen</span>
+                        <span>Teamdynamiken</span>
+                    </div>
+                    <div class="service-methods lang-en" style="display:none;">
+                        <span>Competency Analyses</span>
+                        <span>Potential Analyses</span>
+                        <span>Team Dynamics</span>
+                    </div>
+                </a>
+                <!-- M&A -->
+                <a href="#" class="service-card" style="text-decoration: none; color: inherit;">
+                    <div class="service-icon-container">
+                        <img src="assets/icons/strategy.svg" alt="M&A Icon" class="service-icon">
+                    </div>
+                    <h2 class="lang-de">M&A Beratung & Due Diligence</h2>
+                    <h2 class="lang-en" style="display:none;">M&A Consulting & Due Diligence</h2>
+                    <p class="lang-de">Professionelle Begleitung bei Mergers & Acquisitions, Due Diligence und Post-Merger Integration.</p>
+                    <p class="lang-en" style="display:none;">Professional support for mergers & acquisitions, due diligence and post-merger integration.</p>
+                    <div class="service-methods lang-de">
+                        <span>M&A Strategie</span>
+                        <span>Due Diligence</span>
+                        <span>Post-Merger Integration</span>
+                    </div>
+                    <div class="service-methods lang-en" style="display:none;">
+                        <span>M&A Strategy</span>
+                        <span>Due Diligence</span>
+                        <span>Post-Merger Integration</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Features Section - Weiß/Gold Design -->
+    <section class="service-features">
+        <div class="container">
+            <div class="section-header" style="text-align: center;">
+                <h2 class="section-title lang-de">Warum <span style="color: var(--primary-gold);">FOS</span>?</h2>
+                <h2 class="section-title lang-en" style="display:none;">Why <span style="color: var(--primary-gold);">FOS</span>?</h2>
+                <p class="section-subtitle lang-de">Unsere Stärken und was uns von anderen Beratungsunternehmen unterscheidet.</p>
+                <p class="section-subtitle lang-en" style="display:none;">Our strengths and what sets us apart from other consulting companies.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="assets/icons/strategy.svg" alt="Wissenschaftlich fundiert">
+                    </div>
+                    <h3 class="lang-de">Wissenschaftlich fundiert</h3>
+                    <h3 class="lang-en" style="display:none;">Scientifically grounded</h3>
+                    <p class="lang-de">Alle Methoden basieren auf aktueller Forschung und evidenzbasierten Ansätzen.</p>
+                    <p class="lang-en" style="display:none;">All methods are based on current research and evidence-based approaches.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="assets/icons/coaching.svg" alt="Individuell">
+                    </div>
+                    <h3 class="lang-de">Individuell & maßgeschneidert</h3>
+                    <h3 class="lang-en" style="display:none;">Individual & tailored</h3>
+                    <p class="lang-de">Jede Lösung wird speziell auf Ihre Herausforderungen und Ziele zugeschnitten.</p>
+                    <p class="lang-en" style="display:none;">Every solution is specifically tailored to your challenges and goals.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="assets/icons/special.svg" alt="Nachhaltig">
+                    </div>
+                    <h3 class="lang-de">Nachhaltige Wirkung</h3>
+                    <h3 class="lang-en" style="display:none;">Sustainable impact</h3>
+                    <p class="lang-de">Wir begleiten Sie langfristig und sorgen für dauerhafte Veränderungen.</p>
+                    <p class="lang-en" style="display:none;">We accompany you long-term and ensure lasting changes.</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <img src="assets/icons/arrow-right.svg" alt="Erfahren">
+                    </div>
+                    <h3 class="lang-de">15+ Jahre Erfahrung</h3>
+                    <h3 class="lang-en" style="display:none;">15+ years experience</h3>
+                    <p class="lang-de">Langjährige Expertise in verschiedenen Branchen und Unternehmensgrößen.</p>
+                    <p class="lang-en" style="display:none;">Long-term expertise in various industries and company sizes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: flex-start; gap: 4rem; flex-wrap: wrap;">
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">
+                    <span style="color: var(--primary-gold);">FOS</span> <span style="color: #fff; font-weight: 700;">FocusOnSolutions AG</span>
+                </h3>
+                <p style="color: rgba(255,255,255,0.8);">Ihr Partner für evidenzbasierte,<br>psychologisch fundierte Beratung</p>
+            </div>
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="margin-bottom: 1rem;">
+                    <a href="contact.html" style="color: var(--primary-gold); font-weight: 700; text-decoration: none; transition: color 0.2s; font-size: 1.125rem;" onmouseover="this.style.color='#f6e05e'" onmouseout="this.style.color='var(--primary-gold)'">Kontakt</a>
+                </h3>
+                <p style="color: rgba(255,255,255,0.8);">+41 44 123 45 67</p>
+                <p style="color: rgba(255,255,255,0.8);"><a href="mailto:info@fos-ag.ch" style="color: rgba(255,255,255,0.8); text-decoration: underline; transition: color 0.2s;">info@fos-ag.ch</a></p>
+                <p style="color: rgba(255,255,255,0.8);">Zürich, Schweiz</p>
+            </div>
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="color: var(--primary-gold); font-weight: 700; margin-bottom: 1rem;">Rechtliches</h3>
+                <p><a href="impressum.html">Impressum</a></p>
+                <p><a href="datenschutz.html">Datenschutz</a></p>
+                <p><a href="agb.html">AGB</a></p>
+            </div>
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 2.5rem;">
+            <img src="assets/logos/fos-logo-consulting.svg" alt="FOS Consulting Logo" style="height: 90px; max-width: 90vw; width: auto; opacity: 0.97;" />
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FOS – Focus on Solutions AG. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Language switcher
+        function switchLanguage(lang) {
+            const buttons = document.querySelectorAll('.language-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Show/hide language-specific content
+            const germanElements = document.querySelectorAll('.lang-de');
+            const englishElements = document.querySelectorAll('.lang-en');
+            
+            if (lang === 'de') {
+                germanElements.forEach(el => el.style.display = '');
+                englishElements.forEach(el => el.style.display = 'none');
+            } else {
+                germanElements.forEach(el => el.style.display = 'none');
+                englishElements.forEach(el => el.style.display = '');
+            }
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('mobile-active');
+        }
+
+        // FAB Kontaktmenü
+        const fabContainer = document.getElementById('fabContainer');
+        const fabMainBtn = document.getElementById('fabMainBtn');
+        function toggleFabMenu() {
+            fabContainer.classList.toggle('open');
+        }
+        function openWhatsApp() {
+            const phone = '+41441234567';
+            const currentLang = document.querySelector('.language-btn.active').textContent.toLowerCase();
+            let message = currentLang === 'de'
+                ? 'Hallo FOS Team, ich interessiere mich für Ihre Beratungsleistungen.'
+                : 'Hello FOS Team, I am interested in your consulting services.';
+            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`,'_blank');
+            fabContainer.classList.remove('open');
+        }
+        function openEmail() {
+            const currentLang = document.querySelector('.language-btn.active').textContent.toLowerCase();
+            let subject = currentLang === 'de' ? 'Anfrage Beratung' : 'Consulting Inquiry';
+            let body = currentLang === 'de'
+                ? 'Sehr geehrtes FOS Team,%0D%0Aich interessiere mich für Ihre Beratungsleistungen.'
+                : 'Dear FOS Team,%0D%0AI am interested in your consulting services.';
+            window.open(`mailto:info@fos-ag.ch?subject=${subject}&body=${body}`,'_blank');
+            fabContainer.classList.remove('open');
+        }
+        function openTelegram() {
+            const username = 'FOS_Solutions'; // Beispiel-Username
+            window.open(`https://t.me/${username}`,'_blank');
+            fabContainer.classList.remove('open');
+        }
+        // FAB schließt bei Klick außerhalb
+        document.addEventListener('click', function(event) {
+            if (!fabContainer.contains(event.target)) {
+                fabContainer.classList.remove('open');
+            }
+        });
+    </script>
+</body>
+</html> 

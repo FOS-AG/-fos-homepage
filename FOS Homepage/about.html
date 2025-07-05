@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Über uns - FOS – Focus on Solutions AG</title>
+    <meta name="description" content="Lernen Sie FOS – Focus on Solutions AG kennen. Psychologisch fundierte Beratung mit wissenschaftlicher Exzellenz und unternehmerischer Praxis.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Professional About Hero - Weiß/Gold Design */
+        .about-hero {
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #f5f5f5 100%);
+            color: var(--primary-blue);
+            padding: 8rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid rgba(214, 158, 46, 0.1);
+        }
+        
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23D69E2E" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="%23D69E2E" opacity="0.05"/><circle cx="50" cy="10" r="0.5" fill="%23D69E2E" opacity="0.03"/><circle cx="10" cy="60" r="0.5" fill="%23D69E2E" opacity="0.03"/><circle cx="90" cy="40" r="0.5" fill="%23D69E2E" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.8;
+        }
+        
+        .about-hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .about-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            color: var(--primary-blue);
+        }
+        
+        .about-hero h1 .highlight {
+            color: var(--primary-gold);
+        }
+        
+        .about-hero p {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+        
+        /* About Content Section */
+        .about-content {
+            background: white;
+            padding: 6rem 0;
+            margin-top: -2rem;
+            border-radius: 2rem 2rem 0 0;
+            box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-text h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--medium-gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-visual {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-gold));
+            border-radius: 2rem;
+            padding: 3rem;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .about-visual::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="white" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+        }
+        
+        .about-visual-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .value-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .value-icon {
+            width: 3rem;
+            height: 3rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .value-text h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .value-text p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+        
+        /* Values Section */
+        .values-section {
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+            padding: 5rem 0;
+            border-top: 1px solid rgba(214, 158, 46, 0.1);
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(214, 158, 46, 0.1);
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), #e6b800);
+        }
+        
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(214, 158, 46, 0.15);
+            border-color: rgba(214, 158, 46, 0.3);
+        }
+        
+        .value-card-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-gold), #e6b800);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 15px rgba(214, 158, 46, 0.2);
+        }
+        
+        .value-card-icon img {
+            width: 40px;
+            height: 40px;
+            filter: brightness(0) invert(1);
+        }
+        
+        .value-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .value-card p {
+            color: var(--medium-gray);
+            line-height: 1.6;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .about-hero p {
+                font-size: 1.1rem;
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .values-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .value-card {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; height: 60px;">
+                <img src="assets/logos/fos-icon-exklusiv.svg" alt="FOS Icon Logo" style="height: 48px; width: auto; display: block;" />
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" data-de="Startseite" data-en="Home">Startseite</a></li>
+                <li><a href="about.html" data-de="Über uns" data-en="About">Über uns</a></li>
+                <li><a href="services.html" data-de="Leistungen" data-en="Services">Leistungen</a></li>
+                <li><a href="team.html" data-de="Team" data-en="Team">Team</a></li>
+                <li><a href="login.html" data-de="Login" data-en="Login">Login</a></li>
+                <li><a href="contact.html" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="language-btn active" onclick="switchLanguage('de')">DE</button>
+                <button class="language-btn" onclick="switchLanguage('en')">EN</button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Professional About Hero - Weiß/Gold Design -->
+    <section class="about-hero">
+        <div class="container">
+            <div class="about-hero-content">
+                <h1 class="lang-de">Über <span class="highlight">FOS</span></h1>
+                <h1 class="lang-en" style="display:none;">About <span class="highlight">FOS</span></h1>
+                <p class="lang-de">Wissenschaftliche Exzellenz trifft auf unternehmerische Praxis</p>
+                <p class="lang-en" style="display:none;">Scientific excellence meets entrepreneurial practice</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Content Section -->
+    <section class="about-content">
+        <div class="container">
+            <div class="about-grid">
+                <!-- Text Content -->
+                <div class="about-text">
+                    <h2 class="lang-de">Unsere Mission</h2>
+                    <h2 class="lang-en" style="display:none;">Our Mission</h2>
+                    <p class="lang-de">FOS – Focus on Solutions AG ist ein führendes Beratungsunternehmen, das psychologische Wissenschaft mit unternehmerischer Praxis verbindet. Wir unterstützen Unternehmen, Führungskräfte und Teams dabei, komplexe Herausforderungen zu meistern und nachhaltige Lösungen zu entwickeln.</p>
+                    <p class="lang-en" style="display:none;">FOS – Focus on Solutions AG is a leading consulting company that combines psychological science with entrepreneurial practice. We support companies, leaders and teams in mastering complex challenges and developing sustainable solutions.</p>
+                    
+                    <h3 class="lang-de">Unser Ansatz</h3>
+                    <h3 class="lang-en" style="display:none;">Our Approach</h3>
+                    <p class="lang-de">Basierend auf evidenzbasierten Methoden und jahrelanger Erfahrung entwickeln wir maßgeschneiderte Lösungen, die sowohl wissenschaftlich fundiert als auch praktisch umsetzbar sind. Unser interdisziplinärer Ansatz integriert Erkenntnisse aus Psychologie, Wirtschaftswissenschaften und Organisationsforschung.</p>
+                    <p class="lang-en" style="display:none;">Based on evidence-based methods and years of experience, we develop tailored solutions that are both scientifically grounded and practically implementable. Our interdisciplinary approach integrates insights from psychology, economics and organizational research.</p>
+                </div>
+                
+                <!-- Visual Content -->
+                <div class="about-visual">
+                    <div class="about-visual-content">
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="value-text">
+                                <h4 class="lang-de">Wissenschaftlich fundiert</h4>
+                                <h4 class="lang-en" style="display:none;">Scientifically grounded</h4>
+                                <p class="lang-de">Evidenzbasierte Methoden</p>
+                                <p class="lang-en" style="display:none;">Evidence-based methods</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <div class="value-text">
+                                <h4 class="lang-de">Praxisorientiert</h4>
+                                <h4 class="lang-en" style="display:none;">Practice-oriented</h4>
+                                <p class="lang-de">Direkt umsetzbare Lösungen</p>
+                                <p class="lang-en" style="display:none;">Directly implementable solutions</p>
+                            </div>
+                        </div>
+                        
+                        <div class="value-item">
+                            <div class="value-icon">
+                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+                                </svg>
+                            </div>
+                            <div class="value-text">
+                                <h4 class="lang-de">Individuell</h4>
+                                <h4 class="lang-en" style="display:none;">Individual</h4>
+                                <p class="lang-de">Maßgeschneiderte Ansätze</p>
+                                <p class="lang-en" style="display:none;">Tailored approaches</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title lang-de">Unsere Werte</h2>
+                <h2 class="section-title lang-en" style="display:none;">Our Values</h2>
+                <p class="section-subtitle lang-de">Die Grundlagen unseres Erfolgs</p>
+                <p class="section-subtitle lang-en" style="display:none;">The foundations of our success</p>
+            </div>
+            
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-card-icon">
+                        <img src="assets/icons/strategy.svg" alt="Exzellenz" width="40">
+                    </div>
+                    <h3 class="lang-de">Exzellenz</h3>
+                    <h3 class="lang-en" style="display:none;">Excellence</h3>
+                    <p class="lang-de">Wir streben nach höchster Qualität in allem, was wir tun, basierend auf wissenschaftlichen Erkenntnissen und bewährten Praktiken.</p>
+                    <p class="lang-en" style="display:none;">We strive for the highest quality in everything we do, based on scientific findings and proven practices.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-card-icon">
+                        <img src="assets/icons/coaching.svg" alt="Vertrauen" width="40">
+                    </div>
+                    <h3 class="lang-de">Vertrauen</h3>
+                    <h3 class="lang-en" style="display:none;">Trust</h3>
+                    <p class="lang-de">Vertrauen ist die Grundlage jeder erfolgreichen Zusammenarbeit. Wir bauen auf Offenheit, Ehrlichkeit und Diskretion.</p>
+                    <p class="lang-en" style="display:none;">Trust is the foundation of every successful collaboration. We build on openness, honesty and discretion.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-card-icon">
+                        <img src="assets/icons/special.svg" alt="Innovation" width="40">
+                    </div>
+                    <h3 class="lang-de">Innovation</h3>
+                    <h3 class="lang-en" style="display:none;">Innovation</h3>
+                    <p class="lang-de">Wir entwickeln kreative Lösungen und nutzen innovative Ansätze, um komplexe Herausforderungen zu meistern.</p>
+                    <p class="lang-en" style="display:none;">We develop creative solutions and use innovative approaches to master complex challenges.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: flex-start; gap: 4rem; flex-wrap: wrap;">
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">
+                    <span style="color: var(--primary-gold);">FOS</span> <span style="color: #fff; font-weight: 700;">FocusOnSolutions AG</span>
+                </h3>
+                <p style="color: rgba(255,255,255,0.8);">Ihr Partner für evidenzbasierte,<br>psychologisch fundierte Beratung</p>
+            </div>
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="margin-bottom: 1rem;">
+                    <a href="contact.html" style="color: var(--primary-gold); font-weight: 700; text-decoration: none; transition: color 0.2s; font-size: 1.125rem;" onmouseover="this.style.color='#f6e05e'" onmouseout="this.style.color='var(--primary-gold)'">Kontakt</a>
+                </h3>
+                <p style="color: rgba(255,255,255,0.8);">+41 44 123 45 67</p>
+                <p style="color: rgba(255,255,255,0.8);"><a href="mailto:info@fos-ag.ch" style="color: rgba(255,255,255,0.8); text-decoration: underline; transition: color 0.2s;">info@fos-ag.ch</a></p>
+                <p style="color: rgba(255,255,255,0.8);">Zürich, Schweiz</p>
+            </div>
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="color: var(--primary-gold); font-weight: 700; margin-bottom: 1rem;">Rechtliches</h3>
+                <p><a href="impressum.html">Impressum</a></p>
+                <p><a href="datenschutz.html">Datenschutz</a></p>
+                <p><a href="agb.html">AGB</a></p>
+            </div>
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 2.5rem;">
+            <img src="assets/logos/fos-logo-consulting.svg" alt="FOS Consulting Logo" style="height: 90px; max-width: 90vw; width: auto; opacity: 0.97;" />
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 FOS – Focus on Solutions AG. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Language switcher
+        function switchLanguage(lang) {
+            const buttons = document.querySelectorAll('.language-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Show/hide language-specific content
+            const germanElements = document.querySelectorAll('.lang-de');
+            const englishElements = document.querySelectorAll('.lang-en');
+            
+            if (lang === 'de') {
+                germanElements.forEach(el => el.style.display = '');
+                englishElements.forEach(el => el.style.display = 'none');
+            } else {
+                germanElements.forEach(el => el.style.display = 'none');
+                englishElements.forEach(el => el.style.display = '');
+            }
+            
+            // Update navigation links
+            updateNavigationLanguage(lang);
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Update navigation language
+        function updateNavigationLanguage(lang) {
+            const navLinks = document.querySelectorAll('[data-de][data-en]');
+            navLinks.forEach(link => {
+                if (lang === 'de') {
+                    link.textContent = link.getAttribute('data-de');
+                } else {
+                    link.textContent = link.getAttribute('data-en');
+                }
+            });
+        }
+
+        // Load saved language preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                switchLanguage(savedLang);
+                const buttons = document.querySelectorAll('.language-btn');
+                buttons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.textContent.toLowerCase() === savedLang) {
+                        btn.classList.add('active');
+                    }
+                });
+            } else {
+                // Initialize navigation with default language
+                updateNavigationLanguage('de');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('mobile-active');
+        }
+    </script>
+</body>
+</html> 
