@@ -564,13 +564,32 @@
             }, 2000);
         }
 
+        // Beispiel-Nutzerliste
+        const allowedUsers = ['kunde@fos.ag', 'berater@fos.ag'];
+
+        // Fehleranzeige-Element einfügen
+        const loginFormEl = document.getElementById('loginForm');
+        const errorDiv = document.createElement('div');
+        errorDiv.id = 'login-error-message';
+        errorDiv.style.display = 'none';
+        errorDiv.style.background = '#fff3cd';
+        errorDiv.style.color = '#856404';
+        errorDiv.style.border = '1px solid #ffeeba';
+        errorDiv.style.borderRadius = '8px';
+        errorDiv.style.padding = '1rem';
+        errorDiv.style.marginBottom = '1rem';
+        errorDiv.style.textAlign = 'center';
+        errorDiv.style.fontWeight = '600';
+        loginFormEl.parentNode.insertBefore(errorDiv, loginFormEl);
+
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const email = document.getElementById('email').value;
+            const email = document.getElementById('email').value.trim().toLowerCase();
             const password = document.getElementById('password').value;
-            
+            const currentLang = localStorage.getItem('preferredLanguage') || 'de';
+            errorDiv.style.display = 'none';
+            errorDiv.innerHTML = '';
             if (!email || !password) {
-                const currentLang = localStorage.getItem('preferredLanguage') || 'de';
                 if (currentLang === 'de') {
                     alert('Bitte füllen Sie alle Felder aus.');
                 } else {
@@ -578,14 +597,20 @@
                 }
                 return;
             }
-            
-            const currentLang = localStorage.getItem('preferredLanguage') || 'de';
+            if (!allowedUsers.includes(email)) {
+                if (currentLang === 'de') {
+                    errorDiv.innerHTML = 'Der Benutzer wurde nicht gefunden.<br><a href="#" onclick="alert(\'Bitte wenden Sie sich an uns, falls Sie Ihr Passwort vergessen haben.\')" style="color:#b8944a;text-decoration:underline;">Passwort vergessen?</a> &nbsp;|&nbsp; <a href="contact.html" style="color:#b8944a;text-decoration:underline;">Kontakt aufnehmen</a>';
+                } else {
+                    errorDiv.innerHTML = 'User not found.<br><a href="#" onclick="alert(\'Please contact us if you forgot your password.\')" style="color:#b8944a;text-decoration:underline;">Forgot password?</a> &nbsp;|&nbsp; <a href="contact.html" style="color:#b8944a;text-decoration:underline;">Contact us</a>';
+                }
+                errorDiv.style.display = 'block';
+                return;
+            }
             if (currentLang === 'de') {
                 alert('Login erfolgreich! Sie werden weitergeleitet...');
             } else {
                 alert('Login successful! You will be redirected...');
             }
-            
             setTimeout(() => {
                 window.location.href = 'index.html';
             }, 1500);

@@ -139,6 +139,44 @@
     }
     </script>
     
+    <style>
+    .clients-carousel {
+            overflow: hidden;
+            width: 100%;
+      background: #fff;
+      padding: 2rem 0 1.5rem 0;
+    }
+    .clients-track {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+      animation: scroll-logos 32s linear infinite;
+            width: max-content;
+        }
+        .client-logo {
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+      filter: grayscale(0.1) brightness(0.98);
+      opacity: 0.92;
+      transition: filter 0.2s, opacity 0.2s;
+    }
+        .client-logo:hover { 
+            filter: none;
+                opacity: 1; 
+    }
+    @keyframes scroll-logos {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .clients-carousel-row {
+      margin-bottom: 1.2rem;
+    }
+    @media (max-width: 900px) {
+      .clients-carousel-row:nth-child(2) { display: none; }
+      .client-logo { height: 44px; }
+        }
+    </style>
 
 </head>
 <body>
@@ -186,85 +224,78 @@
         </div>
     </section>
 
-    <!-- EDUQUA Quality Assurance Section -->
-    <section class="eduqua-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%); padding: 4rem 2rem; text-align: center;">
-        <div class="container">
-            <a href="eduqua.html" style="text-decoration: none; color: inherit;">
-                <div class="eduqua-badge" style="display: inline-block; background: linear-gradient(135deg, #C7A15A, #b8944a); color: white; padding: 1rem 2rem; border-radius: 2rem; margin-bottom: 2rem; box-shadow: 0 8px 32px rgba(199,161,90,0.3); transition: all 0.3s ease; cursor: pointer;">
-                    <h3 style="margin: 0; font-size: 1.2rem; font-weight: 700;">🎓 EDUQUA-Zertifiziert</h3>
-                    <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.9;">Schweizer Qualitätsstandard für Weiterbildung</p>
-                </div>
-            </a>
-            <div class="eduqua-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
-                <div class="eduqua-item" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid rgba(199,161,90,0.1);">
-                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 8px 24px rgba(199,161,90,0.2);">
-                        <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                        </svg>
-                    </div>
-                    <h4 style="color: #14213d; margin-bottom: 1rem; font-weight: 700;">Qualitätsmanagement</h4>
-                    <p style="color: #4a5568; line-height: 1.6; font-size: 0.95rem;">Systematische Qualitätssicherung nach Schweizer Bildungsstandards mit kontinuierlicher Evaluation und Verbesserung.</p>
-                </div>
-                <div class="eduqua-item" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid rgba(199,161,90,0.1);">
-                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 8px 24px rgba(199,161,90,0.2);">
-                        <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
-                        </svg>
-                    </div>
-                    <h4 style="color: #14213d; margin-bottom: 1rem; font-weight: 700;">Qualifizierte Dozenten</h4>
-                    <p style="color: #4a5568; line-height: 1.6; font-size: 0.95rem;">Alle Trainer verfügen über wissenschaftliche Qualifikationen und langjährige Praxiserfahrung in der Unternehmensberatung.</p>
-                </div>
-                <div class="eduqua-item" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid rgba(199,161,90,0.1);">
-                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 8px 24px rgba(199,161,90,0.2);">
-                        <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
-                        </svg>
-                    </div>
-                    <h4 style="color: #14213d; margin-bottom: 1rem; font-weight: 700;">Nachweisbare Ergebnisse</h4>
-                    <p style="color: #4a5568; line-height: 1.6; font-size: 0.95rem;">Regelmäßige Evaluation und Messung der Lernerfolge mit transparenten Berichten über die erzielten Verbesserungen.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Professional Clients Section with Animation -->
     <div class="clients">
-        <div class="clients-container">
-            <!-- Erste Reihe Logos -->
-            <img src="assets/logos/clients/mercedes-benz.svg" alt="Mercedes-Benz" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/stuttgart.svg" alt="Stadt Stuttgart" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/bosch.svg" alt="BOSCH" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/swissquote.svg" alt="Swissquote" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/novartis.svg" alt="Novartis" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/crypto-valley.svg" alt="Crypto Valley" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/amag.svg" alt="AMAG" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/swiss-finance.svg" alt="Swiss Finance" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/cv-labs.svg" alt="CV Labs" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/familux-hotel.svg" alt="Familux Hotel" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/fitness-first.svg" alt="FitnessFirst" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/prime-time-fitness.svg" alt="Prime Time Fitness" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/weingut-strehn.svg" alt="Weingut Strehn" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/swiss-bank.svg" alt="Swiss Bank" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/pharma-swiss.svg" alt="Pharma Swiss" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/auto-swiss.svg" alt="Auto Swiss" class="client-logo" loading="lazy">
-            
-            <!-- Duplikate für nahtlose Animation -->
-            <img src="assets/logos/clients/mercedes-benz.svg" alt="Mercedes-Benz" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/stuttgart.svg" alt="Stadt Stuttgart" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/bosch.svg" alt="BOSCH" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/swissquote.svg" alt="Swissquote" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/novartis.svg" alt="Novartis" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/crypto-valley.svg" alt="Crypto Valley" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/amag.svg" alt="AMAG" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/swiss-finance.svg" alt="Swiss Finance" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/cv-labs.svg" alt="CV Labs" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/familux-hotel.svg" alt="Familux Hotel" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/fitness-first.svg" alt="FitnessFirst" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/prime-time-fitness.svg" alt="Prime Time Fitness" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/weingut-strehn.svg" alt="Weingut Strehn" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/swiss-bank.svg" alt="Swiss Bank" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/pharma-swiss.svg" alt="Pharma Swiss" class="client-logo" loading="lazy">
-            <img src="assets/logos/clients/auto-swiss.svg" alt="Auto Swiss" class="client-logo" loading="lazy">
+        <div class="clients-carousel">
+            <div class="clients-carousel-row">
+                <div class="clients-track">
+                    <!-- Automotive & Industrie -->
+                    <img src="assets/logos/clients/bmw.png" alt="BMW" class="client-logo">
+                    <img src="assets/logos/clients/mercedes.png" alt="Mercedes" class="client-logo">
+                    <img src="assets/logos/clients/amg.png" alt="AMG" class="client-logo">
+                    <img src="assets/logos/clients/mahle.png" alt="Mahle" class="client-logo">
+                    <img src="assets/logos/clients/mann filter.jpg" alt="Mann Filter" class="client-logo">
+                    <img src="assets/logos/clients/magna.png" alt="Magna" class="client-logo">
+                    <img src="assets/logos/clients/dräger.png" alt="Dräger" class="client-logo">
+                    <img src="assets/logos/clients/Bosch.png" alt="Bosch" class="client-logo">
+                    <img src="assets/logos/clients/siemens.jpg" alt="Siemens" class="client-logo">
+                    <img src="assets/logos/clients/tss.png" alt="TSS" class="client-logo">
+                    <img src="assets/logos/clients/m+h.png" alt="M+H" class="client-logo">
+                    <img src="assets/logos/clients/dreyev.png" alt="Dreyev" class="client-logo">
+                    <img src="assets/logos/clients/stuttgart.png" alt="Stuttgart" class="client-logo">
+                    <img src="assets/logos/clients/magna.png" alt="Magna" class="client-logo">
+                    <img src="assets/logos/clients/bmw.png" alt="BMW" class="client-logo">
+                    <img src="assets/logos/clients/mercedes.png" alt="Mercedes" class="client-logo">
+                    <img src="assets/logos/clients/amg.png" alt="AMG" class="client-logo">
+                    <img src="assets/logos/clients/mahle.png" alt="Mahle" class="client-logo">
+                    <img src="assets/logos/clients/mann filter.jpg" alt="Mann Filter" class="client-logo">
+                    <img src="assets/logos/clients/magna.png" alt="Magna" class="client-logo">
+                    <img src="assets/logos/clients/dräger.png" alt="Dräger" class="client-logo">
+                    <img src="assets/logos/clients/Bosch.png" alt="Bosch" class="client-logo">
+                    <img src="assets/logos/clients/siemens.jpg" alt="Siemens" class="client-logo">
+                    <img src="assets/logos/clients/tss.png" alt="TSS" class="client-logo">
+                    <img src="assets/logos/clients/m+h.png" alt="M+H" class="client-logo">
+                    <img src="assets/logos/clients/dreyev.png" alt="Dreyev" class="client-logo">
+                    <img src="assets/logos/clients/stuttgart.png" alt="Stuttgart" class="client-logo">
+                </div>
+                    </div>
+            <div class="clients-carousel-row">
+                <div class="clients-track">
+                    <!-- Finance, Tech, Health, Startups, Sonstige -->
+                    <img src="assets/logos/clients/jp morgan.png" alt="JP Morgan" class="client-logo">
+                    <img src="assets/logos/clients/base.png" alt="Base" class="client-logo">
+                    <img src="assets/logos/clients/bottomline.png" alt="Bottomline" class="client-logo">
+                    <img src="assets/logos/clients/covendit.png" alt="Covendit" class="client-logo">
+                    <img src="assets/logos/clients/impag.png" alt="Impag" class="client-logo">
+                    <img src="assets/logos/clients/esb.png" alt="ESB" class="client-logo">
+                    <img src="assets/logos/clients/dhbw.png" alt="DHBW" class="client-logo">
+                    <img src="assets/logos/clients/crypto-valley.png" alt="Crypto Valley" class="client-logo">
+                    <img src="assets/logos/clients/cv labs.png" alt="CV Labs" class="client-logo">
+                    <img src="assets/logos/clients/cv vc.png" alt="CV VC" class="client-logo">
+                    <img src="assets/logos/clients/swisshub.png" alt="SwissHub" class="client-logo">
+                    <img src="assets/logos/clients/Familux.png" alt="Familux" class="client-logo">
+                    <img src="assets/logos/clients/strehn.png" alt="Strehn" class="client-logo">
+                    <img src="assets/logos/clients/Fitness_frist_logo.png" alt="Fitness First" class="client-logo">
+                    <img src="assets/logos/clients/prime-time-fitness.jpg" alt="Prime Time Fitness" class="client-logo">
+                    <img src="assets/logos/clients/amazon.png" alt="Amazon" class="client-logo">
+                    <img src="assets/logos/clients/jp morgan.png" alt="JP Morgan" class="client-logo">
+                    <img src="assets/logos/clients/base.png" alt="Base" class="client-logo">
+                    <img src="assets/logos/clients/bottomline.png" alt="Bottomline" class="client-logo">
+                    <img src="assets/logos/clients/covendit.png" alt="Covendit" class="client-logo">
+                    <img src="assets/logos/clients/impag.png" alt="Impag" class="client-logo">
+                    <img src="assets/logos/clients/esb.png" alt="ESB" class="client-logo">
+                    <img src="assets/logos/clients/dhbw.png" alt="DHBW" class="client-logo">
+                    <img src="assets/logos/clients/crypto-valley.png" alt="Crypto Valley" class="client-logo">
+                    <img src="assets/logos/clients/cv labs.png" alt="CV Labs" class="client-logo">
+                    <img src="assets/logos/clients/cv vc.png" alt="CV VC" class="client-logo">
+                    <img src="assets/logos/clients/swisshub.png" alt="SwissHub" class="client-logo">
+                    <img src="assets/logos/clients/Familux.png" alt="Familux" class="client-logo">
+                    <img src="assets/logos/clients/strehn.png" alt="Strehn" class="client-logo">
+                    <img src="assets/logos/clients/Fitness_frist_logo.png" alt="Fitness First" class="client-logo">
+                    <img src="assets/logos/clients/prime-time-fitness.jpg" alt="Prime Time Fitness" class="client-logo">
+                    <img src="assets/logos/clients/amazon.png" alt="Amazon" class="client-logo">
+                </div>
+            </div>
         </div>
     </div>
 
@@ -356,6 +387,216 @@
                         </div>
                     </div>
                 </div>
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Das Change Management mit FOS war ein voller Erfolg. Die strukturierte Herangehensweise und die psychologische Expertise haben uns durch die Transformation geführt."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The change management with FOS was a complete success. The structured approach and psychological expertise guided us through the transformation."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">A</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">CEO, Tech-Startup</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">CEO, Tech Startup</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 5 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Teamdiagnostik hat uns wertvolle Einblicke in unsere Dynamiken gegeben. Wir konnten Konflikte lösen und die Zusammenarbeit deutlich verbessern."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The team diagnostics gave us valuable insights into our dynamics. We were able to resolve conflicts and significantly improve collaboration."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">K</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Team Lead, Consulting</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Team Lead, Consulting</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 6 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS hat uns bei der strategischen Neuausrichtung unterstützt. Die evidenzbasierten Methoden haben zu messbaren Verbesserungen geführt."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS supported us in our strategic realignment. The evidence-based methods led to measurable improvements."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">R</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">CFO, Finanzdienstleister</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">CFO, Financial Services</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 7 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Das Executive Coaching hat mir geholfen, meine Führungsrolle zu reflektieren und neue Ansätze zu entwickeln. Die Ergebnisse sind spürbar."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Executive coaching helped me reflect on my leadership role and develop new approaches. The results are tangible."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">L</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Managing Director, Retail</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Managing Director, Retail</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 8 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Workshop-Moderation war professionell und ergebnisorientiert. Wir haben konkrete Handlungspläne entwickelt."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The workshop facilitation was professional and results-oriented. We developed concrete action plans."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">P</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Projektmanager, Bauwesen</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Project Manager, Construction</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 9 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Organisationsentwicklung mit FOS hat unsere Unternehmenskultur positiv verändert. Die Mitarbeiterzufriedenheit ist gestiegen."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Organizational development with FOS has positively changed our corporate culture. Employee satisfaction has increased."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">N</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">HR Manager, Logistik</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">HR Manager, Logistics</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 10 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Das Business Coaching hat mir geholfen, meine Geschäftsstrategie zu optimieren. Die Umsetzung war erfolgreich."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Business coaching helped me optimize my business strategy. The implementation was successful."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">E</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Geschäftsführer, KMU</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Managing Director, SME</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 11 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Konfliktmoderation war sehr effektiv. Wir haben konstruktive Lösungen gefunden und die Zusammenarbeit verbessert."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The conflict mediation was very effective. We found constructive solutions and improved collaboration."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">D</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Abteilungsleiter, IT</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Department Head, IT</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 12 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS hat uns bei der digitalen Transformation begleitet. Die psychologische Komponente war entscheidend für den Erfolg."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS accompanied us through the digital transformation. The psychological component was crucial for success."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">F</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">CTO, Digital Agency</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">CTO, Digital Agency</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 13 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Führungskräfteentwicklung war ein voller Erfolg. Unsere Manager sind jetzt besser aufgestellt."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The leadership development was a complete success. Our managers are now better positioned."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">G</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Personalchef, Automobilindustrie</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">HR Director, Automotive Industry</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 14 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Das Strategie-Coaching hat uns geholfen, klare Ziele zu definieren und diese erfolgreich umzusetzen."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Strategy coaching helped us define clear goals and implement them successfully."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">H</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Geschäftsführer, Beratung</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Managing Director, Consulting</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 15 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Kompetenzanalyse war sehr präzise und hat uns bei der Personalauswahl geholfen."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The competency analysis was very precise and helped us with personnel selection."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">I</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Recruiter, Tech-Unternehmen</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Recruiter, Tech Company</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 16 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Das Resilienz-Training hat unserem Team geholfen, besser mit Stress umzugehen."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The resilience training helped our team better cope with stress."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">J</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Teamleiter, Gesundheitswesen</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Team Leader, Healthcare</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 17 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Kommunikationstrainings haben unsere interne Zusammenarbeit deutlich verbessert."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The communication trainings have significantly improved our internal collaboration."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">O</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Kommunikationsleiter, Medien</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Communication Director, Media</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Testimonial 18 -->
+                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
+                    <div class="testimonial-content" style="margin-bottom: 2rem;">
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS hat uns bei der Nachfolgeplanung unterstützt. Der Prozess war strukturiert und erfolgreich."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS supported us in succession planning. The process was structured and successful."</p>
+                    </div>
+                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
+                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">U</div>
+                        <div class="author-info">
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Aufsichtsrat, Familienunternehmen</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Supervisory Board, Family Business</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -403,6 +644,47 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 21l1.65-4.95A9 9 0 1 1 12 21h0a8.96 8.96 0 0 1-4.95-1.65L2 21zm7.5-8.5h5a1 1 0 0 0 0-2h-5a1 1 0 0 0 0 2zm0 3h3a1 1 0 0 0 0-2h-3a1 1 0 0 0 0 2z"/></svg>
         </button>
     </div>
+
+    <!-- EDUQUA Quality Assurance Section -->
+    <section class="eduqua-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%); padding: 4rem 2rem; text-align: center;">
+        <div class="container">
+            <a href="eduqua.html" style="text-decoration: none; color: inherit;">
+                <div class="eduqua-badge" style="display: inline-block; background: linear-gradient(135deg, #C7A15A, #b8944a); color: white; padding: 1rem 2rem; border-radius: 2rem; margin-bottom: 2rem; box-shadow: 0 8px 32px rgba(199,161,90,0.3); transition: all 0.3s ease; cursor: pointer;">
+                    <h3 style="margin: 0; font-size: 1.2rem; font-weight: 700;">🎓 EDUQUA-Zertifiziert</h3>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.9;">Schweizer Qualitätsstandard für Weiterbildung</p>
+                </div>
+            </a>
+            <div class="eduqua-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
+                <div class="eduqua-item" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid rgba(199,161,90,0.1);">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 8px 24px rgba(199,161,90,0.2);">
+                        <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 style="color: #14213d; margin-bottom: 1rem; font-weight: 700;">Qualitätsmanagement</h4>
+                    <p style="color: #4a5568; line-height: 1.6; font-size: 0.95rem;">Systematische Qualitätssicherung nach Schweizer Bildungsstandards mit kontinuierlicher Evaluation und Verbesserung.</p>
+                </div>
+                <div class="eduqua-item" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid rgba(199,161,90,0.1);">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 8px 24px rgba(199,161,90,0.2);">
+                        <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+                        </svg>
+                    </div>
+                    <h4 style="color: #14213d; margin-bottom: 1rem; font-weight: 700;">Qualifizierte Dozenten</h4>
+                    <p style="color: #4a5568; line-height: 1.6; font-size: 0.95rem;">Alle Trainer verfügen über wissenschaftliche Qualifikationen und langjährige Praxiserfahrung in der Unternehmensberatung.</p>
+                </div>
+                <div class="eduqua-item" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid rgba(199,161,90,0.1);">
+                    <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 8px 24px rgba(199,161,90,0.2);">
+                        <svg width="24" height="24" fill="none" stroke="white" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                        </svg>
+                    </div>
+                    <h4 style="color: #14213d; margin-bottom: 1rem; font-weight: 700;">Nachweisbare Ergebnisse</h4>
+                    <p style="color: #4a5568; line-height: 1.6; font-size: 0.95rem;">Regelmäßige Evaluation und Messung der Lernerfolge mit transparenten Berichten über die erzielten Verbesserungen.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer">

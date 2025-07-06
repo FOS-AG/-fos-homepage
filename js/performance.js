@@ -238,13 +238,15 @@ class FOSPerformance {
     setupServiceWorker() {
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js')
-                    .then(registration => {
-                        console.log('SW registered: ', registration);
-                    })
-                    .catch(registrationError => {
-                        console.log('SW registration failed: ', registrationError);
-                    });
+                setTimeout(() => {
+                    navigator.serviceWorker.register('/sw.js')
+                        .then(registration => {
+                            console.log('Service Worker registered successfully:', registration);
+                        })
+                        .catch(error => {
+                            console.log('Service Worker registration failed:', error);
+                        });
+                }, 1000);
             });
         }
     }
@@ -446,6 +448,108 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(() => {
             window.fosPerformance.measurePerformance();
         }, 1000);
+    });
+
+    // PWA Install Prompt deaktivieren
+    let deferredPrompt;
+    
+    window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent the mini-infobar from appearing on mobile
+        e.preventDefault();
+        // Stash the event so it can be triggered later
+        deferredPrompt = e;
+        // Optionally, send analytics event to track that the prompt was prevented
+        console.log('PWA install prompt prevented');
+    });
+    
+    // Prevent automatic install prompt
+    window.addEventListener('appinstalled', (evt) => {
+        // Log install to analytics
+        console.log('PWA was installed');
+    });
+    
+    // Service Worker Registration mit Performance-Optimierung
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            // Verzögerte Registrierung für bessere Performance
+            setTimeout(() => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registered successfully:', registration);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
+            }, 1000); // 1 Sekunde Verzögerung
+        });
+    }
+    
+    // Performance Monitoring
+    if ('performance' in window) {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                console.log('Page Load Time:', perfData.loadEventEnd - perfData.loadEventStart, 'ms');
+                console.log('DOM Content Loaded:', perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart, 'ms');
+            }, 0);
+        });
+    }
+    
+    // Lazy Loading für Bilder
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        document.querySelectorAll('img[data-src]').forEach(img => {
+            imageObserver.observe(img);
+        });
+    }
+    
+    // Preload kritische Ressourcen
+    const criticalResources = [
+        'styles.css',
+        'js/language-switcher.js',
+        'assets/logos/fos-icon-exklusiv.svg'
+    ];
+    
+    criticalResources.forEach(resource => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = resource;
+        link.as = resource.endsWith('.css') ? 'style' : 
+                  resource.endsWith('.js') ? 'script' : 'image';
+        document.head.appendChild(link);
+    });
+    
+    // Optimierte Scroll-Performance
+    let ticking = false;
+    
+    function updateOnScroll() {
+        // Scroll-basierte Animationen hier
+        ticking = false;
+    }
+    
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(updateOnScroll);
+            ticking = true;
+        }
+    });
+    
+    // Memory Management
+    window.addEventListener('beforeunload', () => {
+        // Cleanup vor dem Verlassen der Seite
+        if (window.imageObserver) {
+            window.imageObserver.disconnect();
+        }
     });
 });
 

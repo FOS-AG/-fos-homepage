@@ -65,11 +65,21 @@
             box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.05);
         }
         
+        .about-content .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
         .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+            display: block;
+            gap: 0;
+            align-items: stretch;
+        }
+        
+        .about-text {
+            margin: 0 auto;
+            text-align: center;
         }
         
         .about-text h2 {
@@ -226,9 +236,8 @@
                 font-size: 1.1rem;
             }
             
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .about-content .container {
+                padding: 0 1rem;
             }
             
             .values-grid {
@@ -239,6 +248,84 @@
             .value-card {
                 padding: 2rem;
             }
+        }
+
+        /* Prinzipien als Fliesselemente */
+        .fos-principles-inline {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0 2rem 0;
+            background: none;
+        }
+        .fos-principle {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 0.5rem;
+            min-width: 180px;
+        }
+        .fos-principle img {
+            width: 36px;
+            height: 36px;
+            margin-bottom: 0.5rem;
+            filter: grayscale(0.1) brightness(0.95);
+        }
+        .fos-principle strong {
+            font-size: 1.08rem;
+            color: var(--primary-blue, #1a237e);
+        }
+        .fos-principle span {
+            font-size: 0.97rem;
+            color: var(--medium-gray, #555);
+        }
+        .fos-principles-divider {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+            border-bottom: 2px solid #D69E2E;
+            opacity: 0.18;
+            border-radius: 2px;
+        }
+        @media (max-width: 900px) {
+            .fos-principles-inline {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+        }
+
+        /* Gold-Akzent für Überschriften */
+        .gold-accent {
+            color: #D69E2E;
+            font-weight: 800;
+            letter-spacing: 0.5px;
+        }
+        /* Goldener Kreis für Prinzipien-Icons */
+        .fos-icon-gold {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f6e05e 0%, #d69e2e 100%);
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 0.5rem auto;
+            box-shadow: 0 2px 8px rgba(214,158,46,0.10);
+        }
+        .fos-icon-gold img {
+            width: 28px;
+            height: 28px;
+            filter: grayscale(0.1) brightness(1.1);
+        }
+        /* Kräftigere goldene Trennlinie */
+        .fos-principles-divider {
+            width: 100%;
+            max-width: 700px;
+            margin: 0 auto 2.5rem auto;
+            border-bottom: 3px solid #D69E2E;
+            opacity: 0.28;
+            border-radius: 2px;
         }
     </style>
 </head>
@@ -284,66 +371,57 @@
     <!-- About Content Section -->
     <section class="about-content">
         <div class="container">
-            <div class="about-grid">
-                <!-- Text Content -->
-                <div class="about-text">
-                    <h2 class="lang-de">Unsere Mission</h2>
-                    <h2 class="lang-en" style="display:none;">Our Mission</h2>
-                    <p class="lang-de">FOS – Focus on Solutions AG ist ein führendes Beratungsunternehmen, das psychologische Wissenschaft mit unternehmerischer Praxis verbindet. Wir unterstützen Unternehmen, Führungskräfte und Teams dabei, komplexe Herausforderungen zu meistern und nachhaltige Lösungen zu entwickeln.</p>
-                    <p class="lang-en" style="display:none;">FOS – Focus on Solutions AG is a leading consulting company that combines psychological science with entrepreneurial practice. We support companies, leaders and teams in mastering complex challenges and developing sustainable solutions.</p>
-                    
-                    <h3 class="lang-de">Unser Ansatz</h3>
-                    <h3 class="lang-en" style="display:none;">Our Approach</h3>
-                    <p class="lang-de">Basierend auf evidenzbasierten Methoden und jahrelanger Erfahrung entwickeln wir maßgeschneiderte Lösungen, die sowohl wissenschaftlich fundiert als auch praktisch umsetzbar sind. Unser interdisziplinärer Ansatz integriert Erkenntnisse aus Psychologie, Wirtschaftswissenschaften und Organisationsforschung.</p>
-                    <p class="lang-en" style="display:none;">Based on evidence-based methods and years of experience, we develop tailored solutions that are both scientifically grounded and practically implementable. Our interdisciplinary approach integrates insights from psychology, economics and organizational research.</p>
-                </div>
+            <div class="about-text">
+                <h2 class="lang-de">
+                    Unsere <span class="gold-accent">Mission</span>
+                </h2>
+                <h2 class="lang-en" style="display:none;">Our Mission</h2>
+                <p class="lang-de"><strong>Wir verbinden psychologische Exzellenz mit unternehmerischer Klarheit – damit Organisationen komplexe Herausforderungen meistern, menschlich führen und nachhaltig wirksam bleiben.</strong></p>
+                <p class="lang-en" style="display:none;"><strong>We connect psychological excellence with entrepreneurial clarity – enabling organizations to master complex challenges, lead humanely and remain sustainably effective.</strong></p>
                 
-                <!-- Visual Content -->
-                <div class="about-visual">
-                    <div class="about-visual-content">
-                        <div class="value-item">
-                            <div class="value-icon">
-                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                                </svg>
-                            </div>
-                            <div class="value-text">
-                                <h4 class="lang-de">Wissenschaftlich fundiert</h4>
-                                <h4 class="lang-en" style="display:none;">Scientifically grounded</h4>
-                                <p class="lang-de">Evidenzbasierte Methoden</p>
-                                <p class="lang-en" style="display:none;">Evidence-based methods</p>
-                            </div>
+                <h3 class="lang-de">Unser Ansatz</h3>
+                <h3 class="lang-en" style="display:none;">Our Approach</h3>
+                <p class="lang-de"><strong>Unsere Beratung basiert auf wissenschaftlicher Evidenz, unternehmerischem Denken und psychologischer Tiefe.</strong></p>
+                <p class="lang-en" style="display:none;"><strong>Our consulting is based on scientific evidence, entrepreneurial thinking and psychological depth.</strong></p>
+                <p class="lang-de">Wir integrieren Erkenntnisse aus Psychologie, Wirtschaft und Organisationsentwicklung zu praxisnahen, individuellen Lösungen. Dabei geht es nicht nur um Konzepte, sondern um konkrete Wirkung im Alltag – durch echte Zusammenarbeit, klare Strukturen und Transformation mit Substanz.</p>
+                <p class="lang-en" style="display:none;">We integrate insights from psychology, economics and organizational development into practical, individual solutions. It's not just about concepts, but about concrete impact in everyday life – through genuine collaboration, clear structures and transformation with substance.</p>
+                
+                <h3 class="lang-de">Unsere Vision</h3>
+                <h3 class="lang-en" style="display:none;">Our Vision</h3>
+                <p class="lang-de"><strong>Wir gestalten Organisationen, in denen psychologische Intelligenz und wirtschaftliche Wirksamkeit Hand in Hand gehen – für eine neue Arbeitswelt, die klar denkt, menschlich führt und vorausschauend handelt.</strong></p>
+                <p class="lang-en" style="display:none;"><strong>We shape organizations where psychological intelligence and economic effectiveness go hand in hand – for a new working world that thinks clearly, leads humanely and acts foresightedly.</strong></p>
+
+                <!-- Prinzipien als Fliesselemente unter Vision -->
+                <div class="fos-principles-inline">
+                    <div class="fos-principle">
+                        <span class="fos-icon-gold">
+                            <img src="assets/icons/strategy.svg" alt="Wissenschaftlich fundiert" />
+                        </span>
+                        <div>
+                            <strong>Wissenschaftlich fundiert</strong>
+                            <span>Evidenzbasierte Methoden</span>
                         </div>
-                        
-                        <div class="value-item">
-                            <div class="value-icon">
-                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                                </svg>
-                            </div>
-                            <div class="value-text">
-                                <h4 class="lang-de">Praxisorientiert</h4>
-                                <h4 class="lang-en" style="display:none;">Practice-oriented</h4>
-                                <p class="lang-de">Direkt umsetzbare Lösungen</p>
-                                <p class="lang-en" style="display:none;">Directly implementable solutions</p>
-                            </div>
+                    </div>
+                    <div class="fos-principle">
+                        <span class="fos-icon-gold">
+                            <img src="assets/icons/coaching.svg" alt="Praxisorientiert" />
+                        </span>
+                        <div>
+                            <strong>Praxisorientiert</strong>
+                            <span>Direkt umsetzbare Lösungen</span>
                         </div>
-                        
-                        <div class="value-item">
-                            <div class="value-icon">
-                                <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                                </svg>
-                            </div>
-                            <div class="value-text">
-                                <h4 class="lang-de">Individuell</h4>
-                                <h4 class="lang-en" style="display:none;">Individual</h4>
-                                <p class="lang-de">Maßgeschneiderte Ansätze</p>
-                                <p class="lang-en" style="display:none;">Tailored approaches</p>
-                            </div>
+                    </div>
+                    <div class="fos-principle">
+                        <span class="fos-icon-gold">
+                            <img src="assets/icons/special.svg" alt="Individuell" />
+                        </span>
+                        <div>
+                            <strong>Individuell</strong>
+                            <span>Maßgeschneiderte Ansätze</span>
                         </div>
                     </div>
                 </div>
+                <div class="fos-principles-divider"></div>
             </div>
         </div>
     </section>
@@ -365,8 +443,8 @@
                     </div>
                     <h3 class="lang-de">Exzellenz</h3>
                     <h3 class="lang-en" style="display:none;">Excellence</h3>
-                    <p class="lang-de">Wir streben nach höchster Qualität in allem, was wir tun, basierend auf wissenschaftlichen Erkenntnissen und bewährten Praktiken.</p>
-                    <p class="lang-en" style="display:none;">We strive for the highest quality in everything we do, based on scientific findings and proven practices.</p>
+                    <p class="lang-de">Wir setzen Maßstäbe – durch fundierte Expertise, Wirksamkeit und handfeste Resultate.</p>
+                    <p class="lang-en" style="display:none;">We set standards – through sound expertise, effectiveness and tangible results.</p>
                 </div>
                 
                 <div class="value-card">
@@ -375,8 +453,8 @@
                     </div>
                     <h3 class="lang-de">Vertrauen</h3>
                     <h3 class="lang-en" style="display:none;">Trust</h3>
-                    <p class="lang-de">Vertrauen ist die Grundlage jeder erfolgreichen Zusammenarbeit. Wir bauen auf Offenheit, Ehrlichkeit und Diskretion.</p>
-                    <p class="lang-en" style="display:none;">Trust is the foundation of every successful collaboration. We build on openness, honesty and discretion.</p>
+                    <p class="lang-de">Vertrauen entsteht durch Haltung: Wir arbeiten transparent, diskret und respektvoll.</p>
+                    <p class="lang-en" style="display:none;">Trust arises through attitude: We work transparently, discreetly and respectfully.</p>
                 </div>
                 
                 <div class="value-card">
@@ -385,8 +463,8 @@
                     </div>
                     <h3 class="lang-de">Innovation</h3>
                     <h3 class="lang-en" style="display:none;">Innovation</h3>
-                    <p class="lang-de">Wir entwickeln kreative Lösungen und nutzen innovative Ansätze, um komplexe Herausforderungen zu meistern.</p>
-                    <p class="lang-en" style="display:none;">We develop creative solutions and use innovative approaches to master complex challenges.</p>
+                    <p class="lang-de">Wir denken voraus, handeln kreativ und entwickeln Lösungen, die Zukunft gestalten.</p>
+                    <p class="lang-en" style="display:none;">We think ahead, act creatively and develop solutions that shape the future.</p>
                 </div>
             </div>
         </div>

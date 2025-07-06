@@ -3,7 +3,7 @@
   "short_name": "FOS",
   "description": "Evidenzbasierte, psychologisch fundierte Beratung für Unternehmen, Führungskräfte und Teams",
   "start_url": "/",
-  "display": "standalone",
+  "display": "browser",
   "background_color": "#ffffff",
   "theme_color": "#14213d",
   "orientation": "portrait-primary",
