@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vielen Dank - FOS – Focus on Solutions AG</title>
+    <meta name="description" content="Vielen Dank für Ihre Nachricht. Wir melden uns innerhalb von 24 Stunden bei Ihnen.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* Thank You Page Specific Styles */
+        .thank-you-hero {
+            background: linear-gradient(135deg, #ffffff 0%, #fafafa 50%, #f5f5f5 100%);
+            color: var(--primary-blue);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 2rem 6rem;
+        }
+        
+        .thank-you-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23D69E2E" opacity="0.05"/><circle cx="75" cy="75" r="1" fill="%23D69E2E" opacity="0.05"/><circle cx="50" cy="10" r="0.5" fill="%23D69E2E" opacity="0.03"/><circle cx="10" cy="60" r="0.5" fill="%23D69E2E" opacity="0.03"/><circle cx="90" cy="40" r="0.5" fill="%23D69E2E" opacity="0.03"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.8;
+        }
+        
+        .thank-you-content {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 2rem;
+            padding: 4rem 3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            text-align: center;
+            animation: fadeInUp 1.5s ease-out;
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .success-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+            animation: scaleIn 0.6s ease-out 0.3s both;
+        }
+        
+        .success-icon svg {
+            width: 60px;
+            height: 60px;
+            color: white;
+        }
+        
+        .thank-you-title {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+            line-height: 1.2;
+        }
+        
+        .thank-you-title .highlight {
+            color: var(--primary-gold);
+        }
+        
+        .thank-you-subtitle {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            color: var(--primary-blue);
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        .thank-you-message {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: var(--medium-gray);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .next-steps {
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            border-radius: 1.5rem;
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(214, 158, 46, 0.1);
+        }
+        
+        .next-steps h3 {
+            color: var(--primary-blue);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
+        .next-steps ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .next-steps li {
+            padding: 0.5rem 0;
+            color: var(--medium-gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .next-steps li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary-gold);
+            font-weight: bold;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 3rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), #e6b800);
+            color: white;
+            border: none;
+            border-radius: 3rem;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px rgba(214, 158, 46, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 40px rgba(214, 158, 46, 0.4);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--primary-blue);
+            border: 2px solid var(--primary-gold);
+            border-radius: 3rem;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-secondary:hover {
+            background: var(--primary-gold);
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        
+        @keyframes scaleIn {
+            from {
+                transform: scale(0);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .thank-you-content {
+                padding: 3rem 2rem;
+                margin: 2rem 1rem;
+            }
+            
+            .thank-you-title {
+                font-size: 2.5rem;
+            }
+            
+            .thank-you-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" style="display: flex; align-items: center; height: 60px;">
+                <img src="assets/logos/fos-icon-exklusiv.svg" alt="FOS Icon Logo" style="height: 48px; width: auto; display: block;" />
+            </a>
+            <ul class="nav-links" id="nav-links">
+                <li><a href="index.html" data-de="Startseite" data-en="Home">Startseite</a></li>
+                <li><a href="about.html" data-de="Über uns" data-en="About">Über uns</a></li>
+                <li><a href="services.html" data-de="Leistungen" data-en="Services">Leistungen</a></li>
+                <li><a href="team.html" data-de="Team" data-en="Team">Team</a></li>
+                <li><a href="login.html" data-de="Login" data-en="Login">Login</a></li>
+                <li><a href="contact.html" data-de="Kontakt" data-en="Contact">Kontakt</a></li>
+            </ul>
+            <div class="language-switcher">
+                <button class="language-btn active" onclick="switchLanguage('de')">DE</button>
+                <button class="language-btn" onclick="switchLanguage('en')">EN</button>
+            </div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Thank You Hero Section -->
+    <section class="thank-you-hero">
+        <div class="thank-you-content">
+            <div class="success-icon">
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            
+            <h1 class="thank-you-title lang-de">
+                Vielen <span class="highlight">Dank</span>!
+            </h1>
+            <h1 class="thank-you-title lang-en" style="display:none;">
+                Thank <span class="highlight">You</span>!
+            </h1>
+            
+            <p class="thank-you-subtitle lang-de">
+                Ihre Nachricht wurde erfolgreich gesendet
+            </p>
+            <p class="thank-you-subtitle lang-en" style="display:none;">
+                Your message has been sent successfully
+            </p>
+            
+            <p class="thank-you-message lang-de">
+                Wir haben Ihre Anfrage erhalten und werden uns innerhalb von 24 Stunden bei Ihnen melden. 
+                Vielen Dank für Ihr Interesse an unserer evidenzbasierten, psychologisch fundierten Beratung.
+            </p>
+            <p class="thank-you-message lang-en" style="display:none;">
+                We have received your inquiry and will get back to you within 24 hours. 
+                Thank you for your interest in our evidence-based, psychologically grounded consulting.
+            </p>
+            
+            <div class="next-steps">
+                <h3 class="lang-de">Was passiert als nächstes?</h3>
+                <h3 class="lang-en" style="display:none;">What happens next?</h3>
+                <ul class="lang-de">
+                    <li>Wir prüfen Ihre Anfrage sorgfältig</li>
+                    <li>Ein FOS-Berater meldet sich bei Ihnen</li>
+                    <li>Wir vereinbaren ein kostenloses Erstgespräch</li>
+                    <li>Gemeinsam entwickeln wir Ihre Lösung</li>
+                </ul>
+                <ul class="lang-en" style="display:none;">
+                    <li>We carefully review your inquiry</li>
+                    <li>A FOS consultant will contact you</li>
+                    <li>We schedule a free initial consultation</li>
+                    <li>Together we develop your solution</li>
+                </ul>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="index.html" class="btn-primary lang-de">Zurück zur Startseite</a>
+                <a href="index.html" class="btn-primary lang-en" style="display:none;">Back to Homepage</a>
+                <a href="contact.html" class="btn-secondary lang-de">Weitere Kontaktmöglichkeiten</a>
+                <a href="contact.html" class="btn-secondary lang-en" style="display:none;">Other Contact Options</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: flex-start; gap: 4rem; flex-wrap: wrap;">
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">
+                    <span style="color: var(--primary-gold);">FOS</span> <span style="color: #fff; font-weight: 700;">FocusOnSolutions AG</span>
+                </h3>
+                <p style="color: rgba(255,255,255,0.8);">Ihr Partner für evidenzbasierte,<br>psychologisch fundierte Beratung</p>
+            </div>
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="margin-bottom: 1rem;">
+                    <a href="contact.html" style="color: var(--primary-gold); font-weight: 700; text-decoration: none; transition: color 0.2s; font-size: 1.125rem;" onmouseover="this.style.color='#f6e05e'" onmouseout="this.style.color='var(--primary-gold)'">Kontakt</a>
+                </h3>
+                <p style="color: rgba(255,255,255,0.8);">+41 78 300 74 46</p>
+                <p style="color: rgba(255,255,255,0.8);"><a href="mailto:info@fos.ag" style="color: rgba(255,255,255,0.8); text-decoration: underline; transition: color 0.2s;">info@fos.ag</a></p>
+                <p style="color: rgba(255,255,255,0.8);">St.-Johannes-Strasse 23<br>6300 Zug, Schweiz</p>
+            </div>
+            <div class="footer-section" style="min-width: 250px;">
+                <h3 style="color: var(--primary-gold); font-weight: 700; margin-bottom: 1rem;">Rechtliches</h3>
+                <p><a href="impressum.html">Impressum</a></p>
+                <p><a href="datenschutz.html">Datenschutz</a></p>
+                <p><a href="agb.html">AGB</a></p>
+            </div>
+        </div>
+        <div style="width: 100%; display: flex; justify-content: center; align-items: center; margin-top: 2.5rem;">
+            <img src="assets/logos/fos-logo-consulting.svg" alt="FOS Consulting Logo" style="height: 90px; max-width: 90vw; width: auto; opacity: 0.97;" />
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 FOS FocusOnSolutions AG. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Language switcher
+        function switchLanguage(lang) {
+            const buttons = document.querySelectorAll('.language-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Show/hide language-specific content
+            const germanElements = document.querySelectorAll('.lang-de');
+            const englishElements = document.querySelectorAll('.lang-en');
+            
+            if (lang === 'de') {
+                germanElements.forEach(el => el.style.display = '');
+                englishElements.forEach(el => el.style.display = 'none');
+            } else {
+                germanElements.forEach(el => el.style.display = 'none');
+                englishElements.forEach(el => el.style.display = '');
+            }
+            
+            // Update navigation links
+            updateNavigationLanguage(lang);
+            
+            // Save language preference
+            localStorage.setItem('preferredLanguage', lang);
+        }
+
+        // Update navigation language
+        function updateNavigationLanguage(lang) {
+            const navLinks = document.querySelectorAll('[data-de][data-en]');
+            navLinks.forEach(link => {
+                if (lang === 'de') {
+                    link.textContent = link.getAttribute('data-de');
+                } else {
+                    link.textContent = link.getAttribute('data-en');
+                }
+            });
+        }
+
+        // Load saved language preference
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedLang = localStorage.getItem('preferredLanguage');
+            if (savedLang) {
+                switchLanguage(savedLang);
+                const buttons = document.querySelectorAll('.language-btn');
+                buttons.forEach(btn => {
+                    btn.classList.remove('active');
+                    if (btn.textContent.toLowerCase() === savedLang) {
+                        btn.classList.add('active');
+                    }
+                });
+            } else {
+                // Initialize navigation with default language
+                updateNavigationLanguage('de');
+            }
+        });
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('nav-links');
+            navLinks.classList.toggle('mobile-active');
+        }
+    </script>
+</body>
+</html> 

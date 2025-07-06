@@ -363,42 +363,42 @@
                     <h2 class="lang-de" style="text-align: center; margin-bottom: 2rem; color: var(--primary-blue);">Kontaktformular</h2>
                     <h2 class="lang-en" style="display:none; text-align: center; margin-bottom: 2rem; color: var(--primary-blue);">Contact Form</h2>
                     
-                    <form>
+                    <form action="https://formsubmit.co/info@fos.ag" method="POST" id="contactForm">
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="firstname" class="lang-de">Vorname *</label>
                                 <label for="firstname" class="lang-en" style="display:none;">First Name *</label>
-                                <input type="text" id="firstname" name="firstname" required>
+                                <input type="text" id="firstname" name="Vorname" required>
                             </div>
                             <div class="form-group">
                                 <label for="lastname" class="lang-de">Nachname *</label>
                                 <label for="lastname" class="lang-en" style="display:none;">Last Name *</label>
-                                <input type="text" id="lastname" name="lastname" required>
+                                <input type="text" id="lastname" name="Nachname" required>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label for="email" class="lang-de">E-Mail *</label>
                             <label for="email" class="lang-en" style="display:none;">Email *</label>
-                            <input type="email" id="email" name="email" required>
+                            <input type="email" id="email" name="E-Mail" required>
                         </div>
                         
                         <div class="form-group">
                             <label for="phone" class="lang-de">Telefon</label>
                             <label for="phone" class="lang-en" style="display:none;">Phone</label>
-                            <input type="tel" id="phone" name="phone">
+                            <input type="tel" id="phone" name="Telefon">
                         </div>
                         
                         <div class="form-group">
                             <label for="company" class="lang-de">Unternehmen</label>
                             <label for="company" class="lang-en" style="display:none;">Company</label>
-                            <input type="text" id="company" name="company">
+                            <input type="text" id="company" name="Unternehmen">
                         </div>
                         
                         <div class="form-group">
                             <label for="service" class="lang-de">Interessierter Service</label>
                             <label for="service" class="lang-en" style="display:none;">Service of Interest</label>
-                            <select id="service" name="service">
+                            <select id="service" name="Service">
                                 <option value="" class="lang-de">Bitte wählen Sie...</option>
                                 <option value="" class="lang-en" style="display:none;">Please select...</option>
                                 <option value="coaching" class="lang-de">Executive & Business Coaching</option>
@@ -415,10 +415,13 @@
                         <div class="form-group">
                             <label for="message" class="lang-de">Ihre Nachricht *</label>
                             <label for="message" class="lang-en" style="display:none;">Your Message *</label>
-                            <textarea id="message" name="message" required class="lang-de" placeholder="Beschreiben Sie Ihr Anliegen..."></textarea>
-                            <textarea id="message" name="message" required class="lang-en" style="display:none;" placeholder="Describe your concern..."></textarea>
+                            <textarea id="message" name="Nachricht" required class="lang-de" placeholder="Beschreiben Sie Ihr Anliegen..."></textarea>
+                            <textarea id="message" name="Nachricht_EN" required class="lang-en" style="display:none;" placeholder="Describe your concern..."></textarea>
                         </div>
                         
+                        <!-- Formsubmit: Erfolgsseite und Spam-Schutz -->
+                        <input type="hidden" name="_next" value="https://fos-consulting.ch/danke.html">
+                        <input type="text" name="_honey" style="display:none">
                         <button type="submit" class="submit-btn lang-de">Nachricht senden</button>
                         <button type="submit" class="submit-btn lang-en" style="display:none;">Send Message</button>
                     </form>
