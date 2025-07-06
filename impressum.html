@@ -14,6 +14,42 @@
             padding: 2rem 0;
         }
         
+        @media (max-width: 768px) {
+            .legal-content {
+                padding: 1rem;
+                margin: 0;
+            }
+            
+            .legal-content h1 {
+                font-size: 1.8rem;
+                margin-bottom: 1.5rem;
+            }
+            
+            .legal-content h2 {
+                font-size: 1.3rem;
+                margin: 1.5rem 0 0.8rem 0;
+            }
+            
+            .legal-content h3 {
+                font-size: 1.1rem;
+                margin: 1.2rem 0 0.5rem 0;
+            }
+            
+            .legal-content p, .legal-content li {
+                font-size: 0.95rem;
+                line-height: 1.5;
+            }
+            
+            .legal-content ul {
+                margin-left: 1.5rem;
+            }
+            
+            .legal-content .contact-info {
+                padding: 1rem;
+                margin: 1.5rem 0;
+            }
+        }
+        
         .legal-content h1 {
             color: var(--primary-blue);
             margin-bottom: 2rem;
@@ -207,13 +243,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: flex-start; gap: 4rem; flex-wrap: wrap;">
-            <div class="footer-section" style="min-width: 250px;">
+            <div class="footer-section" style="min-width: 250px; max-width: 100%;">
                 <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">
                     <span style="color: var(--primary-gold);">FOS</span> <span style="color: #fff; font-weight: 700;">FocusOnSolutions AG</span>
                 </h3>
                 <p style="color: rgba(255,255,255,0.8);">Ihr Partner für evidenzbasierte,<br>psychologisch fundierte Beratung</p>
             </div>
-            <div class="footer-section" style="min-width: 250px;">
+            <div class="footer-section" style="min-width: 250px; max-width: 100%;">
                 <h3 style="margin-bottom: 1rem;">
                     <a href="contact.html" style="color: var(--primary-gold); font-weight: 700; text-decoration: none; transition: color 0.2s; font-size: 1.125rem;" onmouseover="this.style.color='#f6e05e'" onmouseout="this.style.color='var(--primary-gold)'">Kontakt</a>
                 </h3>
@@ -221,7 +257,7 @@
                 <p style="color: rgba(255,255,255,0.8);"><a href="mailto:info@fos.ag" style="color: rgba(255,255,255,0.8); text-decoration: underline; transition: color 0.2s;">info@fos.ag</a></p>
                 <p style="color: rgba(255,255,255,0.8);">St.-Johannes-Strasse 23<br>6300 Zug, Schweiz</p>
             </div>
-            <div class="footer-section" style="min-width: 250px;">
+            <div class="footer-section" style="min-width: 250px; max-width: 100%;">
                 <h3 style="color: var(--primary-gold); font-weight: 700; margin-bottom: 1rem;">Rechtliches</h3>
                 <p><a href="impressum.html">Impressum</a></p>
                 <p><a href="datenschutz.html">Datenschutz</a></p>
