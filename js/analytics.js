@@ -38,13 +38,13 @@ class FOSAnalytics {
         // Google Analytics 4
         const script = document.createElement('script');
         script.async = true;
-        script.src = 'https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID';
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=G-1JXFPB8SJM';
         document.head.appendChild(script);
 
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
-        gtag('config', 'GA_MEASUREMENT_ID', {
+        gtag('config', 'G-1JXFPB8SJM', {
             'anonymize_ip': true,
             'cookie_flags': 'SameSite=None;Secure'
         });

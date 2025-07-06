@@ -1,12 +1,35 @@
 # FOS – Focus on Solutions AG Website
 
-**Version 2.0.0** - Professionelle Consulting-Website mit erweiterten Features
+**Version 2.1.0** - Vollständig optimierte und mobile-ready Consulting-Website
 
 ## 🚀 **Übersicht**
 
 Die offizielle Website der FOS – Focus on Solutions AG, einer führenden Schweizer Consulting-Firma für Strategieberatung, Coaching und Diagnostik. Die Website bietet eine moderne, responsive und barrierefreie Benutzererfahrung mit umfassenden SEO-Optimierungen.
 
-## ✨ **Neue Features in Version 2.0**
+## ✨ **Neue Features in Version 2.1**
+
+### 📱 **Mobile-Optimierung & Responsivität**
+- **Horizontales Scrollen behoben** auf allen Mobile-Geräten
+- **Responsive Footer** mit korrekter CI-Farbe (#14213d)
+- **Mobile-optimierte Formulare** und Newsletter-Anmeldung
+- **Touch-freundliche Navigation** und Buttons
+- **Optimierte Bildgrößen** für verschiedene Bildschirmgrößen
+
+### 🌐 **Sprachumschaltung & Internationalisierung**
+- **Persistente Sprachwahl** über localStorage
+- **Vollständige Übersetzungen** für alle Inhalte
+- **EDUQUA-Badge Übersetzungen** (DE/EN)
+- **Footer-Texte übersetzt** und lokalisiert
+- **Newsletter-Hinweise** in beiden Sprachen
+
+### 🔧 **Technische Verbesserungen**
+- **Universeller FAB-Button** auf allen Seiten
+- **Kontrast-Optimierungen** für bessere Lesbarkeit
+- **Broken Links behoben** in allen HTML-Dateien
+- **Impressum mobile-responsive** gemacht
+- **Performance-Optimierungen** implementiert
+
+## ✨ **Features in Version 2.0**
 
 ### 🔧 **Performance & Optimierung**
 - **Service Worker** für Offline-Funktionalität und Caching

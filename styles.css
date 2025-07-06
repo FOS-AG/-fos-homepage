@@ -257,17 +257,6 @@ body {
   position: relative;
 }
 
-.hero-title .highlight::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: var(--primary-gold);
-  border-radius: 2px;
-}
-
 .hero-subtitle { 
   font-size: 1.4rem; 
   font-weight: 400; 
@@ -680,7 +669,8 @@ body {
 }
 
 .section-subtitle {
-  color: rgba(255,255,255,0.8);
+  color: var(--primary-blue);
+  font-weight: 500;
 }
 
 /* Responsive Design Updates */
@@ -1420,4 +1410,188 @@ body {
     width: 20px;
     height: 20px;
   }
+}
+
+/* ===== INLINE-STYLE REPLACEMENTS ===== */
+
+/* Logo styling */
+.logo-flex {
+    display: flex;
+    align-items: center;
+    height: 60px;
+}
+
+.logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
+}
+
+/* Feature card styling */
+.feature-card-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Testimonials section styling */
+.testimonials-section-dark {
+    background: linear-gradient(135deg, #14213d 0%, #1a365d 100%);
+    padding: 6rem 2rem;
+    color: white;
+}
+
+.section-header-center {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.section-title-gold {
+    color: #C7A15A;
+    margin-bottom: 1rem;
+}
+
+.section-subtitle-light {
+    color: rgba(255,255,255,0.8);
+}
+
+/* Newsletter section styling */
+.newsletter-section-light {
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.newsletter-content-center {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter-title-dark {
+    color: #14213d;
+    margin-bottom: 1rem;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.newsletter-subtitle-gray {
+    color: #4a5568;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.newsletter-form-flex {
+    display: flex;
+    gap: 1rem;
+    max-width: 400px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+/* Footer styling */
+.footer-content-flex {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.footer-section-min {
+    min-width: 250px;
+    max-width: 100%;
+}
+
+/* Testimonial card styling */
+.testimonial-card-glass {
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgba(199,161,90,0.2);
+}
+
+.testimonial-content-mb {
+    margin-bottom: 2rem;
+}
+
+.testimonial-text-italic {
+    font-style: italic;
+    line-height: 1.7;
+    font-size: 1.1rem;
+}
+
+.testimonial-author-flex {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.author-avatar-gold {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #C7A15A, #b8944a);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.author-title-gold {
+    color: #C7A15A;
+    margin-bottom: 0.25rem;
+}
+
+/* EDUQUA section styling */
+.eduqua-section-light {
+    background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.eduqua-badge-gold {
+    display: inline-block;
+    background: linear-gradient(135deg, #C7A15A, #b8944a);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 32px rgba(199,161,90,0.3);
+}
+
+.eduqua-grid-responsive {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.eduqua-item-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    border: 1px solid rgba(199,161,90,0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .newsletter-form-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .newsletter-form-flex input {
+        width: 100%;
+        max-width: 300px;
+    }
+    
+    .footer-content-flex {
+        gap: 2rem;
+        padding: 0 1rem;
+    }
 } 
