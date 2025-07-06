@@ -12,7 +12,7 @@ class LanguageSwitcher {
     }
 
     loadSavedLanguage() {
-        const savedLang = localStorage.getItem('preferredLanguage');
+        const savedLang = localStorage.getItem('lang') || localStorage.getItem('preferredLanguage');
         if (savedLang && (savedLang === 'de' || savedLang === 'en')) {
             this.currentLanguage = savedLang;
         }
@@ -48,7 +48,8 @@ class LanguageSwitcher {
         this.updateAllContent();
         
         // Save preference
-        localStorage.setItem('preferredLanguage', lang);
+        localStorage.setItem('lang', lang);
+        localStorage.setItem('preferredLanguage', lang); // Keep for backward compatibility
         
         // Update page title and meta tags
         this.updatePageMeta(lang);
@@ -138,7 +139,7 @@ class LanguageSwitcher {
 // Initialize language switcher when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     window.languageSwitcher = new LanguageSwitcher();
-    const preferredLanguage = localStorage.getItem('preferredLanguage');
+    const preferredLanguage = localStorage.getItem('lang') || localStorage.getItem('preferredLanguage');
     if (preferredLanguage) {
         switchLanguage(preferredLanguage);
     }
