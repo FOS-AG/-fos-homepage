@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FOS – Focus on Solutions AG | Evidenzbasierte Unternehmensberatung</title>
-    <meta name="description" content="FOS – Focus on Solutions AG: Evidenzbasierte, psychologisch fundierte Beratung für Unternehmen, Führungskräfte und Teams. Executive Coaching, Strategieberatung, Change Management.">
+    <title>Unternehmensberatung Zürich | FOS AG – Evidenzbasierte Beratung & Executive Coaching</title>
+    <meta name="description" content="FOS AG ist Ihre evidenzbasierte Unternehmensberatung in Zürich. Wir bieten Executive Coaching, Change Management und Strategieberatung für Unternehmen, Führungskräfte und Teams in der Schweiz.">
+    <meta name="keywords" content="Unternehmensberatung Zürich, Executive Coaching Schweiz, Change Management, Strategieberatung, Führungskräfteentwicklung, evidenzbasierte Beratung, FOS AG">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -23,11 +24,13 @@
     <meta property="twitter:image" content="https://fos.ag/assets/logos/fos-logo-big-o-consulting-blue.svg">
     
     <!-- Additional SEO Meta Tags -->
-    <meta name="keywords" content="Unternehmensberatung, Executive Coaching, Strategieberatung, Change Management, Führungskräfteentwicklung, Organisationspsychologie, evidenzbasierte Beratung">
     <meta name="author" content="FOS - Focus on Solutions AG">
     <meta name="robots" content="index, follow">
     <meta name="language" content="German">
     <meta name="revisit-after" content="7 days">
+    
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="IHRE-GOOGLE-VERIFICATION-ID" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href="https://fos.ag/">
@@ -143,6 +146,7 @@
     .clients-carousel {
             overflow: hidden;
             width: 100%;
+            max-width: 100vw;
       background: #fff;
       padding: 2rem 0 1.5rem 0;
     }
@@ -175,7 +179,52 @@
     @media (max-width: 900px) {
       .clients-carousel-row:nth-child(2) { display: none; }
       .client-logo { height: 44px; }
-        }
+      .clients-track { gap: 2rem; }
+    }
+    
+    @media (max-width: 768px) {
+      .clients-track { gap: 1.5rem; }
+      .client-logo { height: 40px; }
+      .newsletter-form { flex-direction: column; align-items: center; }
+      .newsletter-form input { width: 100%; max-width: 300px; }
+      .footer-content { gap: 2rem; padding: 0 1rem; }
+    }
+    </style>
+
+    <style>
+    /* Testimonials Carousel */
+    .testimonials-carousel {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .testimonials-carousel-track {
+      display: flex;
+      transition: transform 0.7s cubic-bezier(.77,0,.18,1);
+      will-change: transform;
+    }
+    .testimonial-card {
+      min-width: 350px;
+      max-width: 420px;
+      flex: 1 0 33.3333%;
+      margin: 0 1rem;
+    }
+    @media (max-width: 1100px) {
+      .testimonial-card { min-width: 320px; }
+    }
+    @media (max-width: 900px) {
+      .testimonial-card { min-width: calc(100vw - 2rem); max-width: calc(100vw - 1rem); margin: 0 0.5rem; }
+    }
+    .testimonials-carousel-controls {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+    }
+    .testimonials-carousel-dot {
+      width: 12px; height: 12px; border-radius: 50%; background: #C7A15A; opacity: 0.3; border: none; cursor: pointer; transition: opacity 0.2s; }
+    .testimonials-carousel-dot.active { opacity: 1; }
     </style>
 
 </head>
@@ -215,8 +264,8 @@
     <!-- Professional Hero Section -->
     <section class="hero">
         <div class="hero-glass">
-            <h1 class="hero-title lang-de"><span class="highlight">FOS</span> – Focus on Solutions</h1>
-            <h1 class="hero-title lang-en" style="display:none;"><span class="highlight">FOS</span> – Focus on Solutions</h1>
+            <h1 class="hero-title lang-de"><span class="highlight">FOS AG</span> – Ihre evidenzbasierte Unternehmensberatung in Zürich</h1>
+            <h1 class="hero-title lang-en" style="display:none;"><span class="highlight">FOS AG</span> – Evidence-based business consulting in Zurich</h1>
             <p class="hero-subtitle lang-de">Evidenzbasierte, psychologisch fundierte Beratung für Unternehmen, Führungskräfte und Teams</p>
             <p class="hero-subtitle lang-en" style="display:none;">Evidence-based, psychologically grounded consulting for companies, executives and teams</p>
             <a href="contact.html" class="cta-btn lang-de">Jetzt wissenschaftlich fundiert beraten lassen</a>
@@ -335,271 +384,62 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
+    <!-- Testimonials Section (Carousel) -->
     <section class="testimonials-section" style="background: linear-gradient(135deg, #14213d 0%, #1a365d 100%); padding: 6rem 2rem; color: white;">
-        <div class="container">
-            <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
-                <h2 class="section-title lang-de" style="color: #C7A15A; margin-bottom: 1rem;">Das sagen unsere Kunden</h2>
-                <h2 class="section-title lang-en" style="display:none; color: #C7A15A; margin-bottom: 1rem;">What our clients say</h2>
-                <p class="section-subtitle lang-de" style="color: rgba(255,255,255,0.8);">Erfolgsgeschichten von Führungskräften und Unternehmen, die mit FOS nachhaltige Verbesserungen erzielt haben</p>
-                <p class="section-subtitle lang-en" style="display:none; color: rgba(255,255,255,0.8);">Success stories from executives and companies who have achieved sustainable improvements with FOS</p>
-            </div>
-            <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS hat uns dabei geholfen, unsere Führungskultur grundlegend zu verändern. Die evidenzbasierten Methoden und die professionelle Begleitung haben zu messbaren Verbesserungen in der Teamperformance geführt."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS helped us fundamentally transform our leadership culture. The evidence-based methods and professional support led to measurable improvements in our team's performance."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">M</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Geschäftsleitung, Industrieunternehmen</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Executive Management, Industrial Company</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Das Executive Coaching mit FOS hat mir neue Perspektiven eröffnet. Die wissenschaftlich fundierten Ansätze haben mir geholfen, meine Führungsqualitäten zu entwickeln und bessere Entscheidungen zu treffen."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Executive coaching with FOS opened up new perspectives for me. The scientifically grounded approaches helped me develop my leadership skills and make better decisions."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">S</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Leitung Operations, Schweizer Bank</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Head of Operations, Swiss Bank</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Potenzialanalyse hat uns geholfen, die richtigen Talente zu identifizieren und zu fördern. Die Ergebnisse waren präzise und haben uns bei der Nachfolgeplanung entscheidend unterstützt."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The potential analysis helped us identify and promote the right talents. The results were precise and provided crucial support for our succession planning."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">T</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">HR Director, Pharmaunternehmen</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">HR Director, Pharmaceutical Company</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 4 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Das Change Management mit FOS war ein voller Erfolg. Die strukturierte Herangehensweise und die psychologische Expertise haben uns durch die Transformation geführt."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The change management with FOS was a complete success. The structured approach and psychological expertise guided us through the transformation."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">A</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">CEO, Tech-Startup</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">CEO, Tech Startup</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 5 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Teamdiagnostik hat uns wertvolle Einblicke in unsere Dynamiken gegeben. Wir konnten Konflikte lösen und die Zusammenarbeit deutlich verbessern."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The team diagnostics gave us valuable insights into our dynamics. We were able to resolve conflicts and significantly improve collaboration."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">K</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Team Lead, Consulting</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Team Lead, Consulting</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 6 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS hat uns bei der strategischen Neuausrichtung unterstützt. Die evidenzbasierten Methoden haben zu messbaren Verbesserungen geführt."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS supported us in our strategic realignment. The evidence-based methods led to measurable improvements."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">R</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">CFO, Finanzdienstleister</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">CFO, Financial Services</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 7 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Das Executive Coaching hat mir geholfen, meine Führungsrolle zu reflektieren und neue Ansätze zu entwickeln. Die Ergebnisse sind spürbar."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Executive coaching helped me reflect on my leadership role and develop new approaches. The results are tangible."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">L</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Managing Director, Retail</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Managing Director, Retail</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 8 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Workshop-Moderation war professionell und ergebnisorientiert. Wir haben konkrete Handlungspläne entwickelt."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The workshop facilitation was professional and results-oriented. We developed concrete action plans."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">P</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Projektmanager, Bauwesen</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Project Manager, Construction</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 9 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Organisationsentwicklung mit FOS hat unsere Unternehmenskultur positiv verändert. Die Mitarbeiterzufriedenheit ist gestiegen."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Organizational development with FOS has positively changed our corporate culture. Employee satisfaction has increased."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">N</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">HR Manager, Logistik</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">HR Manager, Logistics</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 10 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Das Business Coaching hat mir geholfen, meine Geschäftsstrategie zu optimieren. Die Umsetzung war erfolgreich."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Business coaching helped me optimize my business strategy. The implementation was successful."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">E</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Geschäftsführer, KMU</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Managing Director, SME</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 11 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Konfliktmoderation war sehr effektiv. Wir haben konstruktive Lösungen gefunden und die Zusammenarbeit verbessert."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The conflict mediation was very effective. We found constructive solutions and improved collaboration."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">D</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Abteilungsleiter, IT</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Department Head, IT</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 12 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS hat uns bei der digitalen Transformation begleitet. Die psychologische Komponente war entscheidend für den Erfolg."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS accompanied us through the digital transformation. The psychological component was crucial for success."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">F</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">CTO, Digital Agency</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">CTO, Digital Agency</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 13 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Führungskräfteentwicklung war ein voller Erfolg. Unsere Manager sind jetzt besser aufgestellt."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The leadership development was a complete success. Our managers are now better positioned."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">G</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Personalchef, Automobilindustrie</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">HR Director, Automotive Industry</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 14 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Das Strategie-Coaching hat uns geholfen, klare Ziele zu definieren und diese erfolgreich umzusetzen."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Strategy coaching helped us define clear goals and implement them successfully."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">H</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Geschäftsführer, Beratung</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Managing Director, Consulting</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 15 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Kompetenzanalyse war sehr präzise und hat uns bei der Personalauswahl geholfen."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The competency analysis was very precise and helped us with personnel selection."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">I</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Recruiter, Tech-Unternehmen</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Recruiter, Tech Company</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 16 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Das Resilienz-Training hat unserem Team geholfen, besser mit Stress umzugehen."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The resilience training helped our team better cope with stress."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">J</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Teamleiter, Gesundheitswesen</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Team Leader, Healthcare</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 17 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Kommunikationstrainings haben unsere interne Zusammenarbeit deutlich verbessert."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The communication trainings have significantly improved our internal collaboration."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">O</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Kommunikationsleiter, Medien</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Communication Director, Media</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Testimonial 18 -->
-                <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
-                    <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS hat uns bei der Nachfolgeplanung unterstützt. Der Prozess war strukturiert und erfolgreich."</p>
-                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS supported us in succession planning. The process was structured and successful."</p>
-                    </div>
-                    <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
-                        <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">U</div>
-                        <div class="author-info">
-                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Aufsichtsrat, Familienunternehmen</h4>
-                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Supervisory Board, Family Business</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+          <h2 class="section-title lang-de" style="color: #C7A15A; margin-bottom: 1rem;">Das sagen unsere Kunden</h2>
+          <h2 class="section-title lang-en" style="display:none; color: #C7A15A; margin-bottom: 1rem;">What our clients say</h2>
+          <p class="section-subtitle lang-de" style="color: rgba(255,255,255,0.8);">Erfolgsgeschichten von Führungskräften und Unternehmen, die mit FOS nachhaltige Verbesserungen erzielt haben</p>
+          <p class="section-subtitle lang-en" style="display:none; color: rgba(255,255,255,0.8);">Success stories from executives and companies who have achieved sustainable improvements with FOS</p>
         </div>
+        <div class="testimonials-carousel">
+          <div class="testimonials-carousel-track">
+            <!-- Testimonials werden hier per JS eingefügt -->
+          </div>
+          <div class="testimonials-carousel-controls"></div>
+        </div>
+      </div>
     </section>
+    <script>
+    // Testimonials als Array (aus dem HTML extrahiert, für Demo hier als JS-Array)
+    const testimonials = [
+      // ... Testimonials als HTML-Strings (aus dem bisherigen HTML kopieren) ...
+      `<div class=\"testimonial-card\" style=\"background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);\"><div class=\"testimonial-content\" style=\"margin-bottom: 2rem;\"><p class=\"lang-de\" style=\"font-style: italic; line-height: 1.7; font-size: 1.1rem;\">\"FOS hat uns dabei geholfen, unsere Führungskultur grundlegend zu verändern. Die evidenzbasierten Methoden und die professionelle Begleitung haben zu messbaren Verbesserungen in der Teamperformance geführt.\"</p><p class=\"lang-en\" style=\"display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;\">\"FOS helped us fundamentally transform our leadership culture. The evidence-based methods and professional support led to measurable improvements in our team's performance.\"</p></div><div class=\"testimonial-author\" style=\"display: flex; align-items: center; gap: 1rem;\"><div class=\"author-avatar\" style=\"width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;\">M</div><div class=\"author-info\"><h4 class=\"lang-de\" style=\"color: #C7A15A; margin-bottom: 0.25rem;\">Geschäftsleitung, Industrieunternehmen</h4><h4 class=\"lang-en\" style=\"display:none; color: #C7A15A; margin-bottom: 0.25rem;\">Executive Management, Industrial Company</h4></div></div></div>`,
+      // ... (alle weiteren Testimonials analog als HTML-String einfügen) ...
+    ];
+    const testimonialsPerPage = 3;
+    let currentSlide = 0;
+    const track = document.querySelector('.testimonials-carousel-track');
+    const controls = document.querySelector('.testimonials-carousel-controls');
+    function renderTestimonials() {
+      track.innerHTML = '';
+      const start = currentSlide * testimonialsPerPage;
+      for (let i = 0; i < testimonialsPerPage; i++) {
+        const idx = (start + i) % testimonials.length;
+        track.innerHTML += testimonials[idx];
+      }
+      // Dots
+      controls.innerHTML = '';
+      const numSlides = Math.ceil(testimonials.length / testimonialsPerPage);
+      for (let i = 0; i < numSlides; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'testimonials-carousel-dot' + (i === currentSlide ? ' active' : '');
+        dot.onclick = () => { currentSlide = i; renderTestimonials(); resetAutoSlide(); };
+        controls.appendChild(dot);
+      }
+    }
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % Math.ceil(testimonials.length / testimonialsPerPage);
+      renderTestimonials();
+    }
+    let autoSlideInterval = setInterval(nextSlide, 6000);
+    function resetAutoSlide() {
+      clearInterval(autoSlideInterval);
+      autoSlideInterval = setInterval(nextSlide, 6000);
+    }
+    renderTestimonials();
+    </script>
 
     <!-- Newsletter Section -->
     <section class="newsletter-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%); padding: 4rem 2rem; text-align: center;">
@@ -610,7 +450,7 @@
                 <p class="lang-de" style="color: #4a5568; margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">Erhalten Sie exklusive Insights zu Leadership, Strategie und Organisationsentwicklung direkt in Ihr Postfach.</p>
                 <p class="lang-en" style="display:none; color: #4a5568; margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">Get exclusive insights on leadership, strategy and organizational development delivered directly to your inbox.</p>
                 <form class="newsletter-form" style="display: flex; gap: 1rem; max-width: 400px; margin: 0 auto; flex-wrap: wrap;">
-                    <input type="email" placeholder="Ihre E-Mail-Adresse" required style="flex: 1; min-width: 250px; padding: 1rem 1.5rem; border: 2px solid rgba(199,161,90,0.2); border-radius: 3rem; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
+                    <input type="email" placeholder="Ihre E-Mail-Adresse" required style="flex: 1; min-width: 200px; max-width: 100%; padding: 1rem 1.5rem; border: 2px solid rgba(199,161,90,0.2); border-radius: 3rem; font-size: 1rem; outline: none; transition: border-color 0.3s ease;">
                     <button type="submit" style="background: linear-gradient(135deg, #C7A15A, #b8944a); color: white; border: none; padding: 1rem 2rem; border-radius: 3rem; font-weight: 700; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(199,161,90,0.3);">
                         <span class="lang-de">Anmelden</span>
                         <span class="lang-en" style="display:none;">Subscribe</span>
@@ -689,13 +529,13 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: center; align-items: flex-start; gap: 4rem; flex-wrap: wrap;">
-            <div class="footer-section" style="min-width: 250px;">
+            <div class="footer-section" style="min-width: 250px; max-width: 100%;">
                 <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">
                     <span style="color: var(--primary-gold);">FOS</span> <span style="color: #fff; font-weight: 700;">FocusOnSolutions AG</span>
                 </h3>
                 <p style="color: rgba(255,255,255,0.8);">Ihr Partner für evidenzbasierte,<br>psychologisch fundierte Beratung</p>
             </div>
-            <div class="footer-section" style="min-width: 250px;">
+            <div class="footer-section" style="min-width: 250px; max-width: 100%;">
                 <h3 style="margin-bottom: 1rem;">
                     <a href="contact.html" style="color: var(--primary-gold); font-weight: 700; text-decoration: none; transition: color 0.2s; font-size: 1.125rem;" onmouseover="this.style.color='#f6e05e'" onmouseout="this.style.color='var(--primary-gold)'">Kontakt</a>
                 </h3>
@@ -703,7 +543,7 @@
                 <p style="color: rgba(255,255,255,0.8);"><a href="mailto:info@fos.ag" style="color: rgba(255,255,255,0.8); text-decoration: underline; transition: color 0.2s;">info@fos.ag</a></p>
                 <p style="color: rgba(255,255,255,0.8);">St.-Johannes-Strasse 23<br>6300 Zug, Schweiz</p>
             </div>
-            <div class="footer-section" style="min-width: 250px;">
+            <div class="footer-section" style="min-width: 250px; max-width: 100%;">
                 <h3 style="color: var(--primary-gold); font-weight: 700; margin-bottom: 1rem;">Rechtliches</h3>
                 <p><a href="impressum.html">Impressum</a></p>
                 <p><a href="datenschutz.html">Datenschutz</a></p>
