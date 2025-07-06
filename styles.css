@@ -1594,4 +1594,9 @@ body {
         gap: 2rem;
         padding: 0 1rem;
     }
+}
+
+.highlight-gold {
+  color: #C7A15A;
+  font-weight: 800;
 } 
