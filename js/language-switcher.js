@@ -138,9 +138,18 @@ class LanguageSwitcher {
 // Initialize language switcher when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     window.languageSwitcher = new LanguageSwitcher();
+    const preferredLanguage = localStorage.getItem('preferredLanguage');
+    if (preferredLanguage) {
+        switchLanguage(preferredLanguage);
+    }
 });
 
 // Export for use in other scripts
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = LanguageSwitcher;
+}
+
+function toggleMobileMenu() {
+    const navLinks = document.getElementById('nav-links');
+    navLinks.classList.toggle('mobile-active');
 } 
