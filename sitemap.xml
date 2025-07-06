@@ -4,142 +4,142 @@
     
     <!-- Startseite -->
     <url>
-        <loc>https://fos-consulting.ch/</loc>
+        <loc>https://fos.ag/</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://fos-consulting.ch/" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://fos-consulting.ch/?lang=en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://fos.ag/" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fos.ag/?lang=en" />
     </url>
     
     <!-- Über uns -->
     <url>
-        <loc>https://fos-consulting.ch/about.html</loc>
+        <loc>https://fos.ag/about.html</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://fos-consulting.ch/about.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://fos-consulting.ch/about.html?lang=en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://fos.ag/about.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fos.ag/about.html?lang=en" />
     </url>
     
     <!-- Leistungen -->
     <url>
-        <loc>https://fos-consulting.ch/services.html</loc>
+        <loc>https://fos.ag/services.html</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://fos-consulting.ch/services.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://fos-consulting.ch/services.html?lang=en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://fos.ag/services.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fos.ag/services.html?lang=en" />
     </url>
     
     <!-- Team -->
     <url>
-        <loc>https://fos-consulting.ch/team.html</loc>
+        <loc>https://fos.ag/team.html</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://fos-consulting.ch/team.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://fos-consulting.ch/team.html?lang=en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://fos.ag/team.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fos.ag/team.html?lang=en" />
     </url>
     
     <!-- Kontakt -->
     <url>
-        <loc>https://fos-consulting.ch/contact.html</loc>
+        <loc>https://fos.ag/contact.html</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://fos-consulting.ch/contact.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://fos-consulting.ch/contact.html?lang=en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://fos.ag/contact.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fos.ag/contact.html?lang=en" />
     </url>
     
     <!-- Coaching -->
     <url>
-        <loc>https://fos-consulting.ch/coaching.html</loc>
+        <loc>https://fos.ag/coaching.html</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://fos-consulting.ch/coaching.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://fos-consulting.ch/coaching.html?lang=en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://fos.ag/coaching.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fos.ag/coaching.html?lang=en" />
     </url>
     
     <!-- Strategieberatung -->
     <url>
-        <loc>https://fos-consulting.ch/strategy.html</loc>
+        <loc>https://fos.ag/strategy.html</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://fos-consulting.ch/strategy.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://fos-consulting.ch/strategy.html?lang=en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://fos.ag/strategy.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fos.ag/strategy.html?lang=en" />
     </url>
     
     <!-- Diagnostik -->
     <url>
-        <loc>https://fos-consulting.ch/diagnostics.html</loc>
+        <loc>https://fos.ag/diagnostics.html</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://fos-consulting.ch/diagnostics.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://fos-consulting.ch/diagnostics.html?lang=en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://fos.ag/diagnostics.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fos.ag/diagnostics.html?lang=en" />
     </url>
     
     <!-- Spezialformate -->
     <url>
-        <loc>https://fos-consulting.ch/special-formats.html</loc>
+        <loc>https://fos.ag/special-formats.html</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://fos-consulting.ch/special-formats.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://fos-consulting.ch/special-formats.html?lang=en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://fos.ag/special-formats.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fos.ag/special-formats.html?lang=en" />
     </url>
     
     <!-- Publikationen -->
     <url>
-        <loc>https://fos-consulting.ch/publications.html</loc>
+        <loc>https://fos.ag/publications.html</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://fos-consulting.ch/publications.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://fos-consulting.ch/publications.html?lang=en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://fos.ag/publications.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fos.ag/publications.html?lang=en" />
     </url>
     
     <!-- Login -->
     <url>
-        <loc>https://fos-consulting.ch/login.html</loc>
+        <loc>https://fos.ag/login.html</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://fos-consulting.ch/login.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://fos-consulting.ch/login.html?lang=en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://fos.ag/login.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fos.ag/login.html?lang=en" />
     </url>
     
     <!-- Impressum -->
     <url>
-        <loc>https://fos-consulting.ch/impressum.html</loc>
+        <loc>https://fos.ag/impressum.html</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://fos-consulting.ch/impressum.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://fos-consulting.ch/impressum.html?lang=en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://fos.ag/impressum.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fos.ag/impressum.html?lang=en" />
     </url>
     
     <!-- Datenschutz -->
     <url>
-        <loc>https://fos-consulting.ch/datenschutz.html</loc>
+        <loc>https://fos.ag/datenschutz.html</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://fos-consulting.ch/datenschutz.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://fos-consulting.ch/datenschutz.html?lang=en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://fos.ag/datenschutz.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fos.ag/datenschutz.html?lang=en" />
     </url>
     
     <!-- AGB -->
     <url>
-        <loc>https://fos-consulting.ch/agb.html</loc>
+        <loc>https://fos.ag/agb.html</loc>
         <lastmod>2024-01-15</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
-        <xhtml:link rel="alternate" hreflang="de" href="https://fos-consulting.ch/agb.html" />
-        <xhtml:link rel="alternate" hreflang="en" href="https://fos-consulting.ch/agb.html?lang=en" />
+        <xhtml:link rel="alternate" hreflang="de" href="https://fos.ag/agb.html" />
+        <xhtml:link rel="alternate" hreflang="en" href="https://fos.ag/agb.html?lang=en" />
     </url>
     
 </urlset> 

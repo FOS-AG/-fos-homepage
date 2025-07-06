@@ -4,47 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - Seite nicht gefunden | FOS – Focus on Solutions AG</title>
-    <meta name="description" content="Die angeforderte Seite wurde nicht gefunden. Zurück zur Startseite von FOS Consulting.">
+    <meta name="description" content="Die gesuchte Seite wurde nicht gefunden. Zurück zur Startseite von FOS AG.">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://fos.ag/404.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/logos/fos-icon-exklusiv.svg">
+    <link rel="apple-touch-icon" href="assets/logos/fos-icon-exklusiv.svg">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --primary-blue: #14213d;
-            --primary-gold: #C7A15A;
-            --background: #fff;
-            --text: #22223b;
-        }
-        
-        body { 
-            font-family: 'Inter', Arial, sans-serif; 
-            background: var(--background); 
-            color: var(--text);
-            margin: 0;
-            padding: 0;
+        .error-page {
             min-height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 50%, #C7A15A 100%);
+            padding: 2rem;
         }
         
-        .error-container {
+        .error-content {
             text-align: center;
             max-width: 600px;
-            padding: 2rem;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 2rem;
+            padding: 3rem;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
         }
         
         .error-code {
             font-size: 8rem;
             font-weight: 800;
-            color: var(--primary-gold);
+            color: var(--primary-blue);
             margin: 0;
             line-height: 1;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
         }
         
         .error-title {
             font-size: 2rem;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--primary-blue);
             margin: 1rem 0;
         }
@@ -52,117 +53,64 @@
         .error-message {
             font-size: 1.1rem;
             color: var(--text);
-            margin-bottom: 2rem;
+            margin: 1.5rem 0;
             line-height: 1.6;
-        }
-        
-        .error-suggestions {
-            background: rgba(199, 161, 90, 0.1);
-            border: 1px solid rgba(199, 161, 90, 0.2);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            text-align: left;
-        }
-        
-        .error-suggestions h3 {
-            color: var(--primary-gold);
-            margin: 0 0 1rem 0;
-            font-size: 1.1rem;
-        }
-        
-        .error-suggestions ul {
-            margin: 0;
-            padding-left: 1.5rem;
-            line-height: 1.6;
-        }
-        
-        .error-suggestions li {
-            margin-bottom: 0.5rem;
         }
         
         .error-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            margin-top: 2rem;
         }
         
-        .error-btn {
-            padding: 0.875rem 1.5rem;
-            border: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .error-btn-primary {
-            background: var(--primary-gold);
+        .btn-primary {
+            display: inline-block;
+            background: var(--primary-blue);
             color: white;
+            padding: 1rem 2rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
         }
         
-        .error-btn-primary:hover {
-            background: #b8944a;
+        .btn-primary:hover {
+            background: #0f1a2e;
             transform: translateY(-2px);
         }
         
-        .error-btn-secondary {
+        .btn-secondary {
+            display: inline-block;
             background: transparent;
             color: var(--primary-blue);
+            padding: 1rem 2rem;
             border: 2px solid var(--primary-blue);
-        }
-        
-        .error-btn-secondary:hover {
-            background: var(--primary-blue);
-            color: white;
-        }
-        
-        .search-box {
-            margin: 2rem 0;
-            display: flex;
-            gap: 0.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        
-        .search-input {
-            padding: 0.75rem 1rem;
-            border: 2px solid #e5e7eb;
-            border-radius: 8px;
-            font-size: 1rem;
-            min-width: 250px;
-            transition: border-color 0.3s ease;
-        }
-        
-        .search-input:focus {
-            outline: none;
-            border-color: var(--primary-gold);
-        }
-        
-        .search-btn {
-            padding: 0.75rem 1.5rem;
-            background: var(--primary-blue);
-            color: white;
-            border: none;
-            border-radius: 8px;
+            border-radius: 0.5rem;
+            text-decoration: none;
             font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s ease;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
         }
         
-        .search-btn:hover {
-            background: #0f1a2e;
+        .btn-secondary:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+        
+        .logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 2rem;
+        }
+        
+        .auto-redirect {
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #666;
         }
         
         @media (max-width: 768px) {
-            .error-container {
-                padding: 1rem;
+            .error-content {
+                padding: 2rem;
             }
             
             .error-code {
@@ -172,141 +120,55 @@
             .error-title {
                 font-size: 1.5rem;
             }
-            
-            .error-actions {
-                flex-direction: column;
-            }
-            
-            .error-btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .search-box {
-                flex-direction: column;
-            }
-            
-            .search-input {
-                min-width: auto;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="error-container">
-        <h1 class="error-code">404</h1>
-        <h2 class="error-title">Seite nicht gefunden</h2>
-        <p class="error-message">
-            Entschuldigung, die angeforderte Seite existiert nicht oder wurde verschoben. 
-            Möglicherweise haben Sie einen veralteten Link verwendet oder die URL wurde falsch eingegeben.
-        </p>
-        
-        <div class="error-suggestions">
-            <h3>Was können Sie tun?</h3>
-            <ul>
-                <li>Überprüfen Sie die URL auf Tippfehler</li>
-                <li>Gehen Sie zurück zur <a href="/" style="color: var(--primary-gold);">Startseite</a></li>
-                <li>Nutzen Sie die Navigation oben auf der Seite</li>
-                <li>Kontaktieren Sie uns, falls Sie Hilfe benötigen</li>
-            </ul>
-        </div>
-        
-        <div class="search-box">
-            <input type="text" class="search-input" id="searchInput" placeholder="Suchen Sie nach einer Seite...">
-            <button class="search-btn" onclick="searchPages()">Suchen</button>
-        </div>
-        
-        <div class="error-actions">
-            <a href="/" class="error-btn error-btn-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
-                    <polyline points="9,22 9,12 15,12 15,22"/>
-                </svg>
-                Zur Startseite
-            </a>
+    <div class="error-page">
+        <div class="error-content">
+            <img src="assets/logos/fos-logo-big-o-consulting-blue.svg" alt="FOS AG Logo" class="logo">
             
-            <a href="/contact.html" class="error-btn error-btn-secondary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                    <polyline points="22,6 12,13 2,6"/>
-                </svg>
-                Kontakt
-            </a>
+            <h1 class="error-code">404</h1>
+            <h2 class="error-title">Seite nicht gefunden</h2>
+            
+            <p class="error-message">
+                Die gesuchte Seite existiert leider nicht oder wurde verschoben. 
+                Möglicherweise haben Sie einen veralteten Link verwendet oder sich bei der Eingabe der URL vertippt.
+            </p>
+            
+            <div class="error-actions">
+                <a href="https://fos.ag/" class="btn-primary">Zur Startseite</a>
+                <a href="https://fos.ag/contact.html" class="btn-secondary">Kontakt aufnehmen</a>
+            </div>
+            
+            <div class="auto-redirect">
+                <p>Sie werden automatisch in <span id="countdown">10</span> Sekunden zur Startseite weitergeleitet.</p>
+            </div>
         </div>
     </div>
 
     <script>
-        // Available pages for search
-        const availablePages = [
-            { url: '/', title: 'Startseite', keywords: 'home, start, main' },
-            { url: '/about.html', title: 'Über uns', keywords: 'about, company, team' },
-            { url: '/services.html', title: 'Leistungen', keywords: 'services, consulting, solutions' },
-            { url: '/team.html', title: 'Team', keywords: 'team, members, experts' },
-            { url: '/contact.html', title: 'Kontakt', keywords: 'contact, email, phone' },
-            { url: '/coaching.html', title: 'Coaching', keywords: 'coaching, training, development' },
-            { url: '/strategy.html', title: 'Strategieberatung', keywords: 'strategy, planning, consulting' },
-            { url: '/diagnostics.html', title: 'Diagnostik', keywords: 'diagnostics, analysis, assessment' },
-            { url: '/special-formats.html', title: 'Spezialformate', keywords: 'special, formats, workshops' },
-            { url: '/publications.html', title: 'Publikationen', keywords: 'publications, articles, research' },
-            { url: '/login.html', title: 'Login', keywords: 'login, access, portal' },
-            { url: '/impressum.html', title: 'Impressum', keywords: 'legal, imprint, company info' },
-            { url: '/datenschutz.html', title: 'Datenschutz', keywords: 'privacy, data protection' },
-            { url: '/agb.html', title: 'AGB', keywords: 'terms, conditions, legal' }
-        ];
-
-        function searchPages() {
-            const searchInput = document.getElementById('searchInput');
-            const query = searchInput.value.toLowerCase().trim();
+        // Countdown für automatische Weiterleitung
+        let countdown = 10;
+        const countdownElement = document.getElementById('countdown');
+        
+        const timer = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
             
-            if (!query) {
-                alert('Bitte geben Sie einen Suchbegriff ein.');
-                return;
+            if (countdown <= 0) {
+                clearInterval(timer);
+                window.location.href = 'https://fos.ag/';
             }
-
-            const results = availablePages.filter(page => 
-                page.title.toLowerCase().includes(query) ||
-                page.keywords.toLowerCase().includes(query) ||
-                page.url.toLowerCase().includes(query)
-            );
-
-            if (results.length === 0) {
-                alert('Keine passenden Seiten gefunden. Versuchen Sie einen anderen Suchbegriff.');
-                return;
-            }
-
-            if (results.length === 1) {
-                window.location.href = results[0].url;
-            } else {
-                const resultList = results.map(page => `${page.title} (${page.url})`).join('\n');
-                const choice = prompt(`Gefundene Seiten:\n${resultList}\n\nGeben Sie die gewünschte URL ein:`);
-                if (choice) {
-                    const selectedPage = availablePages.find(page => page.url === choice);
-                    if (selectedPage) {
-                        window.location.href = selectedPage.url;
-                    } else {
-                        alert('Ungültige Auswahl.');
-                    }
-                }
-            }
-        }
-
-        // Allow Enter key to trigger search
-        document.getElementById('searchInput').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                searchPages();
-            }
-        });
-
-        // Track 404 errors for analytics
-        if (window.fosAnalytics) {
-            window.fosAnalytics.trackCustomEvent('404_error', {
-                page: window.location.pathname,
-                referrer: document.referrer
+        }, 1000);
+        
+        // Analytics Event für 404-Fehler
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                page_title: '404 - Seite nicht gefunden',
+                page_location: window.location.href
             });
         }
-
-        // Auto-focus search input
-        document.getElementById('searchInput').focus();
     </script>
 </body>
 </html> 

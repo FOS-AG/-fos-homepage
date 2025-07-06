@@ -99,7 +99,7 @@
   "bugs": {
     "url": "https://github.com/fos-consulting/website/issues"
   },
-  "homepage": "https://fos-consulting.ch",
+  "homepage": "https://fos.ag",
   "config": {
     "unsafe-perm": true
   },
