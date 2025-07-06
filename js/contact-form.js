@@ -269,4 +269,234 @@ document.addEventListener('DOMContentLoaded', function() {
 // Export for use in other scripts
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = { FOSContactForm };
+}
+
+// Contact Form and FAB Menu Handler for FOS Website
+class ContactHandler {
+    constructor() {
+        this.init();
+    }
+
+    init() {
+        this.setupFABMenu();
+        this.setupNewsletterForm();
+        this.setupContactForms();
+    }
+
+    setupFABMenu() {
+        const fabContainer = document.getElementById('fabContainer');
+        const fabMainBtn = document.getElementById('fabMainBtn');
+        
+        if (fabMainBtn) {
+            fabMainBtn.addEventListener('click', () => this.toggleFabMenu());
+        }
+
+        // Setup contact buttons
+        const whatsappBtn = document.querySelector('[onclick*="openWhatsApp"]');
+        const emailBtn = document.querySelector('[onclick*="openEmail"]');
+        const telegramBtn = document.querySelector('[onclick*="openTelegram"]');
+
+        if (whatsappBtn) {
+            whatsappBtn.onclick = () => this.openWhatsApp();
+        }
+        if (emailBtn) {
+            emailBtn.onclick = () => this.openEmail();
+        }
+        if (telegramBtn) {
+            telegramBtn.onclick = () => this.openTelegram();
+        }
+    }
+
+    toggleFabMenu() {
+        const fabContainer = document.getElementById('fabContainer');
+        const fabMainBtn = document.getElementById('fabMainBtn');
+        
+        if (fabContainer) {
+            const isOpen = fabContainer.classList.contains('open');
+            fabContainer.classList.toggle('open');
+            
+            if (fabMainBtn) {
+                fabMainBtn.setAttribute('aria-expanded', !isOpen);
+            }
+        }
+    }
+
+    openWhatsApp() {
+        const phone = '+41783007446'; // FOS phone number
+        const currentLang = window.languageSwitcher ? window.languageSwitcher.getCurrentLanguage() : 'de';
+        let message = currentLang === 'de'
+            ? 'Hallo FOS Team, ich interessiere mich für Ihre evidenzbasierte, psychologisch fundierte Beratung.'
+            : 'Hello FOS Team, I am interested in your evidence-based, psychologically grounded consulting.';
+        
+        window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+        this.toggleFabMenu();
+    }
+
+    openEmail() {
+        const currentLang = window.languageSwitcher ? window.languageSwitcher.getCurrentLanguage() : 'de';
+        let subject = currentLang === 'de' ? 'Anfrage evidenzbasierte Beratung' : 'Evidence-based Consulting Inquiry';
+        let body = currentLang === 'de'
+            ? 'Sehr geehrtes FOS Team,%0D%0A%0D%0Aich interessiere mich für Ihre evidenzbasierte, psychologisch fundierte Beratung.%0D%0A%0D%0AMit freundlichen Grüßen'
+            : 'Dear FOS Team,%0D%0A%0D%0AI am interested in your evidence-based, psychologically grounded consulting.%0D%0A%0D%0ABest regards';
+        
+        window.open(`mailto:info@fos.ag?subject=${subject}&body=${body}`);
+        this.toggleFabMenu();
+    }
+
+    openTelegram() {
+        const phone = '+41783007446'; // FOS phone number
+        const currentLang = window.languageSwitcher ? window.languageSwitcher.getCurrentLanguage() : 'de';
+        let message = currentLang === 'de'
+            ? 'Hallo FOS Team, ich interessiere mich für Ihre evidenzbasierte, psychologisch fundierte Beratung.'
+            : 'Hello FOS Team, I am interested in your evidence-based, psychologically grounded consulting.';
+        
+        window.open(`https://t.me/${phone}?text=${encodeURIComponent(message)}`, '_blank');
+        this.toggleFabMenu();
+    }
+
+    setupNewsletterForm() {
+        const newsletterForm = document.querySelector('.newsletter-form');
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => this.handleNewsletterSubmit(e));
+        }
+    }
+
+    handleNewsletterSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        const emailInput = form.querySelector('input[type="email"]');
+        const email = emailInput.value.trim();
+        
+        // Simple validation
+        if (!this.isValidEmail(email)) {
+            this.showMessage('Bitte geben Sie eine gültige E-Mail-Adresse ein.', 'error');
+            return;
+        }
+        
+        // Here you would typically send the data to your server
+        // For now, we'll just show a success message
+        const currentLang = window.languageSwitcher ? window.languageSwitcher.getCurrentLanguage() : 'de';
+        const message = currentLang === 'de' 
+            ? 'Vielen Dank für Ihre Anmeldung! Sie erhalten in Kürze eine Bestätigungs-E-Mail.'
+            : 'Thank you for subscribing! You will receive a confirmation email shortly.';
+        
+        this.showMessage(message, 'success');
+        form.reset();
+    }
+
+    setupContactForms() {
+        const contactForms = document.querySelectorAll('form[data-contact-form]');
+        contactForms.forEach(form => {
+            form.addEventListener('submit', (e) => this.handleContactSubmit(e));
+        });
+    }
+
+    handleContactSubmit(e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+        
+        // Validate required fields
+        const requiredFields = form.querySelectorAll('[required]');
+        let isValid = true;
+        
+        requiredFields.forEach(field => {
+            if (!field.value.trim()) {
+                isValid = false;
+                field.classList.add('error');
+            } else {
+                field.classList.remove('error');
+            }
+        });
+        
+        if (!isValid) {
+            const currentLang = window.languageSwitcher ? window.languageSwitcher.getCurrentLanguage() : 'de';
+            const message = currentLang === 'de' 
+                ? 'Bitte füllen Sie alle Pflichtfelder aus.'
+                : 'Please fill in all required fields.';
+            this.showMessage(message, 'error');
+            return;
+        }
+        
+        // Here you would typically send the data to your server
+        // For now, we'll just show a success message
+        const currentLang = window.languageSwitcher ? window.languageSwitcher.getCurrentLanguage() : 'de';
+        const message = currentLang === 'de' 
+            ? 'Vielen Dank für Ihre Nachricht! Wir werden uns in Kürze bei Ihnen melden.'
+            : 'Thank you for your message! We will get back to you soon.';
+        
+        this.showMessage(message, 'success');
+        form.reset();
+    }
+
+    isValidEmail(email) {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailRegex.test(email);
+    }
+
+    showMessage(message, type = 'info') {
+        // Create message element
+        const messageEl = document.createElement('div');
+        messageEl.className = `message message-${type}`;
+        messageEl.textContent = message;
+        
+        // Style the message
+        messageEl.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            color: white;
+            font-weight: 500;
+            z-index: 10000;
+            max-width: 400px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        `;
+        
+        // Set background color based on type
+        switch (type) {
+            case 'success':
+                messageEl.style.background = '#10b981';
+                break;
+            case 'error':
+                messageEl.style.background = '#ef4444';
+                break;
+            case 'warning':
+                messageEl.style.background = '#f59e0b';
+                break;
+            default:
+                messageEl.style.background = '#3b82f6';
+        }
+        
+        // Add to page
+        document.body.appendChild(messageEl);
+        
+        // Animate in
+        setTimeout(() => {
+            messageEl.style.transform = 'translateX(0)';
+        }, 100);
+        
+        // Remove after 5 seconds
+        setTimeout(() => {
+            messageEl.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                if (messageEl.parentNode) {
+                    messageEl.parentNode.removeChild(messageEl);
+                }
+            }, 300);
+        }, 5000);
+    }
+}
+
+// Initialize contact handler when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    window.contactHandler = new ContactHandler();
+});
+
+// Export for use in other scripts
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = ContactHandler;
 } 

@@ -1,0 +1,132 @@
+{
+  "name": "FOS - Focus on Solutions AG",
+  "short_name": "FOS",
+  "description": "Evidenzbasierte, psychologisch fundierte Beratung für Unternehmen, Führungskräfte und Teams",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#14213d",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "de",
+  "dir": "ltr",
+  "categories": ["business", "productivity", "education"],
+  "icons": [
+    {
+      "src": "assets/logos/fos-icon-exklusiv.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "assets/logos/fos-icon-exklusiv.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/logos/fos-icon-exklusiv.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Kontakt",
+      "short_name": "Kontakt",
+      "description": "Kontaktieren Sie FOS",
+      "url": "/contact.html",
+      "icons": [
+        {
+          "src": "assets/icons/arrow-right.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Leistungen",
+      "short_name": "Leistungen",
+      "description": "Unsere Beratungsleistungen",
+      "url": "/services.html",
+      "icons": [
+        {
+          "src": "assets/icons/strategy.svg",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Coaching",
+      "short_name": "Coaching",
+      "description": "Executive & Business Coaching",
+      "url": "/coaching.html",
+      "icons": [
+        {
+          "src": "assets/icons/coaching.svg",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/images/screenshot-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "FOS Homepage - Desktop Ansicht"
+    },
+    {
+      "src": "assets/images/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "FOS Homepage - Mobile Ansicht"
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  "handle_links": "preferred",
+  "protocol_handlers": [
+    {
+      "protocol": "mailto",
+      "url": "/contact.html?email=%s"
+    },
+    {
+      "protocol": "tel",
+      "url": "/contact.html?phone=%s"
+    }
+  ],
+  "file_handlers": [
+    {
+      "action": "/contact.html",
+      "accept": {
+        "application/pdf": [".pdf"],
+        "text/plain": [".txt"]
+      }
+    }
+  ],
+  "share_target": {
+    "action": "/contact.html",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url",
+      "files": [
+        {
+          "name": "files",
+          "accept": ["image/*", "application/pdf"]
+        }
+      ]
+    }
+  }
+} 

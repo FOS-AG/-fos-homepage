@@ -35,6 +35,8 @@
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/logos/fos-icon-exklusiv.svg">
     <link rel="apple-touch-icon" href="assets/logos/fos-icon-exklusiv.svg">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#14213d">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
@@ -137,458 +139,7 @@
     }
     </script>
     
-    <style>
-        :root {
-            --primary-blue: #14213d;
-            --primary-gold: #C7A15A;
-            --background: #fff;
-            --white: #fff;
-            --glass: rgba(255,255,255,0.95);
-            --glass-blur: blur(20px);
-            --medium-gray: #e5e7eb;
-            --text: #22223b;
-            --gradient-primary: linear-gradient(135deg, #fff 0%, #f8f9fa 50%, #C7A15A 100%);
-            --gradient-hero: linear-gradient(135deg, #fff 0%, #f8f9fa 30%, #C7A15A 70%, #b8944a 100%);
-        }
-        
-        body { 
-            font-family: 'Inter', Arial, sans-serif; 
-            background: var(--background); 
-            color: var(--text);
-            overflow-x: hidden;
-        }
-        
-        /* Professional Hero Section with Smooth Transitions */
-        .hero {
-            background: var(--gradient-hero);
-            color: var(--primary-blue);
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            padding: 8rem 2rem 6rem;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23C7A15A" opacity="0.05"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
-            opacity: 0.6;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: linear-gradient(to top, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-            z-index: 1;
-        }
-        
-        .hero-glass {
-            background: var(--glass);
-            backdrop-filter: var(--glass-blur);
-            -webkit-backdrop-filter: var(--glass-blur);
-            border-radius: 2rem;
-            padding: 4rem 3rem;
-            max-width: 800px;
-            margin: 0 auto;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
-            text-align: center;
-            animation: fadeInUp 1.5s ease-out;
-            position: relative;
-            z-index: 2;
-            border: 1px solid rgba(255,255,255,0.2);
-        }
-        
-        .hero-title { 
-            font-size: 3.5rem; 
-            font-weight: 800; 
-            margin-bottom: 1.5rem; 
-            letter-spacing: -2px; 
-            color: var(--primary-gold);
-            line-height: 1.1;
-        }
-        
-        .hero-title .highlight { 
-            color: var(--primary-blue);
-            position: relative;
-        }
-        
-        .hero-title .highlight::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: var(--primary-gold);
-            border-radius: 2px;
-        }
-        
-        .hero-subtitle { 
-            font-size: 1.4rem; 
-            font-weight: 400; 
-            margin-bottom: 3rem; 
-            color: var(--primary-blue);
-            line-height: 1.6;
-            opacity: 0.9;
-        }
-        
-        .cta-btn {
-            background: var(--primary-gold);
-            color: var(--white);
-            border: none;
-            border-radius: 3rem;
-            padding: 1.2rem 3rem;
-            font-size: 1.2rem;
-            font-weight: 700;
-            cursor: pointer;
-            box-shadow: 0 8px 32px rgba(199,161,90,0.3);
-            transition: all 0.3s ease;
-            text-decoration: none;
-            display: inline-block;
-            position: relative;
-            overflow: hidden;
-            /* Accessibility: Better contrast */
-            background: #b8944a;
-            color: #ffffff;
-        }
-        
-        .cta-btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .cta-btn:hover::before {
-            left: 100%;
-        }
-        
-        .cta-btn:hover { 
-            background: #a67c3a; 
-            color: var(--white);
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(199,161,90,0.4);
-        }
-        
-        /* Accessibility: Focus states */
-        .cta-btn:focus {
-            outline: 3px solid #14213d;
-            outline-offset: 2px;
-        }
-        
-        /* Accessibility: Skip link */
-        .skip-link {
-            position: absolute;
-            top: -40px;
-            left: 6px;
-            background: #14213d;
-            color: white;
-            padding: 8px;
-            text-decoration: none;
-            border-radius: 4px;
-            z-index: 1001;
-        }
-        
-        .skip-link:focus {
-            top: 6px;
-        }
-        
-        /* Professional Clients Section with Animation */
-        .clients {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 3rem;
-            margin: 4rem 0 2rem 0;
-            flex-wrap: wrap;
-            padding: 2rem;
-            background: rgba(255,255,255,0.8);
-            border-radius: 1rem;
-            backdrop-filter: blur(10px);
-            position: relative;
-            z-index: 2;
-            overflow: hidden;
-            min-height: 80px;
-        }
-        
-        .clients-container {
-            display: flex;
-            gap: 3rem;
-            /* animation: slideLogos 30s linear infinite; */
-            width: max-content;
-            align-items: center;
-        }
-        
-        .client-logo {
-            height: 45px; 
-            opacity: 0.7; 
-            filter: grayscale(1); 
-            transition: all 0.3s ease;
-            flex-shrink: 0;
-            display: block;
-            loading: lazy;
-        }
-        
-        .client-logo:hover { 
-            opacity: 1; 
-            filter: none;
-            transform: scale(1.1);
-        }
-        
-        @keyframes slideLogos {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-        
-        .clients:hover .clients-container {
-            animation-play-state: paused;
-        }
-        
-        /* Professional Features Section */
-        .section {
-            padding: 6rem 2rem;
-            position: relative;
-            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
-        }
-        
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
-        }
-        
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2.5rem;
-            margin: 4rem 0;
-        }
-        
-        .feature-card {
-            background: var(--white);
-            border-radius: 1.5rem;
-            box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-            padding: 3rem 2rem 2rem 2rem;
-            text-align: left;
-            position: relative;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(199,161,90,0.1);
-            overflow: hidden;
-        }
-        
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-gold), #b8944a);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .feature-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .feature-card:hover { 
-            transform: translateY(-10px) scale(1.02); 
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-        
-        .feature-icon {
-            width: 60px; 
-            height: 60px; 
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--primary-gold), #b8944a);
-            border-radius: 1rem;
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
-            box-shadow: 0 8px 24px rgba(199,161,90,0.2);
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 12px 32px rgba(199,161,90,0.3);
-        }
-        
-        .feature-icon img {
-            width: 32px;
-            height: 32px;
-            filter: brightness(0) invert(1);
-        }
-        
-        .feature-title { 
-            font-size: 1.3rem; 
-            font-weight: 700; 
-            color: var(--primary-gold); 
-            margin-bottom: 1rem;
-            line-height: 1.3;
-        }
-        
-        .feature-desc { 
-            color: var(--primary-blue); 
-            font-size: 1.05rem;
-            line-height: 1.6;
-            opacity: 0.9;
-        }
-        
-        /* Smooth Animations */
-        @keyframes fadeInUp { 
-            from { 
-                opacity: 0; 
-                transform: translateY(60px);
-            } 
-            to { 
-                opacity: 1; 
-                transform: none; 
-            } 
-        }
-        
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes slideInRight {
-            from {
-                opacity: 0;
-                transform: translateX(50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .hero-title { 
-                font-size: 2.5rem; 
-                letter-spacing: -1px;
-            }
-            .hero-subtitle {
-                font-size: 1.2rem;
-            }
-            .hero-glass { 
-                padding: 3rem 2rem; 
-                margin: 2rem 1rem;
-            }
-            .features-grid { 
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-            .clients {
-                gap: 2rem;
-                padding: 1.5rem;
-            }
-            .clients img {
-                height: 35px;
-            }
-            .testimonials-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-            .newsletter-form {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .newsletter-form input {
-                min-width: 100%;
-            }
-            .eduqua-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-title { 
-                font-size: 2rem; 
-            }
-            .hero-subtitle {
-                font-size: 1.1rem;
-            }
-            .hero-glass { 
-                padding: 2rem 1.5rem; 
-            }
-            .cta-btn {
-                padding: 1rem 2rem;
-                font-size: 1.1rem;
-            }
-            .testimonial-card {
-                padding: 2rem 1.5rem;
-            }
-            .eduqua-item {
-                padding: 1.5rem;
-            }
-        }
-        
-        /* Touch Device Optimizations */
-        @media (hover: none) and (pointer: coarse) {
-            .cta-btn:hover {
-                transform: none;
-            }
-            .feature-card:hover {
-                transform: none;
-            }
-            .nav-links a:hover::after {
-                width: 0;
-            }
-            .language-btn:hover {
-                background: transparent;
-            }
-            .nav-links a {
-                padding: 0.5rem 0;
-            }
-            .language-btn {
-                min-width: 50px;
-                padding: 0.75rem 1rem;
-            }
-            .mobile-menu-btn {
-                padding: 0.5rem;
-            }
-        }
-    </style>
+
 </head>
 <body>
     <!-- Skip Link for Accessibility -->
@@ -638,10 +189,12 @@
     <!-- EDUQUA Quality Assurance Section -->
     <section class="eduqua-section" style="background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%); padding: 4rem 2rem; text-align: center;">
         <div class="container">
-            <div class="eduqua-badge" style="display: inline-block; background: linear-gradient(135deg, #C7A15A, #b8944a); color: white; padding: 1rem 2rem; border-radius: 2rem; margin-bottom: 2rem; box-shadow: 0 8px 32px rgba(199,161,90,0.3);">
-                <h3 style="margin: 0; font-size: 1.2rem; font-weight: 700;">🎓 EDUQUA-Zertifiziert</h3>
-                <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.9;">Schweizer Qualitätsstandard für Weiterbildung</p>
-            </div>
+            <a href="eduqua.html" style="text-decoration: none; color: inherit;">
+                <div class="eduqua-badge" style="display: inline-block; background: linear-gradient(135deg, #C7A15A, #b8944a); color: white; padding: 1rem 2rem; border-radius: 2rem; margin-bottom: 2rem; box-shadow: 0 8px 32px rgba(199,161,90,0.3); transition: all 0.3s ease; cursor: pointer;">
+                    <h3 style="margin: 0; font-size: 1.2rem; font-weight: 700;">🎓 EDUQUA-Zertifiziert</h3>
+                    <p style="margin: 0.5rem 0 0 0; font-size: 0.9rem; opacity: 0.9;">Schweizer Qualitätsstandard für Weiterbildung</p>
+                </div>
+            </a>
             <div class="eduqua-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin-top: 3rem;">
                 <div class="eduqua-item" style="background: white; padding: 2rem; border-radius: 1rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08); border: 1px solid rgba(199,161,90,0.1);">
                     <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 1rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; box-shadow: 0 8px 24px rgba(199,161,90,0.2);">
@@ -761,39 +314,45 @@
                 <p class="section-subtitle lang-en" style="display:none; color: rgba(255,255,255,0.8);">Success stories from executives and companies who have achieved sustainable improvements with FOS</p>
             </div>
             <div class="testimonials-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem;">
+                <!-- Testimonial 1 -->
                 <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
                     <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS hat uns dabei geholfen, unsere Führungskultur grundlegend zu verändern. Die evidenzbasierten Methoden und die professionelle Begleitung haben zu messbaren Verbesserungen in der Teamperformance geführt."</p>
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS hat uns dabei geholfen, unsere Führungskultur grundlegend zu verändern. Die evidenzbasierten Methoden und die professionelle Begleitung haben zu messbaren Verbesserungen in der Teamperformance geführt."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"FOS helped us fundamentally transform our leadership culture. The evidence-based methods and professional support led to measurable improvements in our team's performance."</p>
                     </div>
                     <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
                         <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">M</div>
                         <div class="author-info">
-                            <h4 style="color: #C7A15A; margin-bottom: 0.25rem;">Dr. Michael Weber</h4>
-                            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">CEO, TechCorp AG</p>
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Geschäftsleitung, Industrieunternehmen</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Executive Management, Industrial Company</h4>
                         </div>
                     </div>
                 </div>
+                <!-- Testimonial 2 -->
                 <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
                     <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Das Executive Coaching mit FOS hat mir neue Perspektiven eröffnet. Die wissenschaftlich fundierten Ansätze haben mir geholfen, meine Führungsqualitäten zu entwickeln und bessere Entscheidungen zu treffen."</p>
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Das Executive Coaching mit FOS hat mir neue Perspektiven eröffnet. Die wissenschaftlich fundierten Ansätze haben mir geholfen, meine Führungsqualitäten zu entwickeln und bessere Entscheidungen zu treffen."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Executive coaching with FOS opened up new perspectives for me. The scientifically grounded approaches helped me develop my leadership skills and make better decisions."</p>
                     </div>
                     <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
                         <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">S</div>
                         <div class="author-info">
-                            <h4 style="color: #C7A15A; margin-bottom: 0.25rem;">Sarah Müller</h4>
-                            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">Head of Operations, SwissBank</p>
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">Leitung Operations, Schweizer Bank</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">Head of Operations, Swiss Bank</h4>
                         </div>
                     </div>
                 </div>
+                <!-- Testimonial 3 -->
                 <div class="testimonial-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 2.5rem; border-radius: 1.5rem; border: 1px solid rgba(199,161,90,0.2);">
                     <div class="testimonial-content" style="margin-bottom: 2rem;">
-                        <p style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Potenzialanalyse hat uns geholfen, die richtigen Talente zu identifizieren und zu fördern. Die Ergebnisse waren präzise und haben uns bei der Nachfolgeplanung entscheidend unterstützt."</p>
+                        <p class="lang-de" style="font-style: italic; line-height: 1.7; font-size: 1.1rem;">"Die Potenzialanalyse hat uns geholfen, die richtigen Talente zu identifizieren und zu fördern. Die Ergebnisse waren präzise und haben uns bei der Nachfolgeplanung entscheidend unterstützt."</p>
+                        <p class="lang-en" style="display:none; font-style: italic; line-height: 1.7; font-size: 1.1rem;">"The potential analysis helped us identify and promote the right talents. The results were precise and provided crucial support for our succession planning."</p>
                     </div>
                     <div class="testimonial-author" style="display: flex; align-items: center; gap: 1rem;">
                         <div class="author-avatar" style="width: 60px; height: 60px; background: linear-gradient(135deg, #C7A15A, #b8944a); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.2rem;">T</div>
                         <div class="author-info">
-                            <h4 style="color: #C7A15A; margin-bottom: 0.25rem;">Thomas Schmidt</h4>
-                            <p style="color: rgba(255,255,255,0.7); font-size: 0.9rem;">HR Director, PharmaSwiss</p>
+                            <h4 class="lang-de" style="color: #C7A15A; margin-bottom: 0.25rem;">HR Director, Pharmaunternehmen</h4>
+                            <h4 class="lang-en" style="display:none; color: #C7A15A; margin-bottom: 0.25rem;">HR Director, Pharmaceutical Company</h4>
                         </div>
                     </div>
                 </div>
@@ -877,142 +436,25 @@
         </div>
     </footer>
 
+    <!-- JavaScript Files -->
+    <script src="js/language-switcher.js"></script>
+    <script src="js/contact-form.js"></script>
+    <script src="js/accessibility.js"></script>
+    <script src="js/performance.js"></script>
+    
+    <!-- Service Worker Registration -->
     <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-
-        // Language switcher
-        function switchLanguage(lang) {
-            const buttons = document.querySelectorAll('.language-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-            
-            // Show/hide language-specific content
-            const germanElements = document.querySelectorAll('.lang-de');
-            const englishElements = document.querySelectorAll('.lang-en');
-            
-            if (lang === 'de') {
-                germanElements.forEach(el => el.style.display = '');
-                englishElements.forEach(el => el.style.display = 'none');
-            } else {
-                germanElements.forEach(el => el.style.display = 'none');
-                englishElements.forEach(el => el.style.display = '');
-            }
-            
-            // Update navigation links
-            updateNavigationLanguage(lang);
-            
-            // Save language preference
-            localStorage.setItem('preferredLanguage', lang);
-        }
-
-        // Update navigation language
-        function updateNavigationLanguage(lang) {
-            const navLinks = document.querySelectorAll('[data-de][data-en]');
-            navLinks.forEach(link => {
-                if (lang === 'de') {
-                    link.textContent = link.getAttribute('data-de');
-                } else {
-                    link.textContent = link.getAttribute('data-en');
-                }
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('Service Worker registered successfully:', registration);
+                    })
+                    .catch(error => {
+                        console.log('Service Worker registration failed:', error);
+                    });
             });
         }
-
-        // Load saved language preference
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('preferredLanguage');
-            if (savedLang) {
-                switchLanguage(savedLang);
-                const buttons = document.querySelectorAll('.language-btn');
-                buttons.forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.textContent.toLowerCase() === savedLang) {
-                        btn.classList.add('active');
-                    }
-                });
-            } else {
-                // Initialize navigation with default language
-                updateNavigationLanguage('de');
-            }
-        });
-
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const navLinks = document.getElementById('nav-links');
-            navLinks.classList.toggle('mobile-active');
-        }
-
-        // FAB Kontaktmenü
-        const fabContainer = document.getElementById('fabContainer');
-        const fabMainBtn = document.getElementById('fabMainBtn');
-        
-        function toggleFabMenu() {
-            fabContainer.classList.toggle('open');
-        }
-        
-        function openWhatsApp() {
-            const phone = '+41441234567';
-            const currentLang = document.querySelector('.language-btn.active').textContent.toLowerCase();
-            let message = currentLang === 'de'
-                ? 'Hallo FOS Team, ich interessiere mich für Ihre evidenzbasierte, psychologisch fundierte Beratung.'
-                : 'Hello FOS Team, I am interested in your evidence-based, psychologically grounded consulting.';
-            window.open(`https://wa.me/${phone}?text=${encodeURIComponent(message)}`,'_blank');
-            fabContainer.classList.remove('open');
-        }
-        
-        function openEmail() {
-            const currentLang = document.querySelector('.language-btn.active').textContent.toLowerCase();
-            let subject = currentLang === 'de' ? 'Anfrage evidenzbasierte Beratung' : 'Evidence-based Consulting Inquiry';
-            let body = currentLang === 'de'
-                ? 'Sehr geehrtes FOS Team,%0D%0Aich interessiere mich für Ihre evidenzbasierte, psychologisch fundierte Beratung.'
-                : 'Dear FOS Team,%0D%0AI am interested in your evidence-based, psychologically grounded consulting.';
-            window.open(`mailto:info@fos-ag.ch?subject=${subject}&body=${body}`);
-            fabContainer.classList.remove('open');
-        }
-        
-        function openTelegram() {
-            const phone = '+41441234567';
-            const currentLang = document.querySelector('.language-btn.active').textContent.toLowerCase();
-            let message = currentLang === 'de'
-                ? 'Hallo FOS Team, ich interessiere mich für Ihre evidenzbasierte, psychologisch fundierte Beratung.'
-                : 'Hello FOS Team, I am interested in your evidence-based, psychologically grounded consulting.';
-            window.open(`https://t.me/${phone}?text=${encodeURIComponent(message)}`,'_blank');
-            fabContainer.classList.remove('open');
-        }
-
-        // Newsletter Form Handling
-        document.addEventListener('DOMContentLoaded', function() {
-            const newsletterForm = document.querySelector('.newsletter-form');
-            if (newsletterForm) {
-                newsletterForm.addEventListener('submit', function(e) {
-                    e.preventDefault();
-                    const email = this.querySelector('input[type="email"]').value;
-                    
-                    // Simple validation
-                    if (!email || !email.includes('@')) {
-                        alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
-                        return;
-                    }
-                    
-                    // Here you would typically send the data to your server
-                    // For now, we'll just show a success message
-                    const currentLang = document.querySelector('.language-btn.active').textContent.toLowerCase();
-                    const message = currentLang === 'de' 
-                        ? 'Vielen Dank für Ihre Anmeldung! Sie erhalten in Kürze eine Bestätigungs-E-Mail.'
-                        : 'Thank you for subscribing! You will receive a confirmation email shortly.';
-                    
-                    alert(message);
-                    this.reset();
-                });
-            }
-        });
     </script>
     </main>
 
