@@ -595,6 +595,17 @@
             window.open(`https://t.me/${username}?text=${encodeURIComponent(message)}`,'_blank');
             fabContainer.classList.remove('open');
         }
+
+        // Sofortige Sprachumschaltung: Verhindert FOUC
+        (function() {
+            var lang = localStorage.getItem('preferredLanguage');
+            if (lang && lang !== 'de') {
+                document.documentElement.lang = lang;
+                document.addEventListener('DOMContentLoaded', function() {
+                    if (typeof switchLanguage === 'function') switchLanguage(lang);
+                });
+            }
+        })();
     </script>
 </body>
 </html> 

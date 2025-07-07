@@ -561,6 +561,19 @@
         </div>
     </footer>
 
+    <!-- Sofortige Sprachumschaltung: Verhindert FOUC -->
+    <script>
+      (function() {
+        var lang = localStorage.getItem('preferredLanguage');
+        if (lang && lang !== 'de') {
+          document.documentElement.lang = lang;
+          document.addEventListener('DOMContentLoaded', function() {
+            if (typeof switchLanguage === 'function') switchLanguage(lang);
+          });
+        }
+      })();
+    </script>
+
     <script>
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
@@ -608,24 +621,6 @@
                 }
             });
         }
-
-        // Load saved language preference
-        document.addEventListener('DOMContentLoaded', function() {
-            const savedLang = localStorage.getItem('preferredLanguage');
-            if (savedLang) {
-                switchLanguage(savedLang);
-                const buttons = document.querySelectorAll('.language-btn');
-                buttons.forEach(btn => {
-                    btn.classList.remove('active');
-                    if (btn.textContent.toLowerCase() === savedLang) {
-                        btn.classList.add('active');
-                    }
-                });
-            } else {
-                // Initialize navigation with default language
-                updateNavigationLanguage('de');
-            }
-        });
 
         // Mobile menu toggle
         function toggleMobileMenu() {
