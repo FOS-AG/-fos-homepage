@@ -1,5 +1,15 @@
 /* FOS - Focus on Solutions AG - Modern Consulting Style */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* Inter Variable lokal eingebunden */
+@font-face {
+  font-family: 'Inter';
+  src: url('assets/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+body, html {
+  font-family: 'Inter', system-ui, sans-serif;
+}
 
 :root {
   /* Primary Colors */
