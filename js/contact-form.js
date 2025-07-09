@@ -15,7 +15,8 @@ class FOSContactForm {
     }
 
     setupEventListeners() {
-        this.form.addEventListener('submit', (e) => this.handleSubmit(e));
+        // Im Konstruktor und in setupEventListeners wird KEIN submit-Event mehr für das Kontaktformular registriert.
+        // this.form.addEventListener('submit', (e) => this.handleSubmit(e)); // entfernt
         
         // Real-time validation
         const inputs = this.form.querySelectorAll('input, textarea, select');
