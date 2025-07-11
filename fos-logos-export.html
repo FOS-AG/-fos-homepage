@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOS Logos Export</title>
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 0;
+        }
+        .logo-container {
+            margin: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        .logo-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #202345;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .logo-display {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .logo-white-bg {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #e0e0e0;
+        }
+        .logo-dark-bg {
+            background: #202345;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        .export-btn {
+            background: #C7A15A;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 10px;
+        }
+        .export-btn:hover {
+            background: #b8944a;
+        }
+        .instructions {
+            background: #e8f4fd;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #C7A15A;
+        }
+    </style>
+</head>
+<body>
+    <div class="instructions">
+        <h2>FOS Logos Export</h2>
+        <p><strong>Anleitung:</strong> Rechtsklick auf jedes Logo und wählen Sie "Bild speichern unter..." um es als PNG zu speichern.</p>
+    </div>
+
+    <!-- FOS Icon -->
+    <div class="logo-container">
+        <div class="logo-title">FOS Icon (Exklusiv)</div>
+        <div class="logo-display">
+            <div class="logo-white-bg">
+                <svg width="320" height="120" viewBox="0 0 320 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="30" y="85" font-family="Montserrat, Arial, sans-serif" font-size="80" font-weight="700" fill="#202345">F</text>
+                    <g>
+                        <circle cx="120" cy="60" r="36" fill="none" stroke="#C7A15A" stroke-width="4"/>
+                        <circle cx="120" cy="60" r="5" fill="#202345"/>
+                    </g>
+                    <text x="170" y="85" font-family="Montserrat, Arial, sans-serif" font-size="80" font-weight="700" fill="#202345">S</text>
+                </svg>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <button class="export-btn" onclick="exportLogo('fos-icon', 320, 120)">Als PNG exportieren</button>
+        </div>
+    </div>
+
+    <!-- FOS Logo Blau -->
+    <div class="logo-container">
+        <div class="logo-title">FOS Logo (Blau)</div>
+        <div class="logo-display">
+            <div class="logo-white-bg">
+                <svg width="340" height="180" viewBox="0 0 340 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="88" y="79" font-family="Montserrat, Arial, sans-serif" font-size="56" font-weight="700" fill="#202345" dominant-baseline="middle">F</text>
+                    <g>
+                        <circle cx="170" cy="74" r="28" fill="none" stroke="#C7A15A" stroke-width="5"/>
+                        <circle cx="170" cy="74" r="4.5" fill="#202345"/>
+                    </g>
+                    <text x="218" y="79" font-family="Montserrat, Arial, sans-serif" font-size="56" font-weight="700" fill="#202345" dominant-baseline="middle">S</text>
+                    <text x="170" y="130" font-family="Montserrat, Arial, sans-serif" font-size="22" font-weight="500" fill="#202345" text-anchor="middle">FocusOnSolutions AG</text>
+                    <text x="170" y="155" font-family="Montserrat, Arial, sans-serif" font-size="20" font-weight="600" fill="#C7A15A" text-anchor="middle" letter-spacing="2">– Consulting –</text>
+                </svg>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <button class="export-btn" onclick="exportLogo('fos-logo-blue', 340, 180)">Als PNG exportieren</button>
+        </div>
+    </div>
+
+    <!-- FOS Logo Weiß -->
+    <div class="logo-container">
+        <div class="logo-title">FOS Logo (Weiß)</div>
+        <div class="logo-display">
+            <div class="logo-dark-bg">
+                <svg width="340" height="180" viewBox="0 0 340 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <text x="88" y="81" font-family="Montserrat, Arial, sans-serif" font-size="56" font-weight="700" fill="#fff" dominant-baseline="middle">F</text>
+                    <g>
+                        <circle cx="170" cy="74" r="28" fill="none" stroke="#C7A15A" stroke-width="5"/>
+                        <circle cx="170" cy="74" r="4.5" fill="#fff"/>
+                    </g>
+                    <text x="218" y="81" font-family="Montserrat, Arial, sans-serif" font-size="56" font-weight="700" fill="#fff" dominant-baseline="middle">S</text>
+                    <text x="170" y="130" font-family="Montserrat, Arial, sans-serif" font-size="22" font-weight="500" fill="#fff" text-anchor="middle">FocusOnSolutions AG</text>
+                    <text x="170" y="155" font-family="Montserrat, Arial, sans-serif" font-size="20" font-weight="600" fill="#C7A15A" text-anchor="middle" letter-spacing="2">– Consulting –</text>
+                </svg>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <button class="export-btn" onclick="exportLogo('fos-logo-white', 340, 180)">Als PNG exportieren</button>
+        </div>
+    </div>
+
+    <script>
+        function exportLogo(logoId, width, height) {
+            const canvas = document.createElement('canvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = width;
+            canvas.height = height;
+            
+            // Finde das entsprechende SVG
+            let svgElement;
+            if (logoId === 'fos-icon') {
+                svgElement = document.querySelector('.logo-container:nth-child(2) svg');
+            } else if (logoId === 'fos-logo-blue') {
+                svgElement = document.querySelector('.logo-container:nth-child(3) svg');
+            } else if (logoId === 'fos-logo-white') {
+                svgElement = document.querySelector('.logo-container:nth-child(4) svg');
+            }
+            
+            if (svgElement) {
+                const svgData = new XMLSerializer().serializeToString(svgElement);
+                const img = new Image();
+                
+                img.onload = function() {
+                    // Setze Hintergrund basierend auf Logo-Typ
+                    if (logoId === 'fos-logo-white') {
+                        ctx.fillStyle = '#202345';
+                        ctx.fillRect(0, 0, width, height);
+                    } else {
+                        ctx.fillStyle = 'white';
+                        ctx.fillRect(0, 0, width, height);
+                    }
+                    
+                    ctx.drawImage(img, 0, 0);
+                    
+                    // Erstelle Download-Link
+                    const link = document.createElement('a');
+                    link.download = `${logoId}.png`;
+                    link.href = canvas.toDataURL('image/png');
+                    link.click();
+                };
+                
+                const svgBlob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+                const url = URL.createObjectURL(svgBlob);
+                img.src = url;
+            }
+        }
+    </script>
+</body>
+</html> 

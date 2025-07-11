@@ -1,25 +1,25 @@
-/* FOS - Focus on Solutions AG - Modern Consulting Style */
-/* Inter Variable lokal eingebunden */
+/* FOS AG - FocusOnSolutions AG - Corporate Identity Style */
+/* Montserrat Variable lokal eingebunden */
 @font-face {
-  font-family: 'Inter';
+  font-family: 'Montserrat';
   src: url('assets/fonts/Inter-VariableFont_slnt,wght.ttf') format('truetype');
   font-weight: 100 900;
   font-display: swap;
 }
 
 body, html {
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Montserrat', system-ui, sans-serif;
 }
 
 :root {
-  /* Primary Colors */
-  --primary-blue: #14213d;
-  --primary-gold: #C7A15A;
-  --primary-white: #ffffff;
+  /* Primary Colors - FOS CI Leitfaden */
+  --primary-blue: #202345;  /* FOS Blau */
+  --primary-gold: #C7A15A;  /* FOS Gold */
+  --primary-white: #ffffff;  /* Weiß */
   
   /* Secondary Colors */
   --light-gray: #f7fafc;
-  --medium-gray: #4a5568;
+  --medium-gray: #6B7280;   /* Grau aus CI-Leitfaden */
   --dark-gray: #2d3748;
   
   /* Accent Colors */
@@ -33,21 +33,28 @@ body, html {
   --gradient-gold: linear-gradient(135deg, var(--primary-gold) 0%, var(--gold-dark) 100%);
   --gradient-hero: linear-gradient(135deg, #fff 0%, #f8f9fa 30%, #C7A15A 70%, #b8944a 100%);
   
-  /* Shadows */
-  --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Shadows - CI-Leitfaden */
+  --shadow-light: 0 4px 12px rgba(0,0,0,0.1);
   --shadow-medium: 0 10px 25px rgba(0, 0, 0, 0.15);
   --shadow-heavy: 0 20px 40px rgba(0, 0, 0, 0.2);
+  --shadow-gold: 0 4px 16px rgba(199,161,90,0.3);
   
-  /* Typography */
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-heading: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  /* Typography - CI-Leitfaden */
+  --font-primary: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-heading: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   
   /* Additional Variables */
   --background: #fff;
   --white: #fff;
   --glass: rgba(255,255,255,0.95);
   --glass-blur: blur(20px);
-  --text: #22223b;
+  --text: #202345;
+  
+  /* Spacing - CI-Leitfaden */
+  --spacing-base: 1rem;
+  --spacing-container: 2rem;
+  --spacing-section: 4rem;
+  --spacing-element: 1.5rem;
 }
 
 * {
@@ -59,7 +66,7 @@ body, html {
 body {
   font-family: var(--font-primary);
   line-height: 1.6;
-  color: var(--dark-gray);
+  color: var(--text);
   background-color: var(--primary-white);
   overflow-x: hidden;
 }
@@ -72,7 +79,7 @@ body {
   background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(214, 158, 46, 0.2);
+  border-bottom: 1px solid rgba(199, 161, 90, 0.2);
   z-index: 1000;
   transition: all 0.3s ease;
   padding: 1rem 0;
@@ -86,7 +93,7 @@ body {
 .nav-container {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 var(--spacing-container);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -146,7 +153,7 @@ body {
   background: var(--light-gray);
   padding: 0.25rem;
   border-radius: 12px;
-  border: 1px solid rgba(214, 158, 46, 0.2);
+  border: 1px solid rgba(199, 161, 90, 0.2);
 }
 
 .language-btn {
@@ -169,7 +176,7 @@ body {
 }
 
 .language-btn:hover:not(.active) {
-  background: rgba(214, 158, 46, 0.1);
+  background: rgba(199, 161, 90, 0.1);
   color: var(--primary-blue);
 }
 
@@ -242,10 +249,10 @@ body {
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
   border-radius: 2rem;
-  padding: 4rem 3rem;
+  padding: var(--spacing-section) var(--spacing-container);
   max-width: 800px;
   margin: 0 auto;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-medium);
   text-align: center;
   animation: fadeInUp 1.5s ease-out;
   position: relative;
@@ -254,24 +261,24 @@ body {
 }
 
 .hero-title { 
-  font-size: 3.5rem; 
-  font-weight: 800; 
-  margin-bottom: 1.5rem; 
-  letter-spacing: -2px; 
-  color: var(--primary-gold);
-  line-height: 1.1;
+  font-size: 2.5rem; /* H1: 2.5rem (40px) - Bold (700) */
+  font-weight: 700; 
+  margin-bottom: var(--spacing-element); 
+  letter-spacing: -1px; 
+  color: var(--primary-blue);
+  line-height: 1.2;
 }
 
 .hero-title .highlight { 
-  color: var(--primary-blue);
+  color: var(--primary-gold);
   position: relative;
 }
 
 .hero-subtitle { 
-  font-size: 1.4rem; 
+  font-size: 1rem; /* Body: 1rem (16px) - Regular (400) */
   font-weight: 400; 
-  margin-bottom: 3rem; 
-  color: var(--primary-blue);
+  margin-bottom: var(--spacing-section); 
+  color: var(--medium-gray);
   line-height: 1.6;
   opacity: 0.9;
 }
@@ -409,8 +416,8 @@ body {
 .feature-card {
   background: var(--white);
   border-radius: 1.5rem;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.08);
-  padding: 3rem 2rem 2rem 2rem;
+  box-shadow: var(--shadow-light);
+  padding: var(--spacing-section) var(--spacing-container);
   text-align: left;
   position: relative;
   transition: all 0.4s ease;
@@ -464,16 +471,16 @@ body {
 }
 
 .feature-title { 
-  font-size: 1.3rem; 
-  font-weight: 700; 
-  color: var(--primary-gold); 
-  margin-bottom: 1rem;
+  font-size: 1.25rem; /* H4: 1.25rem (20px) - Medium (500) */
+  font-weight: 500; 
+  color: var(--primary-blue); 
+  margin-bottom: var(--spacing-base);
   line-height: 1.3;
 }
 
 .feature-desc { 
-  color: var(--primary-blue); 
-  font-size: 1.05rem;
+  color: var(--medium-gray); 
+  font-size: 1rem; /* Body: 1rem (16px) - Regular (400) */
   line-height: 1.6;
   opacity: 0.9;
 }
@@ -481,7 +488,7 @@ body {
 /* EDUQUA Section */
 .eduqua-section {
   background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
-  padding: 4rem 2rem;
+  padding: var(--spacing-section) var(--spacing-container);
   text-align: center;
 }
 
@@ -506,13 +513,13 @@ body {
 
 .eduqua-badge h3 {
   margin: 0;
-  font-size: 1.2rem;
-  font-weight: 700;
+  font-size: 1.2rem; /* H3: 1.5rem (24px) - SemiBold (600) */
+  font-weight: 600;
 }
 
 .eduqua-badge p {
   margin: 0.5rem 0 0 0;
-  font-size: 0.9rem;
+  font-size: 0.875rem; /* Klein: 0.875rem (14px) - Regular (400) */
   opacity: 0.9;
 }
 
@@ -532,21 +539,21 @@ body {
 }
 
 .eduqua-item h4 {
-  color: #14213d;
-  margin-bottom: 1rem;
-  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-base);
+  font-weight: 600;
 }
 
 .eduqua-item p {
-  color: #4a5568;
+  color: var(--medium-gray);
   line-height: 1.6;
-  font-size: 0.95rem;
+  font-size: 1rem; /* Body: 1rem (16px) - Regular (400) */
 }
 
 /* Newsletter Section */
 .newsletter-section {
   background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
-  padding: 4rem 2rem;
+  padding: var(--spacing-section) var(--spacing-container);
   text-align: center;
 }
 
@@ -556,16 +563,16 @@ body {
 }
 
 .newsletter-content h2 {
-  color: #14213d;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: var(--spacing-base);
+  font-size: 2rem; /* H2: 2rem (32px) - SemiBold (600) */
+  font-weight: 600;
 }
 
 .newsletter-content p {
-  color: #4a5568;
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
+  color: var(--medium-gray);
+  margin-bottom: var(--spacing-container);
+  font-size: 1rem; /* Body: 1rem (16px) - Regular (400) */
   line-height: 1.6;
 }
 
@@ -608,8 +615,8 @@ body {
 
 /* Testimonials Section */
 .testimonials-section {
-  background: linear-gradient(135deg, #14213d 0%, #1a365d 100%);
-  padding: 6rem 2rem;
+  background: linear-gradient(135deg, var(--primary-blue) 0%, #1a365d 100%);
+  padding: var(--spacing-section) var(--spacing-container);
   color: white;
 }
 
@@ -624,7 +631,7 @@ body {
 .testimonial-card {
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
-  padding: 2.5rem;
+  padding: var(--spacing-section);
   border-radius: 1.5rem;
   border: 1px solid rgba(199,161,90,0.2);
 }
@@ -636,7 +643,7 @@ body {
 .testimonial-content p {
   font-style: italic;
   line-height: 1.7;
-  font-size: 1.1rem;
+  font-size: 1rem; /* Body: 1rem (16px) - Regular (400) */
 }
 
 .testimonial-author {
@@ -658,13 +665,13 @@ body {
 }
 
 .author-info h4 {
-  color: #C7A15A;
+  color: var(--primary-gold);
   margin-bottom: 0.25rem;
 }
 
 .author-info p {
   color: rgba(255,255,255,0.7);
-  font-size: 0.9rem;
+  font-size: 0.875rem; /* Klein: 0.875rem (14px) - Regular (400) */
 }
 
 /* Section Headers */
@@ -674,8 +681,8 @@ body {
 }
 
 .section-title {
-  color: #C7A15A;
-  margin-bottom: 1rem;
+  color: var(--primary-gold);
+  margin-bottom: var(--spacing-base);
 }
 
 .section-subtitle {

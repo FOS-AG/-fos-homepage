@@ -27,6 +27,23 @@ class FOSContactForm {
 
 document.addEventListener('DOMContentLoaded', function() {
     new FOSContactForm();
+    // Sprachumschaltung für das Textarea-Placeholder
+    const langBtns = document.querySelectorAll('.language-btn');
+    const messageTextarea = document.getElementById('message');
+    if (langBtns && messageTextarea) {
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                setTimeout(() => {
+                    const lang = btn.textContent.trim().toLowerCase();
+                    if (lang === 'de') {
+                        messageTextarea.placeholder = messageTextarea.getAttribute('data-de-placeholder');
+                    } else {
+                        messageTextarea.placeholder = messageTextarea.getAttribute('data-en-placeholder');
+                    }
+                }, 50);
+            });
+        });
+    }
 });
 
 // Hinweis: Für andere Formulare (z.B. Newsletter) bleibt die Validierung erhalten. 
